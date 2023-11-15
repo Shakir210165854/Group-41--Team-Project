@@ -232,6 +232,30 @@
 
 
     <script>
+
+
+        //Function to ensure that home page is the default landing page
+
+        window.onload = function () {
+            if (!window.location.hash) {
+                window.location.hash = 'home';
+            }
+        };
+
+
+        //function to add an event listener for the current page, when refreshed it will save the page as the current one and default to that instead of the home page.
+        window.addEventListener('hashchange', function () {
+            localStorage.setItem('currentHash', window.location.hash);
+        });
+
+        window.onload = function () {
+            var lastHash = localStorage.getItem('currentHash');
+            if (lastHash) {
+                window.location.hash = lastHash;
+            }
+        };
+
+
         function showLogin() {
             var loginFormSection = document.getElementById('loginForm');
             loginFormSection.style.display = 'block';
