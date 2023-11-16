@@ -1,5 +1,5 @@
 * {
-    margin: 0;
+    margin: 2;
     padding: 0;
     box-sizing: border-box;
 }
@@ -15,9 +15,19 @@ nav {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    background: #524c57;
+    background: #8a2cd8;
     z-index: 3; 
 }
+nav button {
+    background-color: #8a2cd8; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
 
 nav a:hover:not(.logo) {
     background-color: lightblue;
@@ -115,29 +125,12 @@ section:target h1 {
     animation: 2s fadeIn forwards .5s;
 }
 
-#home {
-    background-color: gold;
+#home, #products, #partPicker, #about, #contact, #basket  {
+    background-color: rgb(245, 245, 245);
 }
 
-#products {
-    background: #e1a51a;
-}
 
-#partPicker {
-    background: #aebe12;
-}
 
-#about {
-    background: #afe712;
-}
-
-#contact {
-    background: #a5b112;
-}
-
-#basket {
-    background: #7bd60f;
-}
 
 @keyframes fadeIn {
     100% {
