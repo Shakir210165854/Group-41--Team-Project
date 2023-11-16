@@ -1,6 +1,6 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 2;
+    padding: 2;
     box-sizing: border-box;
 }
 
@@ -15,132 +15,72 @@ nav {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    background: #524c57;
+    background: #5e1698;
     z-index: 3; 
 }
-
-nav a:hover:not(.logo) {
-    background-color: lightblue;
+nav button {
+    background-color: #5e1698; /* Purple */
+    border: none;
+    color: white;
+    padding: 30px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-top-left-radius: 25px; /* Rounded top-left corner */
+    border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
 }
+
+nav button:hover {
+    background-color: #252322;
+}
+
 
 .logo {
     text-align: center;
     outline: none;
 }
 
-.logo a {
-    outline: none;
-}
 
 .logo img {
     max-height: 80px;
 }
 
-nav a {
-    font-size: 24px;
-    color: #fff;
-    max-height: 70px;
-    text-decoration: none;
-    padding: 20px;
-    text-align: center;
-}
-nav a[href="#basket"] {
-    display: none;
-}
 
-#loginForm {
-    display: none;
-    background-color:darkgrey;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-30%, -50%);
-    padding: 20px;
-    z-index: 2; 
-}
-
-
-.container {
+.mainContent {
     flex: 3;
-    background: #191919;
+    background: #252322;
     min-height: 100vh;
     font-family: Montserrat, sans-serif;
     position: relative;
     z-index: 1; 
 }
 
-.loginButton {
+.footer {
+    background-color: #5e1698;
+    color: rgb(246, 242, 242);
+    padding: 10px;
+    text-align: center;
     position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 18px;
-    color: #fff;
+    bottom: 0;
+    width: 100%; /* Make the footer full width */
+}
+
+login button {
+    background-color: #5e1698; /* Purple */
+    border: none;
+    color: white;
+    padding: 10px 40px;
+    text-align: center;
     text-decoration: none;
-    padding: 10px 20px;
-    background-color: #3498db;
-    border-radius: 5px;
-    border: 1px solid black;
-    z-index: 3;
+    display: inline-block;
+    font-size: 16px;
+    border-top-left-radius: 25px; /* Rounded top-left corner */
+    border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin-left: 90%;
 }
-
-section {
-    position: absolute;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    opacity: 0;
-    transition: all ease-in .5s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-section h1 {
-    color: #fff;
-    font-size: 50px;
-    text-transform: uppercase;
-    opacity: 0;
-}
-
-section:target {
-    opacity: 1;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-section:target h1 {
-    opacity: 0;
-    animation: 2s fadeIn forwards .5s;
-}
-
-#home {
-    background-color: gold;
-}
-
-#products {
-    background: #e1a51a;
-}
-
-#partPicker {
-    background: #aebe12;
-}
-
-#about {
-    background: #afe712;
-}
-
-#contact {
-    background: #a5b112;
-}
-
-#basket {
-    background: #7bd60f;
-}
-
-@keyframes fadeIn {
-    100% {
-        opacity: 1;
-    }
+login button:hover {
+    background-color: #420c6d; /* Purple */
 }

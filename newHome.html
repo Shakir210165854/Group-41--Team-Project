@@ -3,120 +3,33 @@
 <head>
     <meta charset="utf-8" />
     <title>AlphaTech</title>
-    <link rel="stylesheet" type="text/css" href="Design.css" />
+    <link rel="stylesheet" type="text/css" href="Design.css"/>
 </head>
 <body>
 
     <nav>
 
         <a class="logo" onclick="return false;"><img src="https://i.ibb.co/ZBsn56k/ATlogo.jpg" alt="ATlogo"></a>
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#partPicker">PC Part Picker</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact</a>
-        <a href="#basket">Basket</a>
+        <button onclick="window.location.href = 'newHome.html';">Home</button>
+        <button onclick="window.location.href = 'Products.html';">Products</button>
+        <button onclick="window.location.href = 'About_Us.html';">About Us</button>
+        <button onclick="window.location.href = 'contact_Us.html';">Contact Us</button>
     </nav>
 
-    <div class='container'>
-        <section id='home'>
-            <button type="button" class="loginButton" onclick="showLogin()">Login</button>
 
-            <h1>Home</h1>
-        </section>
+    <div class='mainContent' style="color: aliceblue;">
+        <h2> Home Page</h2>
 
-        <section id='loginForm'>
-            <h1>Login Form</h1>
-            <form>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-
-                <button type="button" onclick="verifyLogin()">Login</button>
-            </form>
-
-        </section>
-
-        <section id='account'>
-            <h1>Account Info</h1>
-        </section>
-
-
-        <section id='products'>
-            <h1>Products/Categories</h1>
-        </section>
-
-        <section id='partPicker'>
-            <h1>Part picker</h1>
-        </section>
-
-        <section id='about'>
-            <h1>About us</h1>
-        </section>
-        <section id='contact'>
-            <h1>Contact</h1>
-        </section>
-        <section id='basket'>
-            <h1>Basket</h1>
-        </section>
-
-
-        <section id='loginForm'>
-            <h1>Login Form</h1>
-            <form>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-
-                <button type="submit">Login</button>
-            </form>
-
-        </section>
+        <login>
+            <button>login</button>
+        </login>
+       
     </div>
-
-
-    <script>
-
-
-        //Function to ensure that home page is the default landing page
-
-        window.onload = function () {
-            if (!window.location.hash) {
-                window.location.hash = 'home';
-            }
-        };
-
-
-        //function to add an event listener for the current page, when refreshed it will save the page as the current one and default to that instead of the home page.
-        window.addEventListener('hashchange', function () {
-            localStorage.setItem('currentHash', window.location.hash);
-        });
-
-        window.onload = function () {
-            var lastHash = localStorage.getItem('currentHash');
-            if (lastHash) {
-                window.location.hash = lastHash;
-            }
-        };
-
-
-        function showLogin() {
-            var loginFormSection = document.getElementById('loginForm');
-            loginFormSection.style.display = 'block';
-            window.location.hash = 'loginForm';
-            alert("ok");
-        }
-
-        function verifyLogin() {
-            alert("test");
-        }
-
-    </script>
-
-
+    
+    <footer class="footer">
+       <p1>hello</p1>
+    </footer>
+    
 </body>
+
 </html>
