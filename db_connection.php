@@ -1,10 +1,10 @@
 <!-- db_connection.php -->
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "alphatech";
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'alphatech';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

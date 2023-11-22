@@ -17,10 +17,17 @@
     </nav>
 
 
+    <div class='mainContent' style="color: aliceblue;">
+        <h2> Home Page</h2>
+        
 
-    <?php
+        <login>
+            <button>login</button>
+        </login>
+
+        <?php
 // Include the database connection file
-include 'db_connection.php';
+include ('db_connection.php');
 
 // Perform a SELECT query
 $sql = "SELECT user_id, first_name, email FROM users";
@@ -29,7 +36,7 @@ $result = $conn->query($sql);
 // Display the results
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo "ID: " . $row["user_id"] . " - Username: " . $row["irst_name"] . " - Email: " . $row["email"] . "<br>";
+        echo "ID: " . $row["user_id"] . " - Username: " . $row["first_name"] . " - Email: " . $row["email"] . "<br>";
     }
 } else {
     echo "0 results";
@@ -38,16 +45,6 @@ if ($result->num_rows > 0) {
 // Close the connection
 $conn->close();
 ?>
-
-
-
-
-    <div class='mainContent' style="color: aliceblue;">
-        <h2> Home Page</h2>
-
-        <login>
-            <button>login</button>
-        </login>
        
     </div>
     
