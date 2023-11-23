@@ -14,6 +14,7 @@
         <button onclick="window.location.href = 'Products.php';">Products</button>
         <button onclick="window.location.href = 'About_Us.php';">About Us</button>
         <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
+        
     </nav>
 
 
@@ -22,7 +23,7 @@
         
 
         <login>
-            <button>login</button>
+            <button onclick="window.location.href = 'loginpage.php';">login</button>
         </login>
 
         <?php
