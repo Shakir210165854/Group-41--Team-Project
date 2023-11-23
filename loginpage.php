@@ -17,7 +17,7 @@
         <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
     </nav>
 
-    <div class="container">
+    <div class='mainContent' style="color: aliceblue;">
         <section id='loginForm'>
             <h1>Login Form</h1>
           <!-- <form onsubmit="hashPassword(document.getElementById('password').value); return false;"> -->

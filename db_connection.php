@@ -1,6 +1,3 @@
-<!-- check for errors -->
-
-
 
 <!-- db_connection.php -->
 <?php
@@ -18,9 +15,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-
-
 
 
 //php for checking log in details
@@ -53,6 +47,7 @@ if (isset($_POST['log-in'])) {
   }
 
 ?>
+<!-- check for errors -->
 <?php  
 if (count($errors) > 0) : ?>
   <script>
