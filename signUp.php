@@ -15,7 +15,7 @@
         <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
     </nav>
 
-
+    <!-- to be made before 2nd dec -->
     <div class='signUp' style="color: aliceblue;">
         <h2> Sign up Page</h2>
 

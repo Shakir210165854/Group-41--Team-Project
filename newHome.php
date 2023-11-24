@@ -21,7 +21,7 @@
     <div class='mainContent' style="color: aliceblue;">
         <h2> Home Page</h2>
         
-
+<!-- a login button should disappear when a user is loged-in -->
         <login>
             <button onclick="window.location.href = 'loginpage.php';">login</button>
         </login>
@@ -34,7 +34,7 @@ include ('db_connection.php');
 $sql = "SELECT user_id, first_name, email FROM users";
 $result = $conn->query($sql);
 
-// Display the results
+// Display the results as a test for now
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "ID: " . $row["user_id"] . " - Username: " . $row["first_name"] . " - Email: " . $row["email"] . "<br>";
