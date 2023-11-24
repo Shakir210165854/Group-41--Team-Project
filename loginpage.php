@@ -1,4 +1,4 @@
-﻿<?php include('db_connection.php') ?>
+<?php include('db_connection.php') ?>
 
 <!DOCTYPE html>
 
@@ -6,20 +6,13 @@
 <head>
     <meta charset="utf-8" />
     <title>Login </title>
-    <link rel="stylesheet" type="text/css" href="Design.css" />
+    <link rel="stylesheet" type="text/css" href="designForms.css" />
 </head>
 <body>
-    <nav>
-        <a class="logo" onclick="return false;"><img src="https://i.ibb.co/ZBsn56k/ATlogo.jpg" alt="ATlogo"></a>
-        <button onclick="window.location.href = 'newHome.php';">Home</button>
-        <button onclick="window.location.href = 'Products.php';">Products</button>
-        <button onclick="window.location.href = 'About_Us.php';">About Us</button>
-        <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
-    </nav>
 
     <div class="container">
         <section id='loginForm'>
-            <h1>Login Form</h1>
+            <h1>Login</h1>
           <!-- <form onsubmit="hashPassword(document.getElementById('password').value); return false;"> -->
             <form method="post" action="loginpage.php">
                 <label for="email">Username:</label>
