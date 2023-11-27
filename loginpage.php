@@ -16,7 +16,7 @@
 
 <body>
 
-    <div class="container">
+    <div class='mainContent' style="color: aliceblue;">
         <section id='loginForm'>
             <h1>Login</h1>
             <form method="post" action="loginpage.php">
