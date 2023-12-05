@@ -80,7 +80,13 @@ login button {
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     margin-left: 90%;
+    margin-top: 2%;   
 }
 login button:hover {
     background-color: #420c6d; /* Purple */
 }
+
+.padding {
+    padding: 30px;
+}
+

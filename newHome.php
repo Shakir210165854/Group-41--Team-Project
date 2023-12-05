@@ -11,6 +11,7 @@
 
         <a class="logo" onclick="return false;"><img src="https://i.ibb.co/ZBsn56k/ATlogo.jpg" alt="ATlogo"></a>
         <button onclick="window.location.href = 'newHome.php';">Home</button>
+        <button onclick="window.location.href = 'myAccount.php';">My Account</button>
         <button onclick="window.location.href = 'Products.php';">Products</button>
         <button onclick="window.location.href = 'About_Us.php';">About Us</button>
         <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
@@ -40,7 +41,7 @@ if ($result->num_rows > 0) {
         echo "ID: " . $row["user_id"] . " - Username: " . $row["first_name"] . " - Email: " . $row["email"] . "<br>";
     }
 } else {
-    echo "0 results";
+    echo "";
 }
 
 // Close the connection

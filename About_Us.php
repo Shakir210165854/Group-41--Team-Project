@@ -10,7 +10,8 @@
 <body>
     <nav>
     <a class="logo" onclick="return false;"><img src="https://i.ibb.co/ZBsn56k/ATlogo.jpg" alt="ATlogo"></a>
-        <button onclick="window.location.href = 'newHome.php';">Home</button>
+    <button onclick="window.location.href = 'newHome.php';">Home</button>
+        <button onclick="window.location.href = 'myAccount.php';">My Account</button>
         <button onclick="window.location.href = 'Products.php';">Products</button>
         <button onclick="window.location.href = 'About_Us.php';">About Us</button>
         <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
