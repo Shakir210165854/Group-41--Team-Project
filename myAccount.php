@@ -1,3 +1,4 @@
+<!-- Include the database connection file -->
 <?php include ('db_connection.php') ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -5,20 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="Design.css"/>
-    <style>
-        .title {
-    color: rgb(246, 242, 242);
-    font-size: 50px;
-    font-weight: bold;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    background-color: #5e1698;
-    min-width: 85%;
-}
-
-
-        </style>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+    
 </head>
 
 
@@ -33,30 +22,11 @@
     </nav>
     
     <div class='mainContent' style="color: aliceblue;">
-        <login>
+        <div class="login">
                 <button onclick="window.location.href = 'loginpage.php';">login</button>
-            </login>
+</div>
     
-            <?php
-    // Include the database connection file
-    
-    
-    // Perform a SELECT query
-    $sql = "SELECT user_id, first_name, email FROM users";
-    $result = $conn->query($sql);
-    
-    // Display the results
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo "ID: " . $row["user_id"] . " - Username: " . $row["first_name"] . " - Email: " . $row["email"] . "<br>";
-        }
-    } else {
-        echo "";
-    }
-    
-    // Close the connection
-    $conn->close();
-    ?>
+
        <h1 class="title"> My Account Information</h1>
     <div class="padding">
        <input placeholder="Profile Picture ">

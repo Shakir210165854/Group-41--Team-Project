@@ -1,0 +1,262 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    margin: 0;
+}
+
+nav {
+    flex: 1;
+    max-width: 200px;
+    max-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    background: #5e1698;
+    z-index: 3; 
+    overflow: auto;
+}
+nav button {
+    background-color: #5e1698; /* Purple */
+    border: none;
+    color: white;
+    padding: 30px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-top-left-radius: 25px; /* Rounded top-left corner */
+    border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
+}
+
+nav button:hover {
+    background-color: #252322;
+}
+
+.logo {
+    text-align: center;
+    outline: none;
+}
+
+.logo img {
+    max-height: 80px;
+}
+
+.mainContent {
+    flex: 3;
+    background: #252322;
+    min-height: 100vh;
+    font-family: Montserrat, sans-serif;
+    position: relative;
+    z-index: 1;
+    overflow: auto;
+}
+
+.footer {
+    background-color: #5e1698;
+    color: rgb(246, 242, 242);
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    /* bottom: 0; */
+    width: 100%; /* Make the footer full width */
+}
+
+.login button {
+    background-color: #5e1698; /* Purple */
+    border: none;
+    color: white;
+    padding: 10px 40px;
+    margin-left: 90%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-top-left-radius: 25px; /* Rounded top-left corner */
+    border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+ 
+}
+.login button:hover {
+    background-color: #420c6d; /* Purple */
+}
+
+.title {
+    color: rgb(246, 242, 242);
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #5e1698;
+        }
+
+.item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    width: 300px;
+}
+.item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+.item-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 8px 0;
+}
+.item-description {
+    font-size: 0.9em;
+    color: #555;
+}
+.item-price {
+    font-size: 1.5em;
+    color: #555;
+}
+
+
+.subtitle {
+    color: rgb(246, 242, 242);
+    font-size: 40px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.paragraph-one {
+    color: rgb(246, 242, 242);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.paragraph-two {
+    color: rgb(246, 242, 242);
+    font-size: 16px;
+    font-style: italic;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.team-member {
+    text-align: center;
+    margin: 20px;
+    flex: 1 0 20%;
+    max-width: 300px;
+}
+
+.team-member img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.team-member h2 {
+    margin-top: 10px;
+    color: #333;
+}
+
+.team-member p {
+    margin-top: 5px;
+    color: #555;
+}
+.hero-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    /* height: 100vh;  */
+    margin: 0;
+}
+#signupForm {
+    margin-top: 4%;
+}
+#loginForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    margin: 0;
+}
+.container {
+   
+    background-color: #fbfafa;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgb(247, 247, 247);
+}
+.container h1{
+ text-align: center;
+}
+
+h1 {
+    color: #333; 
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block; 
+    margin-bottom: 5px; 
+}
+
+input {
+    width: 100%;
+    padding: 10px; 
+    margin-bottom: 15px; 
+}
+
+button {
+    background-color: #5e1698; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px; 
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #420c6d;
+}

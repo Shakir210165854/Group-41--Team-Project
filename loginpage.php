@@ -6,17 +6,17 @@
 <head>
     <meta charset="utf-8" />
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="designForms.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
 
 <body>
 
-    <div class='mainContent'>
+    
     
         <section id='loginForm'>
-            <h1>Login</h1>
+            
             <form method="post" action="loginpage.php">
-
+            <h1>Login</h1><br>
                 <label for="email">Email:</label>
                 <input type="text" id="email" name="email" required />
 
@@ -24,14 +24,16 @@
                 <input type="password" id="password" name="password" required />
 
                 <button type="submit" name="log-in">Login</button>
-            </form>
-
-            <p>
+                <br><br>
+                <p>
                 Don't have an account? <a href="signup.php">Sign up</a>
             </p>
+            </form>
+
+            
         </section>
 
-    </div>
+
 </body>
 
 </html>
