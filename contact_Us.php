@@ -92,7 +92,7 @@
 				else if (msg.data == 'refreshcss') refreshCSS();
 			};
 			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
+				console.log('Live Reload enabled.');
 				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
 			}
 		})();
