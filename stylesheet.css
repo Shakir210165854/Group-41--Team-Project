@@ -53,7 +53,8 @@ nav button:hover {
     font-family: Montserrat, sans-serif;
     position: relative;
     z-index: 1;
-    overflow: auto;
+    overflow-y: auto;
+
 
 }
 
@@ -217,17 +218,7 @@ nav button:hover {
 
 
 
-* {
-    box-sizing: border-box;
-}
 
-body {
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-    /* height: 100vh;  */
-    margin: 0;
-}
 #signupForm {
     margin-top: 4%;
 }
@@ -253,9 +244,9 @@ h1 {
     color: #333; 
 }
 
-form {
+/* form {
     margin-top: 20px;
-}
+} */
 
 label {
     display: block; 
@@ -286,7 +277,7 @@ button:hover {
     display:inline-flex;
     padding: 5px;
     height: auto;
-    width: 100%;
+    /* width: 100vh; */
     position:relative;
     
     margin-left: 25%;
@@ -301,7 +292,7 @@ button:hover {
 }
 .search .searchB{
     max-width: 40%;
-    height: 40%;
+    height: 70%;
 }
 .search #log-in{
   
@@ -311,83 +302,29 @@ button:hover {
     border-bottom-right-radius: 25px;
 }
 
-#signupForm {
-    margin-top: 4%;
-}
-#loginForm {
+
+form{
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; 
-    margin: 0;
+    /* flex-wrap: wrap; */
+    justify-content: start;
+    align-items: left;
+    position: relative;
+    /* display:inline-flex; */
+    padding: 5px;
+    height: auto;
+    /* width: 100%; */
+    /* position:relative; */
 }
-.container {
-   
-    background-color: #fbfafa;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgb(247, 247, 247);
-}
-.container h1{
- text-align: center;
-}
+/* form button{
 
-h1 {
-    color: #333; 
-}
+} */
 
-form {
-    margin-top: 20px;
-}
-
-label {
-    display: block; 
-    margin-bottom: 5px; 
-}
-
-input {
-    width: 100%;
-    padding: 10px; 
-    margin-bottom: 15px; 
-}
-
-button {
-    background-color: #5e1698; 
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px; 
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #420c6d;
-}
-input,
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-}
-
-.myButton {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    cursor: pointer;
-}
-
-.myButton:hover {
-    background-color: #353232ba;
-    color: black;
-}
-Form {
-    background: linear-gradient(to right, #333, #764abc, #000); /* Linear gradient from dark grey to a subtle purple to black */
-    padding: 20px;
-    max-width: 50%;
-    margin: 0 auto;
-    color: #fff; /* White text for contrast */
+@media screen and (max-width: 700px) {
+    .login button {
+        margin-left: 0; /* Adjust as needed for smaller screens */
+    }
+    .search{
+        margin-left: 3%;
+    }
 }

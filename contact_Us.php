@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+    <link rel="stylesheet" type="text/css" href="Design.css"/>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
         <h1 class="title"> Contact</h1>
           
 
-            <form id="Form2" action="process_contact_form.php" method="post">
+            <form  id="Form2" action="process_contact_form.php" method="post">
                 <h3>GET IN TOUCH</h3>
                 <label for="name">Name:</label>
                 <input type="text" id="name" placeholder="Name" required>

@@ -1,23 +1,59 @@
 * {
-    margin: 2px;
-    padding: 2px;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
-
 
 body {
     display: flex;
     margin: 0;
 }
+.title {
+    color: rgb(246, 242, 242);
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #5e1698;
+        }
+
+        /* .login {
+    display: flex;
+    flex: wrap;
+    width: 100%;
+} */
+.login button {
+    background-color: #5e1698; /* Purple */
+    border: none;
+    color: white;
+    padding: 10px 40px;
+    margin-left: 90%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-top-left-radius: 25px; /* Rounded top-left corner */
+    border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+ 
+}
+.login button:hover {
+    background-color: #420c6d; /* Purple */
+}
 
 nav {
     flex: 1;
     max-width: 200px;
+    max-height: 100vh;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     background: #5e1698;
     z-index: 3; 
+    overflow: auto;
 }
 nav button {
     background-color: #5e1698; /* Purple */
@@ -36,17 +72,14 @@ nav button:hover {
     background-color: #252322;
 }
 
-
 .logo {
     text-align: center;
     outline: none;
 }
 
-
 .logo img {
     max-height: 80px;
 }
-
 
 .mainContent {
     flex: 3;
@@ -55,6 +88,9 @@ nav button:hover {
     font-family: Montserrat, sans-serif;
     position: relative;
     z-index: 1;
+    overflow-y: auto;
+
+
 }
 
 .footer {
@@ -66,52 +102,83 @@ nav button:hover {
     /* bottom: 0; */
     width: 100%; /* Make the footer full width */
 }
-login button {
-    background-color: #5e1698;  /* Purple */
+#signupForm {
+    margin-top: 4%;
+}
+#loginForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    margin: 0;
+}
+.container {
+   
+    background-color: #fbfafa;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgb(247, 247, 247);
+}
+.container h1{
+ text-align: center;
+}
+
+h1 {
+    color: #333; 
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block; 
+    margin-bottom: 5px; 
+}
+
+input {
+    width: 100%;
+    padding: 10px; 
+    margin-bottom: 15px; 
+}
+
+button {
+    background-color: #5e1698; 
     border: none;
     color: white;
-    padding: 10px 40px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+    padding: 10px 20px;
     font-size: 16px;
-    border-top-left-radius: 25px; /* Rounded top-left corner */
-    border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    margin-left: 5%;
-}
-.login button:hover {
-    background-color: #420c6d; /* Purple */
+    border-radius: 5px; 
+    cursor: pointer;
 }
 
-.title {
-    color: rgb(246, 242, 242);
-    font-size: 50px;
-    font-weight: bold;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    background-color: #5e1698;
-        }
+button:hover {
+    background-color: #420c6d;
+}
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
 
-.item {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 16px;
-    width: 300px;
+.myButton {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
 }
-.item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
+
+.myButton:hover {
+    background-color: #353232ba;
+    color: black;
 }
-.item-name {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 8px 0;
-}
-.item-description, .item-price {
-    font-size: 9em;
-    color: #555;
+#Form2 {
+    background: linear-gradient(to right, #333, #764abc, #000); /* Linear gradient from dark grey to a subtle purple to black */
+    padding: 20px;
+    max-width: 50%;
+    margin: 0 auto;
+    color: #fff; /* White text for contrast */
 }

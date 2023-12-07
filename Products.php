@@ -24,23 +24,44 @@
     <div class='mainContent' style="color: aliceblue;">
     
     <div class="search">
+    <form method="post" action="">
         <input class="searchB"type="text" placeholder="Search..." name="search">
         <button name="submit">Search</button>
+
         
-        <button id="log-in"onclick="window.location.href = 'loginpage.php';">login</button>
+</form>
+<button id="log-in"onclick="window.location.href = 'loginpage.php';">login</button>
 
     </div>
 
 
 
 <?php
+ if (isset($_POST['submit'])) {
+    // If search form is submitted
+
+    $search = mysqli_real_escape_string($conn, $_POST['search']);
+
+    // Modify SQL query to include a WHERE clause for searching
+    $sql = "SELECT items.*, image.image_data FROM items
+            INNER JOIN image ON items.item_id = image.item_id
+            WHERE items.item_name LIKE '%$search%'";
+
+    $result = $conn->query($sql);
+
+    echo '<h1 class="title">Search Results</h1>';
+    if ($result->num_rows === 0) {
+        echo '<p>Item not found.</p>';
+    }
+}else {
+
 
 $sql = "SELECT items.*, image.image_data FROM items
         INNER JOIN image ON items.item_id = image.item_id";
 $result = $conn->query($sql);
 
 echo '<h1 class="title">Products</h1>';
-
+}
 // Add a container to hold the items
 echo '<div class="items-container">';
 
