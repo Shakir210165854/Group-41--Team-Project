@@ -11,13 +11,14 @@ body {
 
 nav {
     flex: 1;
-    max-width: 200px;
-    max-height: 100vh;
+    width: 200px;
+    height: 100vh;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     background: #5e1698;
     z-index: 3; 
+    position: fixed;
     overflow: auto;
 }
 nav button {
@@ -50,10 +51,11 @@ nav button:hover {
     flex: 3;
     background: #252322;
     min-height: 100vh;
+    margin-left: 200px;
     font-family: Montserrat, sans-serif;
     position: relative;
-    z-index: 1;
-    overflow-y: auto;
+    /* z-index: 1; */
+    /* overflow-y: auto; */
 
 
 }
@@ -101,22 +103,25 @@ nav button:hover {
     font-weight: bold;
     font-family: 'Arial', sans-serif;
     text-align: center;
+    margin-left: 2px;
     background-color: #5e1698;
         }
         .items-container {
             display: flex;
-            /* flex-wrap: wrap; */
+            flex-wrap: wrap;
             justify-content: start;
             align-items: left;
             position: relative;
+            /* justify-content: space-around; */
         }
         
         .item {
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 16px;
-            margin: 16px;
-            width: 300px;
+            margin: 10px;
+            width: auto;
+            max-width: 300px;
             box-sizing: border-box;
             /* display: flex;
             flex-wrap: wrap; */
@@ -181,10 +186,10 @@ nav button:hover {
     border-radius: 10px;
 }
 
-.team-members {
+.team-members , .stock , .header-con{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
 }
 
 .team-member {
@@ -277,22 +282,25 @@ button:hover {
     display:inline-flex;
     padding: 5px;
     height: auto;
-    /* width: 100vh; */
+    width: 100%;
     position:relative;
-    
-    margin-left: 25%;
+    justify-content: space-between;
+    /* margin-left: 25%; */
 }
 .search button{
     margin-left: 5px;
     height: 40px ;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    align-items: center;
+    
+    position: relative;
     
 }
-.search .searchB{
-    max-width: 40%;
+.searchB{
+    max-width: 60%;
     height: 70%;
+    
 }
 .search #log-in{
   
@@ -308,13 +316,11 @@ form{
     display: flex;
     /* flex-wrap: wrap; */
     justify-content: start;
-    align-items: left;
+    align-content: center;
     position: relative;
     /* display:inline-flex; */
     padding: 5px;
     height: auto;
-    /* width: 100%; */
-    /* position:relative; */
 }
 /* form button{
 

@@ -22,20 +22,22 @@
     </nav>
     
     <div class='mainContent' style="color: aliceblue;">
-    
+<div class= "header-con">
     <div class="search">
-    <form method="post" action="">
-        <input class="searchB"type="text" placeholder="Search..." name="search">
-        <button name="submit">Search</button>
 
-        
-</form>
-<button id="log-in"onclick="window.location.href = 'loginpage.php';">login</button>
+        <form method="post" action="">
+            <input class="searchB"type="text" placeholder="Search..." name="search">
+            <button name="submit">Search</button>
+        </form>
 
+        <div>
+            <button id="log-in"onclick="window.location.href = 'loginpage.php';">login</button>
+        </div>
     </div>
+</div>
+    <h1 class="title">Products</h1>
 
-
-
+    <div class="stock">
 <?php
  if (isset($_POST['submit'])) {
     // If search form is submitted
@@ -49,7 +51,7 @@
 
     $result = $conn->query($sql);
 
-    echo '<h1 class="title">Search Results</h1>';
+    // echo '<h1 class="title">Search Results</h1>';
     if ($result->num_rows === 0) {
         echo '<p>Item not found.</p>';
     }
@@ -60,7 +62,7 @@ $sql = "SELECT items.*, image.image_data FROM items
         INNER JOIN image ON items.item_id = image.item_id";
 $result = $conn->query($sql);
 
-echo '<h1 class="title">Products</h1>';
+// echo '<h1 class="title">Products</h1>';
 }
 // Add a container to hold the items
 echo '<div class="items-container">';
@@ -71,7 +73,7 @@ while ($row = $result->fetch_assoc()) {
     $imageData = base64_encode($row['image_data']);
     echo '<img src="data:image/jpeg;base64,' . $imageData . '" alt="Item Image">';
     echo '<div class="item-name">' . $row['item_name'] . '</div>';
-    echo '<div class="item-description">' . $row['quantity'] . '</div>';
+    echo '<div class="item-description">' . $row['description'] . '</div>';
     echo '<div class="item-price">£' . $row['price'] . '</div>';
     echo '</div>';
 }
@@ -79,6 +81,7 @@ while ($row = $result->fetch_assoc()) {
 echo '</div>'; // Close the items container
 
 ?>
+    </div>
 
     </div>
         
