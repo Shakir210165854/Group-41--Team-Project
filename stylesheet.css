@@ -310,3 +310,84 @@ button:hover {
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
 }
+
+#signupForm {
+    margin-top: 4%;
+}
+#loginForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    margin: 0;
+}
+.container {
+   
+    background-color: #fbfafa;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgb(247, 247, 247);
+}
+.container h1{
+ text-align: center;
+}
+
+h1 {
+    color: #333; 
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block; 
+    margin-bottom: 5px; 
+}
+
+input {
+    width: 100%;
+    padding: 10px; 
+    margin-bottom: 15px; 
+}
+
+button {
+    background-color: #5e1698; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px; 
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #420c6d;
+}
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.myButton {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+.myButton:hover {
+    background-color: #353232ba;
+    color: black;
+}
+Form {
+    background: linear-gradient(to right, #333, #764abc, #000); /* Linear gradient from dark grey to a subtle purple to black */
+    padding: 20px;
+    max-width: 50%;
+    margin: 0 auto;
+    color: #fff; /* White text for contrast */
+}
