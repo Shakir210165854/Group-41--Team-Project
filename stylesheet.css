@@ -54,6 +54,7 @@ nav button:hover {
     position: relative;
     z-index: 1;
     overflow: auto;
+
 }
 
 .footer {
@@ -66,6 +67,11 @@ nav button:hover {
     width: 100%; /* Make the footer full width */
 }
 
+/* .login {
+    display: flex;
+    flex: wrap;
+    width: 100%;
+} */
 .login button {
     background-color: #5e1698; /* Purple */
     border: none;
@@ -274,4 +280,34 @@ button {
 
 button:hover {
     background-color: #420c6d;
+}
+
+.search{
+    display:inline-flex;
+    padding: 5px;
+    height: auto;
+    width: 100%;
+    position:relative;
+    
+    margin-left: 25%;
+}
+.search button{
+    margin-left: 5px;
+    height: 40px ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+.search .searchB{
+    max-width: 40%;
+    height: 40%;
+}
+.search #log-in{
+  
+    border-top-left-radius: 25px; /* Rounded top-left corner */
+    border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+
 }

@@ -20,10 +20,18 @@
         <button onclick="window.location.href = 'About_Us.php';">About Us</button>
         <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
     </nav>
+    
     <div class='mainContent' style="color: aliceblue;">
-        <div class="login">
-                <button onclick="window.location.href = 'loginpage.php';">login</button>
-</div>
+    
+    <div class="search">
+        <input class="searchB"type="text" placeholder="Search..." name="search">
+        <button name="submit">Search</button>
+        
+        <button id="log-in"onclick="window.location.href = 'loginpage.php';">login</button>
+
+    </div>
+
+
 
 <?php
 
