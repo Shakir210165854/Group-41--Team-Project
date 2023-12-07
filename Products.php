@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="stylesheet.css"/> -->
+    
 </head>
+<style><?php include 'stylesheet.css'; ?></style>
 
 
 <body>
@@ -23,15 +25,31 @@
                 <button onclick="window.location.href = 'loginpage.php';">login</button>
 </div>
 
+<?php
 
-    <h1 class="title"> Products</h1>
+$sql = "SELECT items.*, image.image_data FROM items
+        INNER JOIN image ON items.item_id = image.item_id";
+$result = $conn->query($sql);
 
-    <div class="item">
-        <img src="https://media.istockphoto.com/id/1371213291/photo/3d-rendering-of-cyberpunk-ai-circuit-board-technology-background-central-computer-processors.jpg?s=612x612&w=0&k=20&c=saeDrSwqdVnj0gjftZhmfZn1a6kFgdv2NEUrV1uqI1Y=" alt="Item Image">
-        <div class="item-name">Item Name</div>
-        <div class="item-description">this is a small description of the item</div>
-        <div class="item-price">£19.99</div>
-    </div>
+echo '<h1 class="title">Products</h1>';
+
+// Add a container to hold the items
+echo '<div class="items-container">';
+
+// Loop through the results and display product information
+while ($row = $result->fetch_assoc()) {
+    echo '<div class="item">';
+    $imageData = base64_encode($row['image_data']);
+    echo '<img src="data:image/jpeg;base64,' . $imageData . '" alt="Item Image">';
+    echo '<div class="item-name">' . $row['item_name'] . '</div>';
+    echo '<div class="item-description">' . $row['quantity'] . '</div>';
+    echo '<div class="item-price">£' . $row['price'] . '</div>';
+    echo '</div>';
+}
+
+echo '</div>'; // Close the items container
+
+?>
 
     </div>
         
