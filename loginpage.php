@@ -1,4 +1,4 @@
-<?php include('db_connection.php') ?>
+﻿<?php include('db_connection.php') ?>
 
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="designForms.css" />
 </head>
 
 <body>
