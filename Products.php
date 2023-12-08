@@ -82,7 +82,7 @@ while ($row = $result->fetch_assoc()) {
 
     echo '<form method="post" action="add_to_cart.php">';
     echo '<input type="hidden" name="item_id" value="' . $row['item_id'] . '">';
-    echo '<input type="hidden" name="image_id" value="' . $row['image_id'] . '">';
+    // echo '<input type="hidden" name="image_id" value="' . $row['image_id'] . '">';
     echo '<input type="hidden" name="item_name" value="' . $row['item_name'] . '">';
     echo '<input type="hidden" name="description" value="' . $row['description'] . '">';
     echo '<input type="hidden" name="price" value="' . $row['price'] . '">';
