@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2023 at 07:28 PM
+-- Generation Time: Dec 08, 2023 at 07:58 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -78,21 +78,22 @@ CREATE TABLE `items` (
   `quantity` int(11) DEFAULT NULL,
   `price` decimal(10,2) DEFAULT NULL,
   `item_name` varchar(255) NOT NULL,
-  `description` varchar(255) DEFAULT NULL
+  `description` varchar(255) DEFAULT NULL,
+  `image_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `items`
 --
 
-INSERT INTO `items` (`item_id`, `quantity`, `price`, `item_name`, `description`) VALUES
-(1, 46, '799.99', 'AMD Ryzen 9 5950X', 'A high-end desktop processor based on the Zen 3 architecture'),
-(2, 14, '379.87', 'ASUS ROG VIII Hero (Wi-Fi 6)', 'Part of ASUS\'s Republic of Gamers (ROG) series, known for high-end features and performance'),
-(3, 22, '698.99', 'NVIDIA GeForce RTX 3080', 'A high-performance graphics card based on the Ampere architecture. With 10 GB of GDDR6X VRAM and advanced features like DLSS '),
-(4, 30, '160.00', 'Corsair Vengeance (2 x 16GB) DDR4-3200', 'DDR4 memory modules. The 32GB kit (2 x 16GB) running at 3200 MHz provides a good balance of capacity'),
-(5, 43, '149.99', 'Samsung 970 EVO Plus 1TB NVMe M.2', 'A high-performance NVMe SSD, offering fast read and write speeds'),
-(6, 23, '120.00', 'EVGA SuperNOVA, 80 Plus Gold 750W', 'A reliable power supply unit with 80 Plus Gold efficiency. With a 750W capacity'),
-(7, 34, '89.98', 'Noctua NH-D15', 'The Noctua NH-D15 is an air cooler known for its exceptional cooling performance and low noise levels');
+INSERT INTO `items` (`item_id`, `quantity`, `price`, `item_name`, `description`, `image_id`) VALUES
+(1, 46, '799.99', 'AMD Ryzen 9 5950X', 'A high-end desktop processor based on the Zen 3 architecture', 1),
+(2, 14, '379.87', 'ASUS ROG VIII Hero (Wi-Fi 6)', 'Part of ASUS\'s Republic of Gamers (ROG) series, known for high-end features and performance', 2),
+(3, 22, '698.99', 'NVIDIA GeForce RTX 3080', 'A high-performance graphics card based on the Ampere architecture. With 10 GB of GDDR6X VRAM and advanced features like DLSS ', 3),
+(4, 30, '160.00', 'Corsair Vengeance (2 x 16GB) DDR4-3200', 'DDR4 memory modules. The 32GB kit (2 x 16GB) running at 3200 MHz provides a good balance of capacity', 4),
+(5, 43, '149.99', 'Samsung 970 EVO Plus 1TB NVMe M.2', 'A high-performance NVMe SSD, offering fast read and write speeds', 5),
+(6, 23, '120.00', 'EVGA SuperNOVA, 80 Plus Gold 750W', 'A reliable power supply unit with 80 Plus Gold efficiency. With a 750W capacity', 6),
+(7, 34, '89.98', 'Noctua NH-D15', 'The Noctua NH-D15 is an air cooler known for its exceptional cooling performance and low noise levels', 7);
 
 -- --------------------------------------------------------
 
@@ -188,7 +189,8 @@ ALTER TABLE `image`
 -- Indexes for table `items`
 --
 ALTER TABLE `items`
-  ADD PRIMARY KEY (`item_id`);
+  ADD PRIMARY KEY (`item_id`),
+  ADD KEY `fk_items_image` (`image_id`);
 
 --
 -- Indexes for table `order_details`
@@ -258,7 +260,7 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT for table `shopping_cart`
 --
 ALTER TABLE `shopping_cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -280,7 +282,14 @@ ALTER TABLE `address`
 -- Constraints for table `image`
 --
 ALTER TABLE `image`
+  ADD CONSTRAINT `fk_image_item` FOREIGN KEY (`item_id`) REFERENCES `items` (`item_id`),
   ADD CONSTRAINT `image_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `items` (`item_id`);
+
+--
+-- Constraints for table `items`
+--
+ALTER TABLE `items`
+  ADD CONSTRAINT `fk_items_image` FOREIGN KEY (`image_id`) REFERENCES `image` (`image_id`);
 
 --
 -- Constraints for table `order_details`
