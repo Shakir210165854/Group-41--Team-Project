@@ -70,22 +70,50 @@ nav button:hover {
     width: 100%; /* Make the footer full width */
 }
 
-/* .login {
+.login {
     display: flex;
     flex: wrap;
-    width: 100%;
-} */
+    /* width: 100vh; */
+    position: relative;
+    justify-content:right;
+    text-align:center;
+    
+}
+.loginX {
+    display: flex;
+    flex: wrap;
+    /* width: 100vh; */
+    position: relative;
+    justify-content:right;
+    text-align:center;
+    justify-content: space-between;
+}
+.loginX button{
+    background-color: #5e1698; /* Purple */
+    border: none;
+    color: white;
+    padding: 10px 40px;
+    margin: 5px;
+   /* 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block; */
+    font-size: 16px;
+    border-top-left-radius: 25px; /* Rounded top-left corner */
+    border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
 .login button {
     background-color: #5e1698; /* Purple */
     border: none;
     color: white;
     padding: 10px 40px;
-    margin-left: 90%;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    margin: 5px;
+   /* 
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: inline-block; */
     font-size: 16px;
     border-top-left-radius: 25px; /* Rounded top-left corner */
     border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
@@ -98,14 +126,29 @@ nav button:hover {
 }
 
 .title {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content:center;
     color: rgb(246, 242, 242);
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
     font-family: 'Arial', sans-serif;
-    text-align: center;
+    text-align:center;
     margin-left: 2px;
     background-color: #5e1698;
+    justify-content: space-between;
+
         }
+    .title img{
+        align-items: end;
+        width: 20%;
+        /* height: auto; */
+        /* margin-right: 5vh; */
+    }
+    /* .title h4{
+        
+    } */
         .items-container {
             display: flex;
             flex-wrap: wrap;
@@ -148,7 +191,61 @@ nav button:hover {
             font-size: 1.5em;
             color: #555;
         }
-            
+
+        .Basket {
+            display: flex;
+            color: aliceblue;
+            background-color: #333;
+            max-width: 80%;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .Basket img {
+            max-width: 100px;
+            max-height: 100px;
+            margin-right: 20px;
+            border-radius: 4px;
+        }
+        
+        .Basket-content {
+            flex-grow: 1;
+        }
+        
+        .Basket-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .Basket-description {
+            margin-bottom: 12px;
+        }
+        
+        .Basket-price {
+            font-size: 1.1em;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        .delete-button {
+            margin-left: auto; /* Push the button to the right end */
+            padding: 8px 12px;
+            max-height: 50px;
+            background-color: #5e1698; /* Bootstrap's danger color */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .delete-button:hover {
+            background-color: #511085; /* Darker shade on hover */
+            color: #9d9d9d;
+        }
+        
 
 
 .subtitle {
@@ -365,8 +462,8 @@ button:hover {
     height: 70%;
     
 }
-.search #log-in{
-  
+#log-in{
+    
     border-top-left-radius: 25px; /* Rounded top-left corner */
     border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
     border-top-right-radius: 25px;

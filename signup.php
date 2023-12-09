@@ -12,16 +12,16 @@
             <h1>Sign Up</h1>
             <form method="post" action="loginpage.php">
 
-                <label for="first_name">first name:</label>
+                <label for="first_name">First name:</label>
                 <input type="name" id="first_name" name="first_name" required />
 
-                <label for="surname">surname:</label>
+                <label for="surname">Surname:</label>
                 <input type="surname" id="surname" name="surname" required />
 
                 <label for="email">Email:</label>
                 <input type="email" id="signupEmail" name="email" required/>
 
-                <label for="Phone_number">Phone_number:</label>
+                <label for="Phone_number">Phone Number:</label>
                 <input type="number" id="number" name="phone_number" required />
 
                 <label for="password">Password:</label>

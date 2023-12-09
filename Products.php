@@ -30,13 +30,16 @@
             <button name="submit">Search</button>
         </form>
 
-        <div>
-            <button id="log-in"onclick="window.location.href = 'loginpage.php';">login</button>
+        <div class="login">
+            <button onclick="window.location.href = 'loginpage.php';">login</button>
         </div>
     </div>
 </div>
-    <h1 class="title">Products</h1>
-
+    <div class="title">
+        <h3></h3>
+        <h3>Products</h3>
+        <a onclick="window.location.href = 'shopping_basket.php';"><img src="Basket.png" alt="ATlogo"></a>
+    </div>
     <div class="stock">
 <?php
  if (isset($_POST['submit'])) {
@@ -58,9 +61,10 @@
 }else {
 
 
-$sql = "SELECT items.*, image.image_data FROM items
-        INNER JOIN image ON items.item_id = image.item_id";
+    $sql = "SELECT items.*, image.image_id, image.image_data FROM items
+    INNER JOIN image ON items.item_id = image.item_id";
 $result = $conn->query($sql);
+
 
 // echo '<h1 class="title">Products</h1>';
 }
@@ -75,6 +79,15 @@ while ($row = $result->fetch_assoc()) {
     echo '<div class="item-name">' . $row['item_name'] . '</div>';
     echo '<div class="item-description">' . $row['description'] . '</div>';
     echo '<div class="item-price">£' . $row['price'] . '</div>';
+
+    echo '<form method="post" action="add_to_cart.php">';
+    echo '<input type="hidden" name="item_id" value="' . $row['item_id'] . '">';
+    echo '<input type="hidden" name="image_id" value="' . $row['image_id'] . '">';
+    echo '<input type="hidden" name="item_name" value="' . $row['item_name'] . '">';    
+    echo '<input type="hidden" name="description" value="' . $row['description'] . '">';
+    echo '<input type="hidden" name="price" value="' . $row['price'] . '">';
+    echo '<button type="submit" name="add_to_cart">Add to Basket</button>';
+    echo '</form>';
     echo '</div>';
 }
 
