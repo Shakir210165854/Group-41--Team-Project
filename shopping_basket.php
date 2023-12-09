@@ -1,3 +1,8 @@
+<?php
+session_start();
+include ('db_connection.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +22,23 @@
 
       <div class="loginX">
           <button onclick="window.location.href = 'Products.php';">Back</button>
-          <button onclick="window.location.href = 'loginpage.php';">login</button>
+          <!-- <button onclick="window.location.href = 'loginpage.php';">login</button> -->
+          <?php
+        if (isset($_SESSION['user_id'])) {
+            // If logged in, show logout button
+            echo '<div class="login">';
+            echo '<form action="logout.php" method="post">';
+            echo '<button type="submit" name="logout">Logout</button>';
+            echo '</form>';
+            // echo '<button onclick="window.location.href = \'logout.php\';">Logout</button>';
+            echo '</div>';
+        } else {
+            // If not logged in, show login button
+            echo '<div class="login">';
+            echo '<button onclick="window.location.href = \'loginpage.php\';">Login</button>';
+            echo '</div>';
+        }
+        ?>
       </div>
 
 

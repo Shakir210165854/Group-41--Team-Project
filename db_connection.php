@@ -34,6 +34,7 @@ if (isset($_POST['log-in'])) {
       $query = "SELECT * FROM users WHERE email='$username' AND password='$password'";
       $results = mysqli_query($conn, $query);
       if (mysqli_num_rows($results) == 1) {
+        session_start();
         $user = mysqli_fetch_assoc($results);
         $uid = $user['user_id'];
         $_SESSION['email'] = $username;
