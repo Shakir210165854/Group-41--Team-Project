@@ -152,15 +152,15 @@ nav button:hover {
 
 
 .subtitle {
-    color: rgb(246, 242, 242);
-    font-size: 40px;
+    color: rgb(146, 3, 255);
+    font-size: 30px;
     font-family: 'Arial', sans-serif;
     text-align: center;
 }
 
 .paragraph-one {
-    color: rgb(246, 242, 242);
-    font-size: 18px;
+    color: rgb(136, 1, 194);
+    font-size: 14px;
     font-weight: bold;
     text-align: center;
     padding-left: 50px;
@@ -168,8 +168,34 @@ nav button:hover {
 }
 
 .paragraph-two {
-    color: rgb(246, 242, 242);
-    font-size: 16px;
+    color: rgb(136, 1, 194);
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+}
+
+.about-us-subtitle {
+    color: rgb(174, 99, 212);
+    font-size: 30px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.about-us-paragraph-one {
+    color: rgb(136, 1, 194);
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.about-us-paragraph-two {
+    color: rgb(136, 1, 194);
+    font-size: 13px;
     font-style: italic;
     text-align: center;
     padding-left: 50px;
@@ -206,12 +232,12 @@ nav button:hover {
 
 .team-member h2 {
     margin-top: 10px;
-    color: #333;
+    color: #b7b7b7;
 }
 
 .team-member p {
     margin-top: 5px;
-    color: #555;
+    color: #b3b3b3;
 }
 .hero-image {
     width: 100%;
@@ -220,7 +246,44 @@ nav button:hover {
     margin-bottom: 20px;
 }
 
+.slideshow-container {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
 
+.mySlides {
+    display: none;
+}
+
+.side-image-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.side-by-side-images {
+    display: flex;
+}
+
+.side-image {
+    text-align: center;
+    margin: 0 10px;
+}
+
+.side-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.side-image-text {
+    color: rgb(136, 1, 194);
+    font-size: 15px;
+    font-style: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 
 
