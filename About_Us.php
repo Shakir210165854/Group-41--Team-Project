@@ -25,15 +25,15 @@
 </div>
         <h1 class="title">OUR STORY</h1>
 
-        <p class="paragraph-one">Our journey began with a simple idea—to provide computer enthusiasts and professionals with high-quality, cutting-edge components that elevate their computing experience.</p>
+        <p class="about-us-paragraph-one">Our journey began with a simple idea—to provide computer enthusiasts and professionals with high-quality, cutting-edge components that elevate their computing experience.</p>
 
         <div class="image-container">
                 <img src="https://www.shutterstock.com/image-vector/computer-parts-hands-repair-pc-600nw-2192555921.jpg" alt="Sample Image">
         </div>
 
-        <p class="paragraph-two">Founded by a team of dedicated tech enthusiasts, we set out to create a platform that not only offers a vast selection of computer parts but also ensures that each product meets our rigorous standards for performance and reliability. Our commitment to excellence drives every aspect of our business, from the carefully curated products in our inventory to the seamless shopping experience we provide. At AlphaTech, we understand that each computer build is a unique expression of creativity and functionality. Whether you're a seasoned gamer pushing the limits of performance or a professional seeking the latest innovations for your workstations, we've got you covered.</p>
+        <p class="about-us-paragraph-two">Founded by a team of dedicated tech enthusiasts, we set out to create a platform that not only offers a vast selection of computer parts but also ensures that each product meets our rigorous standards for performance and reliability. Our commitment to excellence drives every aspect of our business, from the carefully curated products in our inventory to the seamless shopping experience we provide. At AlphaTech, we understand that each computer build is a unique expression of creativity and functionality. Whether you're a seasoned gamer pushing the limits of performance or a professional seeking the latest innovations for your workstations, we've got you covered.</p>
 
-        <h1 class="subtitle">Our Founders</h1>
+        <h1 class="about-us-subtitle">Our Founders</h1>
         
         <div class="team-members">
             <div class="team-member">
