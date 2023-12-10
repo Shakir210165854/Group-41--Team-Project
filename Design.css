@@ -9,30 +9,67 @@ body {
     margin: 0;
 }
 .title {
-    color: rgb(246, 242, 242);
-    font-size: 50px;
-    font-weight: bold;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    background-color: #5e1698;
-        }
+display: flex;
+flex-wrap: wrap;
+position: relative;
+justify-content:center;
+color: rgb(246, 242, 242);
+font-size: 40px;
+font-weight: bold;
+font-family: 'Arial', sans-serif;
+text-align:center;
+margin-left: 2px;
+background-color: #5e1698;
+justify-content: space-between;
 
-        /* .login {
+
+    }
+    
+   
+.login {
     display: flex;
     flex: wrap;
-    width: 100%;
-} */
+    /* width: 100vh; */
+    position: relative;
+    justify-content:right;
+    text-align:center;
+    
+}
+.loginX {
+    display: flex;
+    flex: wrap;
+    /* width: 100vh; */
+    position: relative;
+    justify-content:right;
+    text-align:center;
+    justify-content: space-between;
+}
+.loginX button{
+    background-color: #5e1698; /* Purple */
+    border: none;
+    color: white;
+    padding: 10px 40px;
+    margin: 5px;
+   /* 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block; */
+    font-size: 16px;
+    border-top-left-radius: 25px; /* Rounded top-left corner */
+    border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
 .login button {
     background-color: #5e1698; /* Purple */
     border: none;
     color: white;
     padding: 10px 40px;
-    margin-left: 90%;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    margin: 5px;
+   /* 
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: inline-block; */
     font-size: 16px;
     border-top-left-radius: 25px; /* Rounded top-left corner */
     border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
@@ -46,14 +83,15 @@ body {
 
 nav {
     flex: 1;
-    max-width: 200px;
-    max-height: 100vh;
+    width: 200px;
+    height: 100vh;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     background: #5e1698;
     z-index: 3; 
     overflow: auto;
+    position: fixed;
 }
 nav button {
     background-color: #5e1698; /* Purple */
@@ -85,11 +123,12 @@ nav button:hover {
     flex: 3;
     background: #252322;
     min-height: 100vh;
+    margin-left: 200px;
     font-family: Montserrat, sans-serif;
     position: relative;
     z-index: 1;
     overflow-y: auto;
-
+ 
 
 }
 
@@ -181,4 +220,34 @@ textarea {
     max-width: 50%;
     margin: 0 auto;
     color: #fff; /* White text for contrast */
+   
 }
+.paragraph {
+    color: rgb(246, 242, 242);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.Contact-form {
+    margin-top: 20px;
+}
+
+.Contact-form {
+    max-width: 100%;
+    border-radius: 10px;
+}
+h3 {
+text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+    .login button {
+        margin-left: 0; /* Adjust as needed for smaller screens */
+    }
+    .search{
+        margin-left: 3%;
+    }
+}
+

@@ -46,6 +46,9 @@ include ('db_connection.php');
       
         <h1 class="title">Contact</h1>
 
+        <p class="paragraph">Connecting with us is simple. Whether you have questions, inquiries, or just want to say hello, feel free to send us a message. Our dedicated team at AlphaTech is here to assist you. feel free to provide more details, and we can help you refine your message or provide additional information. Let AlphaTech help set you apart in your journey. We look forward to hearing from you!</p>
+
+        <div class="Contact-form">
         <form id="Form2" action="process_contact_form.php" method="post">
             <h3>GET IN TOUCH</h3>
             <label for="name">Name:</label>
@@ -67,21 +70,38 @@ include ('db_connection.php');
             <button type="submit" class="myButton">Submit</button>
 
             <div id="thankYouMessage" style="display: none;">
-                <p>Thank you for submitting the form!</p>
+                <p>
+Thank you for reaching out to AlphaTech! Your message has been received,and we appreciate your interest in AlphaTech.</p>
             </div>
         </form>
-    </div>
-  
-    <footer class="footer">
+
+        
+
+        </div>
+
+       <footer class="footer">
         <p1>hello</p1>
     </footer>
+        
+    </div>
+  
+    
 
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
         document.getElementById('Form2').addEventListener('submit', function (e) {
             e.preventDefault(); 
+            
+            document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('subject').value = '';
+        document.getElementById('message').value = '';
+
             document.getElementById('thankYouMessage').style.display = 'block';
         });
+
+        
+        
     </script>
 
     <script>
@@ -96,3 +116,5 @@ include ('db_connection.php');
     </script>
 </body>
 </html>
+
+
