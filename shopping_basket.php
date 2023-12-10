@@ -50,12 +50,23 @@ include ('db_connection.php');
       <?php
 include('db_connection.php');
 
+if (isset($_SESSION['user_id'])) {
+    $userID = $_SESSION['user_id'];
+}else{
+    // guest user id jut for now
+    $userID = 1; 
+}
+
 // Fetch data from the shopping_cart table
 $sql = "SELECT shopping_cart.*, items.item_name, items.description, items.price, image.image_data
-        FROM shopping_cart
+        FROM shopping_cart 
         INNER JOIN items ON shopping_cart.item_id = items.item_id
-        INNER JOIN image ON shopping_cart.image_id = image.image_id";
+        INNER JOIN image ON shopping_cart.image_id = image.image_id
+        WHERE shopping_cart.user_id = '$userID'";
 $result = $conn->query($sql);
+
+  // holds the total price 
+  $totalPrice = 0;
 
 // Display the fetched data
 while ($row = $result->fetch_assoc()) {
@@ -72,7 +83,16 @@ while ($row = $result->fetch_assoc()) {
     echo '<button class="delete-button" type="submit" name="delete_item">Delete</button>';
     echo '</div>';
     echo '</form>';
+
+      // adds the price for each item
+      $totalPrice += $row['price'];
 }
+
+// Display total price and Buy button
+echo '<div class="total-price" style="color: white; font-weight: bold;">Total: $' . $totalPrice . '</div>';
+echo '<form method="post" action="delete_item.php">';
+echo '<button class="buy-button" type="submit" name="buy_items">Buy</button>';
+echo '</form>';
 
 
 

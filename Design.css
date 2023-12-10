@@ -244,7 +244,7 @@ text-align: center;
 
 @media screen and (max-width: 700px) {
     .login button {
-        margin-left: 0; /* Adjust as needed for smaller screens */
+        margin-left: 0;
     }
     .search{
         margin-left: 3%;

@@ -2,6 +2,8 @@
 <!-- db_connection.php -->
 <?php
 
+
+
 $servername = 'localhost';
 $username = 'root';
 $password = '';
@@ -16,6 +18,18 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// Start the session if not already started
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+
+// Check if the user is logged in
+if (isset($_SESSION['user_id'])) {
+  $userID = $_SESSION['user_id'];
+} else {
+  // If the user is not logged in, treat them as a guest
+  $userID = null;
+}
 
 //php for checking log in details
 if (isset($_POST['log-in'])) {
@@ -34,12 +48,13 @@ if (isset($_POST['log-in'])) {
       $query = "SELECT * FROM users WHERE email='$username' AND password='$password'";
       $results = mysqli_query($conn, $query);
       if (mysqli_num_rows($results) == 1) {
-        session_start();
+        // session_start();
         $user = mysqli_fetch_assoc($results);
         $uid = $user['user_id'];
         $_SESSION['email'] = $username;
         $_SESSION['user_id'] = $uid;
         $_SESSION['success'] = "You are now logged in";
+        $userID = $uid; // Update $userID
         header('location: newHome.php');
       }else {
         array_push($errors, "Wrong username/password combination");
