@@ -1,4 +1,4 @@
-﻿<?php include('db_connection.php') ?>
+<?php include('db_connection.php') ?>
 
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -13,7 +13,7 @@
 
     
     
-        <section id='loginForm'>
+        <section class="container" id='loginForm'>
             
             <form method="post" action="loginpage.php">
             <h1>Login</h1><br>
