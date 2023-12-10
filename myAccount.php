@@ -1,4 +1,4 @@
-<!-- Include the database connection file -->
+<!-- Include the user information php file -->
 <?php 
 include ('getUserInfo.php') ?>
 <!DOCTYPE html>
@@ -12,17 +12,20 @@ include ('getUserInfo.php') ?>
 
 
 <body>
+    <!--left side nav bar which is present on all pages-->
     <nav>
         <a class="logo" onclick="return false;">
             <img src="https://i.ibb.co/ZBsn56k/ATlogo.jpg" alt="ATlogo" />
         </a>
+        <!--when clicking on buttons it goes to the page that was clicked on.-->
         <button onclick="window.location.href = 'newHome.php';">Home</button>
         <button onclick="window.location.href = 'myAccount.php';">My Account</button>
         <button onclick="window.location.href = 'Products.php';">Products</button>
         <button onclick="window.location.href = 'About_Us.php';">About Us</button>
         <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
     </nav>
-
+    <!--main content is responsible for ensuring the page follows the same layout- login button top right
+    then title spanning the width below it and then the page content below that-->
     <div class='mainContent' style="color: aliceblue;">
 
         <div class="login">
@@ -49,12 +52,14 @@ include ('getUserInfo.php') ?>
         </div>
 
         <h1 class="title"> My Account Information</h1>
-
         <div class="accountInfo">
             <img src="https://via.placeholder.com/150" alt="Person 1" />
+            <!--new container to store the labels and values-->
             <div class="infoContainer">
                 <label for="name">Name: </label>
-                <span class="infoContent"><?php echo $first_name; ?></span>
+                <!--used the php from getUserInfo.php to get the firstname, surname and email.  strtoupper makes it uppercase-->
+                <span class="infoContent"><?php echo strtoupper($first_name . " " . $surname); ?></span>
+
             </div>
             <br />
             <br />
