@@ -13,22 +13,22 @@
             <form method="post" action="loginpage.php">
 
                 <label for="first_name">First name:</label>
-                <input type="name" id="first_name" name="first_name" required />
+                <input type="text" id="first_name" name="first_name" required />
 
                 <label for="surname">Surname:</label>
-                <input type="surname" id="surname" name="surname" required />
+                <input type="text" id="surname" name="surname" required />
 
                 <label for="email">Email:</label>
                 <input type="email" id="signupEmail" name="email" required/>
 
                 <label for="Phone_number">Phone Number:</label>
-                <input type="number" id="number" name="phone_number" required />
+                <input type="tel" id="number" name="phone_number" required />
 
                 <label for="password">Password:</label>
                 <input type="password" id="signupPassword" name="password" required />
 
                 <label for="confPassword">Re-enter Password:</label>
-                <input type="Password" id="confPassword" name="confPassword" required />
+                <input type="password" id="confPassword" name="confPassword" required />
 
 
                 <button type="submit" name="sign-up">Sign Up</button>
@@ -37,6 +37,10 @@
             <p>
                 Already have an account? <a href="loginpage.php">Login</a>
             </p>
+
+            <p2>
+                <a href="newHome.php">Continue as Guest</a>
+            </p2>
 </section>
     
 </body>
