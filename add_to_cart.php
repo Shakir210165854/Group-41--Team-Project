@@ -1,6 +1,14 @@
 <?php
 include('db_connection.php');
 
+// Pup-up message function 
+session_start();
+function goback()
+{ 
+    $_SESSION['success'] = 'true';
+    header("location:Products.php");
+}
+
 if (isset($_POST['add_to_cart'])) {
     if (isset($_SESSION['user_id'])) {
         $userID = $_SESSION['user_id'];
@@ -22,7 +30,8 @@ if (isset($_POST['add_to_cart'])) {
     $check_result = $conn->query($check_sql);
 
     if ($check_result->num_rows > 0) {
-        echo '<p>Item is already in the shopping cart.</p>';
+        // echo '<p>Item is already in the shopping cart.</p>';
+        goback();
     } else {
         // If the item is not in the shopping cart, insert it with additional details
         $insert_sql = "INSERT INTO shopping_cart (item_id, user_id, image_id, item_name, description, price) 

@@ -90,7 +90,13 @@ $result = $conn->query($sql);
 }
 // Add a container to hold the items
 echo '<div class="items-container">';
-
+//Pop-up message for duplicate items
+if(isset($_SESSION['success']) && $_SESSION['success']=='true')
+{
+    echo '<script type="text/javascript"> window.onload = function () { alert("Item is already in the shopping cart."); } </script>';
+    
+  $_SESSION['success'] = 'false';
+}
 // Loop through the results and display product information
 while ($row = $result->fetch_assoc()) {
     echo '<div class="item">';
