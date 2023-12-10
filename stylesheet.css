@@ -1,6 +1,6 @@
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -382,25 +382,6 @@ nav button:hover {
     margin-bottom: 10px;
 }
 
-
-
-#signupForm {
-    margin-top: 4%;
-}
-#loginForm {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; 
-    margin: 0;
-}
-.container {
-   
-    background-color: #fbfafa;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgb(247, 247, 247);
-}
 .container h1{
  text-align: center;
 }
@@ -488,9 +469,35 @@ form{
 
 @media screen and (max-width: 700px) {
     .login button {
-        margin-left: 0; /* Adjust as needed for smaller screens */
+        margin-left: 0; 
     }
     .search{
         margin-left: 3%;
     }
 }
+
+.accountInfo{
+    margin-left:20px;
+    margin-top:20px;
+    padding:10px;
+}
+
+.accountInfo img{
+    width: 250px; 
+    height: 250px; 
+    border-radius: 50%;
+}
+
+.accountInfo .infoContent {
+    margin-bottom: 20px;
+    padding:10px;
+}
+
+.accountInfo label {
+    font-weight: bold;
+}
+
+.accountInfo .infoContent {
+    margin-left: 10px;
+}
+
