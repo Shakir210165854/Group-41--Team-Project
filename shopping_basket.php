@@ -11,6 +11,15 @@ include ('db_connection.php');
     <title>Basket</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
+<script>
+function buyButtonClick() {
+  // Display an alert
+  alert("Thank you for your purchase!");
+
+  // Redirect to the home page
+  window.location.href = "newHome.php";
+}
+</script>
 <body>
     <nav>
 
@@ -88,11 +97,26 @@ while ($row = $result->fetch_assoc()) {
       $totalPrice += $row['price'];
 }
 
-// Display total price and Buy button
 echo '<div class="total-price" style="color: white; font-weight: bold;">Total: $' . $totalPrice . '</div>';
+
+echo '<form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '">';
+echo '<table>';
+echo '<tr><td><label for="address"> Address: </label></td>';
+echo '<td><input type="text" name="address" required></td></tr>';
+
+echo '<tr><td><label for="card_number">Card Number:</label></td>';
+echo '<td><input type="text" name="card_number" pattern="\d{16}" title="Enter a 16-digit card number" required></td></tr>';
+
+echo '<tr><td><label for="ccv">CCV:</label></td>';
+echo '<td><input type="text" name="ccv" pattern="\d{3}" title="Enter a 3-digit CCV" required></td></tr>';
+
+echo '</table>';
+    // Display total price and Buy button
 echo '<form method="post" action="delete_item.php">';
-echo '<button class="buy-button" type="submit" name="buy_items">Buy</button>';
+echo '<button class="buy-button" type="submit" name="buy_basket_items" onclick="buyButtonClick()">Buy</button>';
 echo '</form>';
+echo '</form>';
+
 
 
 
