@@ -1,9 +1,6 @@
 
-<!-- db_connection.php -->
 <?php
-
-
-
+// Database connection
 $servername = 'localhost';
 $username = 'root';
 $password = '';
@@ -45,24 +42,31 @@ if (isset($_POST['log-in'])) {
    
     if (count($errors) == 0) {
       $password = md5($password);
-      $query = "SELECT * FROM users WHERE email='$username' AND password='$password'";
+      $query = "SELECT * FROM users WHERE email='$username' AND password='$password' ";
       $results = mysqli_query($conn, $query);
+      
       if (mysqli_num_rows($results) == 1) {
-        // session_start();
         $user = mysqli_fetch_assoc($results);
         $uid = $user['user_id'];
         $_SESSION['email'] = $username;
         $_SESSION['user_id'] = $uid;
         $_SESSION['success'] = "You are now logged in";
         $userID = $uid; // Update $userID
-        header('location: newHome.php');
-      }else {
+
+        // Check if the user is an admin
+        if ($user['admin'] == 1) {
+          header('location: adminPage.php');
+        } else {
+          header('location: newHome.php');
+        }
+      } else {
         array_push($errors, "Wrong username/password combination");
       }
     }
-  }
+}
 
 ?>
+
 
 
 
