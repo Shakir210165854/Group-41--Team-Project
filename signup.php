@@ -25,11 +25,10 @@
                 <input type="tel" id="number" name="phone_number" required />
 
                 <label for="password">Password:</label>
-                <input type="password" id="signupPassword" name="password" required />
+                <input type="password" id="signupPassword" name="password" minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#\$%\^&\*\(\)_\-+=]).{8,}$" required />
 
                 <label for="confPassword">Re-enter Password:</label>
                 <input type="password" id="confPassword" name="confPassword" required />
-
 
                 <button type="submit" name="sign-up">Sign Up</button>
             </form>
