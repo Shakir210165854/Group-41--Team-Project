@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "Error updating password: " . mysqli_error($conn);
             }
         } else {
-            echo $currentPassword;
+            echo "Wrong Password";
         }
     } else {
         echo "Error: " . mysqli_error($conn);
