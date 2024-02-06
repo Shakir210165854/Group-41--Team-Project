@@ -66,6 +66,14 @@ include ('getUserInfo.php') ?>
             <div class="infoContainer">
                 <label for="email">Email: </label>
                 <span class="infoContent"><?php echo $email; ?></span>
+                <form method="post" action="changePassword.php">
+                    <h1>Change Password </h1> </br>
+                    <label for="current_Password"> Current Password: </label>
+                    <input type="password" id="current_Password" name="currentPassword" required />
+                    <label for="new_Password"> New Password: </label>
+                    <input type="password" id="new_Password" name="newPassword" required /><br><br>
+                    <button type="submit" name="change-pass">Change Password</button>
+    </form>
             </div>
 
         </div>
