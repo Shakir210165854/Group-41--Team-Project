@@ -48,7 +48,10 @@ include ('getUserInfo.php') ?>
             echo '<button onclick="window.location.href = \'loginpage.php\';">Login</button>';
             echo '</div>';
         }
-            ?>
+            ?> <div class="Basket">
+            <a onclick="window.location.href = 'shopping_basket.php';"><img src="Basket.png" alt="ATlogo"></a>
+            </div>
+    
         </div>
 
         <h1 class="title"> My Account Information</h1>

@@ -53,12 +53,16 @@ include ('db_connection.php');
         }
         ?>
         </div>
+        <div class="Basket">
+        <a onclick="window.location.href = 'shopping_basket.php';"><img src="Basket.png" alt="ATlogo"></a>
+        </div>
+
     </div>
 </div>
     <div class="title">
         <h3></h3>
         <h3>Products</h3>
-        <a onclick="window.location.href = 'shopping_basket.php';"><img src="Basket.png" alt="ATlogo"></a>
+        
     </div>
     <div class="stock">
 <?php

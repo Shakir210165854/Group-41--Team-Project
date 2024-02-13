@@ -191,62 +191,92 @@ nav button:hover {
             font-size: 1.5em;
             color: #fefcfc;        }
 
-        .Basket {
-            display: flex;
-            color: aliceblue;
-            background-color: #333;
-            max-width: 80%;
-            margin: 20px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .Basket img {
-            max-width: 100px;
-            max-height: 100px;
-            margin-right: 20px;
-            border-radius: 4px;
-        }
-        
-        .Basket-content {
-            flex-grow: 1;
-        }
-        
-        .Basket-name {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-        
-        .Basket-description {
-            margin-bottom: 12px;
-        }
-        
-        .Basket-price {
-            font-size: 1.1em;
-            color: #007BFF;
-            font-weight: bold;
-        }
-        .delete-button {
-            margin-left: auto; /* Push the button to the right end */
-            padding: 8px 12px;
-            max-height: 50px;
-            background-color: #5e1698; /* Bootstrap's danger color */
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        .delete-button:hover {
-            background-color: #511085; /* Darker shade on hover */
-            color: #9d9d9d;
-        }
-        
+            .Basket {
 
-
+            
+        
+                background-color: #5e1698; /* Purple */
+                border: none;
+                color: white;
+                padding: 10px 40px;
+                margin: 5px;
+                height: 40px;
+                width: 110px;
+               /* 
+                text-align: center;
+                text-decoration: none;
+                display: inline-block; */
+                font-size: 16px;
+                border-top-left-radius: 25px; /* Rounded top-left corner */
+                border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
+                border-top-right-radius: 25px;
+                border-bottom-right-radius: 25px;
+             
+            }
+            
+            .Basket img {
+                align-items: end;
+                width: 70%;
+                /* height: auto; */
+                /* margin-right: 5vh; */
+            }
+            
+            
+            .Basket-content {
+                flex-grow: 1;
+            }
+            
+            .Basket-name {
+                font-size: 1.2em;
+                font-weight: bold;
+                margin-bottom: 8px;
+            }
+            
+            .Basket-description {
+                margin-bottom: 12px;
+            }
+            
+            .Basket-price {
+                font-size: 1.1em;
+                color: #007BFF;
+                font-weight: bold;
+            }
+            .delete-button {
+                margin-left: auto; /* Push the button to the right end */
+                padding: 8px 12px;
+                max-height: 50px;
+                background-color: #5e1698; /* Bootstrap's danger color */
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            
+            .delete-button:hover {
+                background-color: #511085; /* Darker shade on hover */
+                color: #9d9d9d;
+            }
+            .Basket button {
+                background-color: #5e1698; /* Purple */
+                border: none;
+                color: white;
+                padding: 10px 40px;
+                margin: 5px;
+               /* 
+                text-align: center;
+                text-decoration: none;
+                display: inline-block; */
+                font-size: 16px;
+                border-top-left-radius: 25px; /* Rounded top-left corner */
+                border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
+                border-top-right-radius: 25px;
+                border-bottom-right-radius: 25px;
+             
+            }
+            .Basket:hover {
+                background-color: #420c6d; /* Purple */
+            }
+    
 .subtitle {
     color: rgb(146, 3, 255);
     font-size: 30px;
