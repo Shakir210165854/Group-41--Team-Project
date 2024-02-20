@@ -1,9 +1,7 @@
 
 <!-- db_connection.php -->
 <?php
-
-
-
+// Database connection
 $servername = 'localhost';
 $username = 'root';
 $password = '';
@@ -47,8 +45,8 @@ if (isset($_POST['log-in'])) {
       $password = md5($password);
       $query = "SELECT * FROM users WHERE email='$username' AND password='$password' ";
       $results = mysqli_query($conn, $query);
+      
       if (mysqli_num_rows($results) == 1) {
-        // session_start();
         $user = mysqli_fetch_assoc($results);
         $uid = $user['user_id'];
         $isAdmin = $user['admin'];
@@ -56,28 +54,15 @@ if (isset($_POST['log-in'])) {
         $_SESSION['user_id'] = $uid;
         $_SESSION['success'] = "You are now logged in";
         $userID = $uid; // Update $userID
-    
-        if ($isAdmin == 1) {
-          // Redirect to admin page
-          header('location: adminPage.php');
-        } else {
-          // Redirect to regular user page
-          header('location: newHome.php');
-        }
-        exit(); 
-       
+        header('location: newHome.php');
       }else {
         array_push($errors, "Wrong username/password combination");
       }
     }
-
-    
-    
-
-    
   }
 
 ?>
+
 
 
 <!-- Sign-up connection -->
