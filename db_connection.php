@@ -1,9 +1,7 @@
 
 <!-- db_connection.php -->
 <?php
-
-
-
+// Database connection
 $servername = 'localhost';
 $username = 'root';
 $password = '';
@@ -49,9 +47,9 @@ if (isset($_POST['log-in'])) {
       $results = mysqli_query($conn, $query);
       
       if (mysqli_num_rows($results) == 1) {
-        // session_start();
         $user = mysqli_fetch_assoc($results);
         $uid = $user['user_id'];
+        $isAdmin = $user['admin'];
         $_SESSION['email'] = $username;
         $_SESSION['user_id'] = $uid;
         $_SESSION['success'] = "You are now logged in";
