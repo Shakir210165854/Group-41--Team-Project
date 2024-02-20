@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $update_query = "UPDATE users SET phone_number = '$newPhonenumber' WHERE user_id = '$user_id'";
     $update_result = mysqli_query($conn,$update_query);
     if ($update_result) {
-        echo "Phone number updated successfully.";
+        echo "<script>alert('Updated Phone Number Successfully'); window.location.href = 'myAccount.php';</script>";
     } else {
         echo "Error updating Phone number: " . mysqli_error($conn);
     } }
