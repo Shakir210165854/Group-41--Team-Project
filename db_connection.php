@@ -49,12 +49,16 @@ if (isset($_POST['log-in'])) {
       if (mysqli_num_rows($results) == 1) {
         $user = mysqli_fetch_assoc($results);
         $uid = $user['user_id'];
-        $isAdmin = $user['admin'];
         $_SESSION['email'] = $username;
         $_SESSION['user_id'] = $uid;
         $_SESSION['success'] = "You are now logged in";
         $userID = $uid; // Update $userID
-        header('location: newHome.php');
+
+        if($user['admin'] == 1){
+          header('location: adminPage.php');
+        }else{
+          header('location: newHome.php');
+        }
       }else {
         array_push($errors, "Wrong username/password combination");
       }
