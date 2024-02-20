@@ -19,7 +19,13 @@ include ('db_connection.php');
     <nav>
         <a class="logo" onclick="return false;"><img src="https://i.ibb.co/ZBsn56k/ATlogo.jpg" alt="ATlogo"></a>
         <button onclick="window.location.href = 'newHome.php';">Home</button>
-        <button onclick="window.location.href = 'myAccount.php';">My Account</button>
+        <?php
+    if (isset($_SESSION['user_id'])) {
+        echo ' <button onclick="window.location.href = \'myAccount.php\';">My Account</button>';
+       } else {
+        echo '<button onclick="window.location.href = \'loginpage.php\';">My Account</button>';
+       }
+       ?>
         <button onclick="window.location.href = 'Products.php';">Products</button>
         <button onclick="window.location.href = 'About_Us.php';">About Us</button>
         <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
@@ -53,12 +59,16 @@ include ('db_connection.php');
         }
         ?>
         </div>
+        <div class="Basket">
+        <a onclick="window.location.href = 'shopping_basket.php';"><img src="Basket.png" alt="ATlogo"></a>
+        </div>
+
     </div>
 </div>
     <div class="title">
         <h3></h3>
         <h3>Products</h3>
-        <a onclick="window.location.href = 'shopping_basket.php';"><img src="Basket.png" alt="ATlogo"></a>
+        
     </div>
     <div class="stock">
 <?php
