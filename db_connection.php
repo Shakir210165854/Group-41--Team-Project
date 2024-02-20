@@ -1,7 +1,8 @@
 
-<!-- db_connection.php -->
 <?php
-// Database connection
+
+
+
 $servername = 'localhost';
 $username = 'root';
 $password = '';
@@ -53,20 +54,11 @@ if (isset($_POST['log-in'])) {
         $_SESSION['user_id'] = $uid;
         $_SESSION['success'] = "You are now logged in";
         $userID = $uid; // Update $userID
-
-        if($user['admin'] == 1){
-          header('location: adminPage.php');
-        }else{
-          header('location: newHome.php');
-        }
+        header('location: newHome.php');
       }else {
         array_push($errors, "Wrong username/password combination");
       }
     }
-
-    
-
-    
   }
 
 ?>
