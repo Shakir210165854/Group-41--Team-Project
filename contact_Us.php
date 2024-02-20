@@ -17,7 +17,17 @@ include ('db_connection.php');
     <nav>
         <a class="logo" onclick="return false;"><img src="https://i.ibb.co/ZBsn56k/ATlogo.jpg" alt="ATlogo"></a>
         <button onclick="window.location.href = 'newHome.php';">Home</button>
-        <button onclick="window.location.href = 'myAccount.php';">My Account</button>
+<?php
+if (isset($_SESSION['user_id'])) {
+    // If logged in, go to the My Account page
+    echo '<button onclick="window.location.href = \'myAccount.php\';">My Account</button>';
+} else {
+    // If not logged in, go to the login page
+    echo '<button onclick="window.location.href = \'loginpage.php\';">My Account</button>';
+}
+?>
+
+
         <button onclick="window.location.href = 'Products.php';">Products</button>
         <button onclick="window.location.href = 'About_Us.php';">About Us</button>
         <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
