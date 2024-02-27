@@ -1,0 +1,491 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    margin: 0;
+}
+
+/*
+body {
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    margin: 0;
+} 
+*/
+
+nav {
+    flex: 1;
+    width: 200px;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    background: #5e1698;
+    z-index: 3; 
+    position: fixed;
+    overflow: auto;
+}
+
+nav button {
+    background-color: #5e1698; /* Purple */
+    border: none;
+    color: white;
+    padding: 30px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-top-left-radius: 25px; /* Rounded top-left corner */
+    border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
+}
+
+nav button:hover {
+    background-color: #252322;
+}
+
+.logo {
+    text-align: center;
+    outline: none;
+}
+
+.logo img {
+    max-height: 80px;
+}
+
+.mainContent {
+    flex: 3;
+    background: #3e3c3a;
+    min-height: 100vh;
+    margin-left: 200px;
+    font-family: Montserrat, sans-serif;
+    position: relative;
+    /* z-index: 1; */
+    /* overflow-y: auto; */
+}
+
+h3 {
+    text-align: center;
+}
+
+.footer {
+    background-color: #5e1698;
+    color: rgb(246, 242, 242);
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    /* bottom: 0; */
+    width: 100%; /* Make the footer full width */
+}
+
+.login {
+    display: flex;
+    flex: wrap;
+    /* width: 100vh; */
+    position: relative;
+    justify-content:right;
+    text-align:center;
+}
+
+.login button {
+    background-color: #5e1698; /* Purple */
+    border: none;
+    color: white;
+    padding: 10px 40px;
+    margin: 5px;
+   /* 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block; */
+    font-size: 16px;
+    border-top-left-radius: 25px; /* Rounded top-left corner */
+    border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.login button:hover {
+    background-color: #420c6d; /* Purple */
+}
+
+.title {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content:center;
+    color: rgb(246, 242, 242);
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    text-align:center;
+    margin-left: 2px;
+    background-color: #5e1698;
+    justify-content: space-between;
+
+}
+
+.items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: left;
+    position: relative;
+    /* justify-content: space-around; */
+}
+
+.item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 10px;
+    width: auto;
+    max-width: 300px;
+    box-sizing: border-box;
+    /* display: flex;
+    flex-wrap: wrap; */
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.item-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.item-description {
+    font-size: 0.9em;
+    color: #fefcfc;
+}
+
+.item-price {
+    font-size: 1.5em;
+    color: #fefcfc;
+}
+
+.Basket {
+    display: flex;
+    color: aliceblue;
+    background-color: #333;
+    max-width: 80%;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Basket img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 20px;
+    border-radius: 4px;
+}
+
+.Basket-content {
+    flex-grow: 1;
+}
+
+.Basket-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.Basket-description {
+    margin-bottom: 12px;
+}
+
+.Basket-price {
+    font-size: 1.1em;
+    color: #007BFF;
+    font-weight: bold;
+}
+.delete-button {
+    margin-left: auto; /* Push the button to the right end */
+    padding: 8px 12px;
+    max-height: 50px;
+    background-color: #5e1698; /* Bootstrap's danger color */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #511085; /* Darker shade on hover */
+    color: #9d9d9d;
+}
+
+.subtitle {
+    color: rgb(146, 3, 255);
+    font-size: 30px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.about-us-subtitle {
+    color: rgb(174, 99, 212);
+    font-size: 30px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.paragraph {
+    color: rgb(246, 242, 242);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.paragraph-one {
+    color: rgb(136, 1, 194);
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.paragraph-two {
+    color: rgb(136, 1, 194);
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+}
+
+.about-us-paragraph-one {
+    color: rgb(136, 1, 194);
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.about-us-paragraph-two {
+    color: rgb(136, 1, 194);
+    font-size: 13px;
+    font-style: italic;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.team-members , .stock , .header-con{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.team-member {
+    text-align: center;
+    margin: 20px;
+    flex: 1 0 20%;
+    max-width: 300px;
+}
+
+.team-member img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.team-member h2 {
+    margin-top: 10px;
+    color: #b7b7b7;
+}
+
+.team-member p {
+    margin-top: 5px;
+    color: #b3b3b3;
+}
+.hero-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.slideshow-container {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.mySlides {
+    display: none;
+}
+
+.side-image-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.side-by-side-images {
+    display: flex;
+}
+
+.side-image {
+    text-align: center;
+    margin: 0 10px;
+}
+
+.side-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.side-image-text {
+    color: rgb(136, 1, 194);
+    font-size: 15px;
+    font-style: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container h1{
+    text-align: center;
+}
+
+h1 {
+    color: #333; 
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block; 
+    margin-bottom: 5px; 
+}
+
+input {
+    width: 100%;
+    padding: 10px; 
+    margin-bottom: 15px; 
+}
+
+button {
+    background-color: #5e1698; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px; 
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #420c6d;
+}
+
+.search{
+    display:inline-flex;
+    padding: 5px;
+    height: auto;
+    width: 100%;
+    position:relative;
+    justify-content: space-between;
+    /* margin-left: 25%; */
+}
+
+.search button{
+    margin-left: 5px;
+    height: 40px ;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+}
+
+.searchB{
+    max-width: 60%;
+    height: 70%;
+}
+
+@media screen and (max-width: 700px) {
+    .login button {
+        margin-left: 0; 
+    }
+    .search{
+        margin-left: 3%;
+    }
+}
+
+.accountInfo{
+    margin-left:20px;
+    margin-top:20px;
+    padding:10px;
+}
+
+.accountInfo img{
+    width: 250px; 
+    height: 250px; 
+    border-radius: 50%;
+}
+
+.accountInfo .infoContent {
+    margin-bottom: 20px;
+    padding:10px;
+}
+
+.accountInfo label {
+    font-weight: bold;
+}
+
+.accountInfo .infoContent {
+    margin-left: 10px;
+}
+
+#signupForm {
+    margin-top: 4%;
+}
+
+#loginForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    margin: 0;
+}
+
+#Form2 {
+    background: linear-gradient(to right, #333, #764abc, #000); /* Linear gradient from dark grey to a subtle purple to black */
+    padding: 20px;
+    max-width: 50%;
+    margin: 0 auto;
+    color: #fff; /* White text for contrast */
+}
+
+.Contact-form {
+    max-width: 100%;
+    border-radius: 10px;
+}
