@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $update_query = "UPDATE users SET password = '$hashed_new_password' WHERE user_id = '$user_id'";
             $update_result = mysqli_query($conn, $update_query);
             if ($update_result) {
-                echo "Password updated successfully.";
+                echo "<script>alert('Updated password successfully'); window.location.href = 'myAccount.php';</script>";
             } else {
                 echo "Error updating password: " . mysqli_error($conn);
             }

@@ -48,7 +48,10 @@ include ('getUserInfo.php') ?>
             echo '<button onclick="window.location.href = \'loginpage.php\';">Login</button>';
             echo '</div>';
         }
-            ?>
+            ?> <div class="Basket">
+            <a onclick="window.location.href = 'shopping_basket.php';"><img src="Basket.png" alt="ATlogo"></a>
+            </div>
+    
         </div>
 
         <h1 class="title"> My Account Information</h1>
@@ -66,8 +69,18 @@ include ('getUserInfo.php') ?>
             <div class="infoContainer">
                 <label for="email">Email: </label>
                 <span class="infoContent"><?php echo $email; ?></span>
+                <label for="email">Phone Number: </label>
+               
+                <span class="infoContent"><?php echo $phone_number; ?></span> 
+                <!-- Change number form -->
+                <form method="post" action="changeNumber.php">
+                    <label for="newNumber"> New Number: </label>
+                    <input type="tel" id="newNumber" name="newNumber" required />
+                    <button type="submit" name="change-number">Change Phone Number</button>
+    </form>
+                <!-- Change pass form -->
                 <form method="post" action="changePassword.php">
-                    <h1>Change Password </h1> </br>
+                   </br>
                     <label for="current_Password"> Current Password: </label>
                     <input type="password" id="current_Password" name="currentPassword" required />
                     <label for="new_Password"> New Password: </label>
