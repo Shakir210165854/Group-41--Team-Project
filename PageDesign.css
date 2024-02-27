@@ -173,6 +173,7 @@ h3 {
     color: #fefcfc;
 }
 
+/*
 .Basket {
     display: flex;
     color: aliceblue;
@@ -184,12 +185,44 @@ h3 {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+*/
 
-.Basket img {
+.Basket {
+
+            
+        
+    background-color: #5e1698; /* Purple */
+    border: none;
+    color: white;
+    padding: 10px 40px;
+    margin: 5px;
+    height: 40px;
+    width: 110px;
+   /* 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block; */
+    font-size: 16px;
+    border-top-left-radius: 25px; /* Rounded top-left corner */
+    border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+ 
+}
+
+/*.Basket img {
     max-width: 100px;
     max-height: 100px;
     margin-right: 20px;
     border-radius: 4px;
+}
+*/
+
+.Basket img {
+    align-items: end;
+    width: 70%;
+    /* height: auto; */
+    /* margin-right: 5vh; */
 }
 
 .Basket-content {
