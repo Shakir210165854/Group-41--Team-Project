@@ -57,7 +57,7 @@ if (isset($_POST['log-in'])) {
         header('location: newHome.php');
 
         if($user['admin'] == 1){
-          header('location: adminPage.php');
+          header('location: AlphaTechAdminPanel.php');
         }else{
           header('location: newHome.php');
         }
