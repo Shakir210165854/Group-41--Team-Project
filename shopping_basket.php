@@ -9,7 +9,7 @@ include ('db_connection.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basket</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="basket.css" />
 </head>
 <script>
 function buyButtonClick() {
