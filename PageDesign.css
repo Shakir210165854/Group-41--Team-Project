@@ -115,19 +115,10 @@ h3 {
 }
 
 .title {
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    justify-content:center;
     color: rgb(246, 242, 242);
     font-size: 40px;
-    font-weight: bold;
-    font-family: 'Arial', sans-serif;
-    text-align:center;
-    margin-left: 2px;
     background-color: #5e1698;
-    justify-content: space-between;
-
+    text-align:center;
 }
 
 .items-container {
