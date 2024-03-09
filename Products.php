@@ -12,7 +12,7 @@ include ('db_connection.php');
     <!-- <link rel="stylesheet" type="text/css" href="stylesheet.css"/> -->
     
 </head>
-<style><?php include 'stylesheet.css'; ?></style>
+<style><?php include 'PageDesign.css'; ?></style>
 
 
 <body>
