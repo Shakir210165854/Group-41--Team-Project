@@ -53,7 +53,7 @@ include ('db_connection.php');
         </div>
 
 </div>
-        <h1 class="title">OUR STORY</h1>
+        <h1 class="title">Our Story</h1>
 
         <p class="about-us-paragraph-one">Our journey began with a simple idea—to provide computer enthusiasts and professionals with high-quality, cutting-edge components that elevate their computing experience.</p>
 

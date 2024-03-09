@@ -54,7 +54,7 @@ if (isset($_SESSION['user_id'])) {
         ?>
         </div>
       
-        <h1 class="title">Contact</h1>
+        <h1 class="title">Contact Us</h1>
 
         <!-- <div class="paragraph">
         <p>Connecting with us is simple. Whether you have questions, inquiries, or just want 
