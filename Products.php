@@ -17,7 +17,7 @@ include ('db_connection.php');
 
 <body>
     <nav>
-        <a class="logo" onclick="return false;"><img src="https://i.ibb.co/ZBsn56k/ATlogo.jpg" alt="ATlogo"></a>
+        <a class="logo" onclick="return false;"><img src="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png" alt="ATlogo"></a>
         <button onclick="window.location.href = 'newHome.php';">Home</button>
         <?php
     if (isset($_SESSION['user_id'])) {
