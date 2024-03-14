@@ -55,7 +55,7 @@ include ('getUserInfo.php') ?>
     
         </div>
 
-        <h1 class="title"> My Account Information</h1>
+        <h1 class="title"> My Account Details</h1>
         <div class="accountInfo">
             <img src="https://via.placeholder.com/150" alt="Person 1" />
             <!--new container to store the labels and values-->
