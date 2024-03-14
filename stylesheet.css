@@ -9,6 +9,44 @@ body {
     margin: 0;
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
 nav {
     flex: 1;
     width: 200px;
@@ -127,25 +165,42 @@ nav button:hover {
 
 .title {
     display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    justify-content:center;
+    justify-content: space-between;
+    align-items: center;
     color: rgb(246, 242, 242);
     font-size: 40px;
     font-weight: bold;
     font-family: 'Arial', sans-serif;
-    text-align:center;
-    margin-left: 2px;
+    text-align: center;
+    margin-left: auto; /* Move the entire container to the right */
     background-color: #5e1698;
-    justify-content: space-between;
+    padding: 10px; /* Adjust padding for spacing */
+}
 
-        }
-    .title img{
-        align-items: end;
-        width: 20%;
-        /* height: auto; */
-        /* margin-right: 5vh; */
-    }
+.title h3 {
+    flex: 1; /* Allow the text to take remaining space */
+    margin-right: 10px; /* Adjust margin for spacing */
+}
+
+.sort {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Adjust margin for spacing */
+}
+
+#sort {
+    margin-right: 10px; /* Adjust margin for spacing */
+}
+
+.title a img {
+    width: 40%;
+    height: auto;
+    border-radius: 50%;
+}
+
+
+
+
     /* .title h4{
         
     } */
@@ -530,3 +585,34 @@ form{
     margin-left: 10px;
 }
 
+
+/* Style the dropdown container */
+#sort {
+    background-color: #5e1698;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style the options within the dropdown */
+#sort option {
+    padding: 12px 16px;
+    font-size: 14px;
+}
+
+/* Style the hover state of the dropdown content links */
+#sort-content a:hover {
+    background-color: #36075c;
+}
+
+/* Show the dropdown content when the dropdown is hovered */
+#sort:hover #sort-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when hovered */
+#sort:hover {
+    background-color: #4d0e80;
+}
