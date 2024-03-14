@@ -17,7 +17,9 @@ include ('db_connection.php');
 
     <nav>
 
-        <a class="logo" onclick="return false;"><img src="https://i.ibb.co/ZBsn56k/ATlogo.jpg" alt="ATlogo"></a>
+        <a class="logo" onclick="return false;">
+            <img src="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png" alt="ATlogo" />
+        </a>
         <button onclick="window.location.href = 'newHome.php';">Home</button>
         <button onclick="window.location.href = 'myAccount.php';">My Account</button>
         <button onclick="window.location.href = 'Products.php';">Products</button>
