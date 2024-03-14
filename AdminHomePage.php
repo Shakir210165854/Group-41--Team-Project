@@ -18,7 +18,7 @@ include ('db_connection.php');
 
         <a class="logo" onclick="return false;"><img src="https://i.ibb.co/ZBsn56k/ATlogo.jpg" alt="ATlogo"></a>
         <button onclick="window.location.href = 'AdminHomePage.php';">Home</button>
-        <button onclick="window.location.href = 'Users_accounts.php';">Users</button>
+        <button onclick="window.location.href = 'User_accounts.php';">Users</button>
         <button onclick="window.location.href = 'Stock.php';">Stock</button>
         <button onclick="window.location.href = 'Stats.php';">Stats</button>
         
