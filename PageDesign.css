@@ -47,7 +47,7 @@ nav button {
 }
 
 nav button:hover {
-    background-color: #252322;
+    background: #3e3c3a;
 }
 
 .logo {
@@ -465,14 +465,14 @@ button:hover {
 }
 
 .accountInfo{
-    margin-left:20px;
-    margin-top:20px;
+    margin: left 10px;
+    margin-top:10px;
     padding:10px;
 }
 
 .accountInfo img{
-    width: 250px; 
-    height: 250px; 
+    width: 200  px; 
+    height: 200px; 
     border-radius: 50%;
 }
 
