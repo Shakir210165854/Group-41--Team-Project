@@ -50,9 +50,9 @@ include ('db_connection.php');
             echo '</div>';
         }
         ?> 
-        <!-- <div class="Basket">
-        
-        </div> -->
+        <div class="Basket">
+            <a onclick="window.location.href = 'shopping_basket.php';"><img src="Basket.png" alt="ATlogo"></a>
+            </div>
 
         </div>    
 
