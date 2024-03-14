@@ -16,7 +16,7 @@ include ('getUserInfo.php') ?>
     <!--left side nav bar which is present on all pages-->
     <nav>
         <a class="logo" onclick="return false;">
-            <img src="https://i.ibb.co/ZBsn56k/ATlogo.jpg" alt="ATlogo" />
+            <img src="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png" alt="ATlogo" />
         </a>
         <!--when clicking on buttons it goes to the page that was clicked on.-->
         <button onclick="window.location.href = 'newHome.php';">Home</button>
