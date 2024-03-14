@@ -10,7 +10,7 @@ include ('db_connection.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
     <!-- <link rel="stylesheet" type="text/css" href="stylesheet.css"/> -->
-    
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/tZw1b64/Alpha-Tech-Final-PNG.png"> 
 </head>
 <style><?php include 'PageDesign.css'; ?></style>
 

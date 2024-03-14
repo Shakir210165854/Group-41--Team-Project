@@ -7,6 +7,7 @@
     <meta charset="utf-8" />
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="designForms.css" />
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/tZw1b64/Alpha-Tech-Final-PNG.png"> 
 </head>
 
 <body>
