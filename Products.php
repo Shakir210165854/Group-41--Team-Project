@@ -12,20 +12,14 @@ include ('db_connection.php');
     <!-- <link rel="stylesheet" type="text/css" href="stylesheet.css"/> -->
     <link rel="icon" type="image/x-icon" href="https://i.ibb.co/tZw1b64/Alpha-Tech-Final-PNG.png"> 
 </head>
-<style><?php include 'PageDesign.css'; ?></style>
+<style><?php include 'stylesheet.css'; ?></style>
 
 
 <body>
     <nav>
-        <a class="logo" onclick="return false;"><img src="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png" alt="ATlogo"></a>
+        <a class="logo" onclick="return false;"><img src="https://i.ibb.co/ZBsn56k/ATlogo.jpg" alt="ATlogo"></a>
         <button onclick="window.location.href = 'newHome.php';">Home</button>
-        <?php
-    if (isset($_SESSION['user_id'])) {
-        echo ' <button onclick="window.location.href = \'myAccount.php\';">My Account</button>';
-       } else {
-        echo '<button onclick="window.location.href = \'loginpage.php\';">My Account</button>';
-       }
-       ?>
+        <button onclick="window.location.href = 'myAccount.php';">My Account</button>
         <button onclick="window.location.href = 'Products.php';">Products</button>
         <button onclick="window.location.href = 'About_Us.php';">About Us</button>
         <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
@@ -59,16 +53,28 @@ include ('db_connection.php');
         }
         ?>
         </div>
-        <div class="Basket">
-        <a onclick="window.location.href = 'shopping_basket.php';"><img src="Basket.png" alt="ATlogo"></a>
-        </div>
-
     </div>
 </div>
     <div class="title">
+    <div class="sort">
+                <form method="post" action="" id="sortForm">
+                    <label for="sort">Sort by:</label>
+                    <select name="sort" id="sort" onchange="submitForm()">
+                        <option value="">Select</option>
+                        <option value="name_asc">Name A-Z</option>
+                        <option value="name_desc">Name Z-A</option>
+                        <option value="price_asc">Price Low to High</option>
+                        <option value="price_desc">Price High to Low</option>
+                    </select>
+                </form>
         <h3></h3>
+        <!-- <button type="submit" name="sort_submit">Sort</button> -->
         <h3>Products</h3>
-        
+
+        <a onclick="window.location.href = 'shopping_basket.php';"><img src="Basket.png" alt="ATlogo"></a>
+    
+</div>
+
     </div>
     <div class="stock">
 <?php
@@ -95,9 +101,35 @@ include ('db_connection.php');
     INNER JOIN image ON items.item_id = image.item_id";
 $result = $conn->query($sql);
 
+if (isset($_POST['sort'])) {
+    // If sort option is selected
+    $sort_option = $_POST['sort'];
+    switch ($sort_option) {
+        case 'name_asc':
+            $order_by = 'items.item_name ASC';
+            break;
+        case 'name_desc':
+            $order_by = 'items.item_name DESC';
+            break;
+        case 'price_asc':
+            $order_by = 'items.price ASC';
+            break;
+        case 'price_desc':
+            $order_by = 'items.price DESC';
+            break;
+        default:
+            $order_by = 'items.item_name ASC';
+    }
+
+    // Modify SQL query to include ORDER BY clause
+    $sql .= " ORDER BY $order_by";
+}
+
+$result = $conn->query($sql);
+}
 
 // echo '<h1 class="title">Products</h1>';
-}
+
 // Add a container to hold the items
 echo '<div class="items-container">';
 //Pop-up message for duplicate items
@@ -137,4 +169,9 @@ echo '</div>'; // Close the items container
 
 
 </body>
+<script>
+        function submitForm() {
+            document.getElementById("sortForm").submit();
+        }
+    </script>
 </html>
