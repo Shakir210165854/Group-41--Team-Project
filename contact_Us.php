@@ -53,6 +53,10 @@ if (isset($_SESSION['user_id'])) {
             echo '</div>';
         }
         ?>
+
+<div class="Basket">
+            <a onclick="window.location.href = 'shopping_basket.php';"><img src="Basket.png" alt="ATlogo"></a>
+            </div>
         </div>
       
         <h1 class="title">Contact Us</h1>

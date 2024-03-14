@@ -54,6 +54,10 @@ include ('db_connection.php');
             echo '</div>';
         }
         ?>
+
+<div class="Basket">
+            <a onclick="window.location.href = 'shopping_basket.php';"><img src="Basket.png" alt="ATlogo"></a>
+            </div>
         </div>
     </div>
 </div>
@@ -73,7 +77,7 @@ include ('db_connection.php');
         <!-- <button type="submit" name="sort_submit">Sort</button> -->
         <h3>Products</h3>
 
-        <a onclick="window.location.href = 'shopping_basket.php';"><img src="Basket.png" alt="ATlogo"></a>
+        <!-- <a onclick="window.location.href = 'shopping_basket.php';"><img src="Basket.png" alt="ATlogo"></a> -->
     
 </div>
 
