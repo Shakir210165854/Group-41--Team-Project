@@ -17,15 +17,9 @@ include ('db_connection.php');
 
     <nav>
 
-        <a class="logo" onclick="return false;"><img src="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png" alt="ATlogo"></a>
+        <a class="logo" onclick="return false;"><img src="https://i.ibb.co/ZBsn56k/ATlogo.jpg" alt="ATlogo"></a>
         <button onclick="window.location.href = 'newHome.php';">Home</button>
-        <?php
-    if (isset($_SESSION['user_id'])) {
-        echo ' <button onclick="window.location.href = \'myAccount.php\';">My Account</button>';
-       } else {
-        echo '<button onclick="window.location.href = \'loginpage.php\';">My Account</button>';
-       }
-       ?>
+        <button onclick="window.location.href = 'myAccount.php';">My Account</button>
         <button onclick="window.location.href = 'Products.php';">Products</button>
         <button onclick="window.location.href = 'About_Us.php';">About Us</button>
         <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
@@ -53,7 +47,8 @@ include ('db_connection.php');
             echo '<button onclick="window.location.href = \'loginpage.php\';">Login</button>';
             echo '</div>';
         }
-        ?> <div class="Basket">
+        ?> 
+        <div class="Basket">
         <a onclick="window.location.href = 'shopping_basket.php';"><img src="Basket.png" alt="ATlogo"></a>
         </div>
 
@@ -61,58 +56,54 @@ include ('db_connection.php');
 
 
         
-    <h1 class="title">AlphaTech</h1>
-
-    <div class="slideshow-container">
-    <div class="mySlides">
-        <img class="hero-image" src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/page/campaign/alienware/gaming/awr16-aw2723df-aw420k-aw620m-aw720h-xml-pl-gaminggetaway-front.psd?fmt=png-alpha&wid=4000&hei=2249" alt="Hero Image 1">
-    </div>
-    <div class="mySlides">
-        <img class="hero-image" src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/page/campaign/alienware/gaming/m18-aw3423dw-aw920k-aw720m-aw920h-xml-prestige-pursuer-front-4000x2250.jpg?fmt=jpg&wid=4000&hei=2250" alt="Hero Image 2">
-    </div>
-    <div class="mySlides">
-        <img class="hero-image" src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/page/campaign/alienware/gaming/x16-aw3423dw-aw420k-aw720m-aw920h-xml-experience-seeker-front-4000x2250.jpg?fmt=jpg&wid=4000&hei=2250" alt="Hero Image 3">
-    </div>
-    <div class="mySlides">
-        <img class="hero-image" src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/page/campaign/alienware/gaming/awr15-aw3423dw-aw510k-aw620m-aw720h-xml-enthusiast-front.jpg?fmt=jpg&wid=4000&hei=2249" alt="Hero Image 4">
-    </div>
+    <!-- <h1 class="title" style="text-align: center;">Best Sellers</h1> -->
+    <div class="title">
+        <h3></h3>
+        <h3>BEST SELLERS</h3>
+        <a onclick="window.location.href = 'shopping_basket.php';"><img src="Basket.png" alt="ATlogo"></a>
     </div>
 
-    <h1 class="subtitle">Looking for parts for your dream setup?</h1>
-    <p class="paragraph-one">Click below to get top-of-the-line parts for the setup of your dreams</p>
-    <p class="paragraph-two"><a href="Products.php">Click here!</a></p>
+    <?php
+        // Assuming you have a database connection established and stored in the $conn variable
 
-    <div class="side-image-container">
-    <div class="side-by-side-images">
-        <div class="side-image">
-            <img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/page/campaign/alienware/gaming/awr14-aw720m-aw920h-lifestylelaptop.jpg?fmt=jpg&wid=1080&hei=720">
-            <p class="side-image-text">Want to know who made this all possible?<br><a href="About_Us.php">Click here to find out!</a></br></p>
-        </div>
-        <div class="side-image">
-            <img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/page/campaign/alienware/gaming/awr14-aw920h-girlsgame.jpg?fmt=jpg&wid=1080&hei=720" alt="Image 2">
-            <p class="side-image-text">Need support with anything?<br><a href="Contact_Us.php">Click here to get in contact!</a></br></p>
-        </div>
-    </div>
-</div>
+// Perform the query
+$query = "SELECT items.item_id, items.item_name, items.description, items.price, image.image_data, SUM(order_details.quantity) AS total_quantity_sold
+FROM order_details
+JOIN items ON order_details.item_id = items.item_id
+JOIN image ON items.image_id = image.image_id
+GROUP BY items.item_id
+ORDER BY total_quantity_sold DESC
+LIMIT 4";
 
-</div>
-    
-<script>
-    var slideIndex = 0;
-    showSlides();
+$result = $conn->query($query);
 
-    function showSlides() {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) { slideIndex = 1 }
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 4000);
-        }
-    </script>
+// Display the results
+echo '<div class="items-container">';
+while ($row = $result->fetch_assoc()) {
+    echo '<div class="item">';
+    // Display the item information, including the image
+    $imageData = base64_encode($row['image_data']);
+    echo '<img src="data:image/jpeg;base64,' . $imageData . '" alt="Item Image">';
+    echo '<div class="item-name">' . $row['item_name'] . '</div>';
+    echo '<div class="item-description">' . $row['description'] . '</div>';
+    echo '<div class="item-price">£' . $row['price'] . '</div>';
+
+    // Add the form code for adding to the shopping cart
+    echo '<form method="post" action="add_to_cart.php">';
+    echo '<input type="hidden" name="item_id" value="' . $row['item_id'] . '">';
+    echo '<input type="hidden" name="item_name" value="' . $row['item_name'] . '">';    
+    echo '<input type="hidden" name="description" value="' . $row['description'] . '">';
+    echo '<input type="hidden" name="price" value="' . $row['price'] . '">';
+    echo '<button type="submit" name="add_to_cart">Add to Basket</button>';
+    echo '</form>';
+
+    echo '</div>';
+}
+echo '</div>';
+
+
+
+    ?>
 
 </body>
 
