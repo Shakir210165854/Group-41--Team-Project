@@ -267,6 +267,7 @@ ALTER TABLE `items`
 ALTER TABLE `order_details`
   MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
+
 --
 -- AUTO_INCREMENT for table `review`
 --
