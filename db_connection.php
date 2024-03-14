@@ -1,6 +1,8 @@
 
 <?php
-// Database connection .
+
+
+
 $servername = 'localhost';
 $username = 'root';
 $password = '';
@@ -52,18 +54,19 @@ if (isset($_POST['log-in'])) {
         $_SESSION['user_id'] = $uid;
         $_SESSION['success'] = "You are now logged in";
         $userID = $uid; // Update $userID
+        header('location: newHome.php');
 
-        // Check if the user is an admin
-        if ($user['admin'] == 1) {
-          header('location: adminPage.php');
-        } else {
+        if($user['admin'] == 1){
+          header('location: AlphaTechAdminPanel.php');
+        }else{
           header('location: newHome.php');
         }
-      } else {
+
+      }else {
         array_push($errors, "Wrong username/password combination");
       }
     }
-}
+  }
 
 ?>
 

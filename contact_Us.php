@@ -9,15 +9,25 @@ include ('db_connection.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="Design.css"/>
+    <link rel="stylesheet" type="text/css" href="PageDesign.css"/>
 </head>
 
 <body>
 
     <nav>
-        <a class="logo" onclick="return false;"><img src="https://i.ibb.co/ZBsn56k/ATlogo.jpg" alt="ATlogo"></a>
+        <a class="logo" onclick="return false;"><img src="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png" alt="ATlogo"></a>
         <button onclick="window.location.href = 'newHome.php';">Home</button>
-        <button onclick="window.location.href = 'myAccount.php';">My Account</button>
+<?php
+if (isset($_SESSION['user_id'])) {
+    // If logged in, go to the My Account page
+    echo '<button onclick="window.location.href = \'myAccount.php\';">My Account</button>';
+} else {
+    // If not logged in, go to the login page
+    echo '<button onclick="window.location.href = \'loginpage.php\';">My Account</button>';
+}
+?>
+
+
         <button onclick="window.location.href = 'Products.php';">Products</button>
         <button onclick="window.location.href = 'About_Us.php';">About Us</button>
         <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
@@ -44,7 +54,7 @@ include ('db_connection.php');
         ?>
         </div>
       
-        <h1 class="title">Contact</h1>
+        <h1 class="title">Contact Us</h1>
 
         <!-- <div class="paragraph">
         <p>Connecting with us is simple. Whether you have questions, inquiries, or just want 

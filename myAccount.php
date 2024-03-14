@@ -7,7 +7,7 @@ include ('getUserInfo.php') ?>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Account</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="PageDesign.css" />
 </head>
 
 
@@ -15,7 +15,7 @@ include ('getUserInfo.php') ?>
     <!--left side nav bar which is present on all pages-->
     <nav>
         <a class="logo" onclick="return false;">
-            <img src="https://i.ibb.co/ZBsn56k/ATlogo.jpg" alt="ATlogo" />
+            <img src="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png" alt="ATlogo" />
         </a>
         <!--when clicking on buttons it goes to the page that was clicked on.-->
         <button onclick="window.location.href = 'newHome.php';">Home</button>
@@ -48,7 +48,10 @@ include ('getUserInfo.php') ?>
             echo '<button onclick="window.location.href = \'loginpage.php\';">Login</button>';
             echo '</div>';
         }
-            ?>
+            ?> <div class="Basket">
+            <a onclick="window.location.href = 'shopping_basket.php';"><img src="Basket.png" alt="ATlogo"></a>
+            </div>
+    
         </div>
 
         <h1 class="title"> My Account Information</h1>
@@ -66,8 +69,18 @@ include ('getUserInfo.php') ?>
             <div class="infoContainer">
                 <label for="email">Email: </label>
                 <span class="infoContent"><?php echo $email; ?></span>
+                <label for="email">Phone Number: </label>
+               
+                <span class="infoContent"><?php echo $phone_number; ?></span> 
+                <!-- Change number form -->
+                <form method="post" action="changeNumber.php">
+                    <label for="newNumber"> New Number: </label>
+                    <input type="tel" id="newNumber" name="newNumber" required />
+                    <button type="submit" name="change-number">Change Phone Number</button>
+    </form>
+                <!-- Change pass form -->
                 <form method="post" action="changePassword.php">
-                    <h1>Change Password </h1> </br>
+                   </br>
                     <label for="current_Password"> Current Password: </label>
                     <input type="password" id="current_Password" name="currentPassword" required />
                     <label for="new_Password"> New Password: </label>
