@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2023 at 07:58 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Mar 14, 2024 at 12:54 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -87,13 +87,13 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`item_id`, `quantity`, `price`, `item_name`, `description`, `image_id`) VALUES
-(1, 46, '799.99', 'AMD Ryzen 9 5950X', 'A high-end desktop processor based on the Zen 3 architecture', 1),
-(2, 14, '379.87', 'ASUS ROG VIII Hero (Wi-Fi 6)', 'Part of ASUS\'s Republic of Gamers (ROG) series, known for high-end features and performance', 2),
-(3, 22, '698.99', 'NVIDIA GeForce RTX 3080', 'A high-performance graphics card based on the Ampere architecture. With 10 GB of GDDR6X VRAM and advanced features like DLSS ', 3),
-(4, 30, '160.00', 'Corsair Vengeance (2 x 16GB) DDR4-3200', 'DDR4 memory modules. The 32GB kit (2 x 16GB) running at 3200 MHz provides a good balance of capacity', 4),
-(5, 43, '149.99', 'Samsung 970 EVO Plus 1TB NVMe M.2', 'A high-performance NVMe SSD, offering fast read and write speeds', 5),
-(6, 23, '120.00', 'EVGA SuperNOVA, 80 Plus Gold 750W', 'A reliable power supply unit with 80 Plus Gold efficiency. With a 750W capacity', 6),
-(7, 34, '89.98', 'Noctua NH-D15', 'The Noctua NH-D15 is an air cooler known for its exceptional cooling performance and low noise levels', 7);
+(1, 46, 799.99, 'AMD Ryzen 9 5950X', 'A high-end desktop processor based on the Zen 3 architecture', 1),
+(2, 14, 379.87, 'ASUS ROG VIII Hero (Wi-Fi 6)', 'Part of ASUS\'s Republic of Gamers (ROG) series, known for high-end features and performance', 2),
+(3, 22, 698.99, 'NVIDIA GeForce RTX 3080', 'A high-performance graphics card based on the Ampere architecture. With 10 GB of GDDR6X VRAM and advanced features like DLSS ', 3),
+(4, 30, 160.00, 'Corsair Vengeance (2 x 16GB) DDR4-3200', 'DDR4 memory modules. The 32GB kit (2 x 16GB) running at 3200 MHz provides a good balance of capacity', 4),
+(5, 43, 149.99, 'Samsung 970 EVO Plus 1TB NVMe M.2', 'A high-performance NVMe SSD, offering fast read and write speeds', 5),
+(6, 23, 120.00, 'EVGA SuperNOVA, 80 Plus Gold 750W', 'A reliable power supply unit with 80 Plus Gold efficiency. With a 750W capacity', 6),
+(7, 34, 89.98, 'Noctua NH-D15', 'The Noctua NH-D15 is an air cooler known for its exceptional cooling performance and low noise levels', 7);
 
 -- --------------------------------------------------------
 
@@ -109,6 +109,16 @@ CREATE TABLE `order_details` (
   `quantity` varchar(255) NOT NULL,
   `total_price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `order_details`
+--
+
+INSERT INTO `order_details` (`order_id`, `user_id`, `item_id`, `order_date`, `quantity`, `total_price`) VALUES
+(1, 1, 1, '2024-03-12', '2', 26),
+(2, 2, 2, '2024-03-13', '1', 16),
+(3, 3, 3, '2024-03-14', '1', 40),
+(4, 3, 3, '2024-03-14', '5', 90);
 
 -- --------------------------------------------------------
 
@@ -140,6 +150,13 @@ CREATE TABLE `shopping_cart` (
   `price` decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `shopping_cart`
+--
+
+INSERT INTO `shopping_cart` (`cart_id`, `user_id`, `item_id`, `item_name`, `image_id`, `description`, `price`) VALUES
+(39, 1, 1, 'AMD Ryzen 9 5950X', 0, 'A high-end desktop processor based on the Zen 3 architecture', 799.99);
+
 -- --------------------------------------------------------
 
 --
@@ -161,7 +178,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `email`, `password`, `first_name`, `surname`, `phone_number`, `admin`) VALUES
-(1, 'user1@example.com', '7c6a180b36896a0a8c02787eeafb0e4c', 'John', 'Doe', '1234567890', 0),
+(1, 'user1@example.com', 'f30aa7a662c728b7407c54ae6bfd27d1', 'John', 'Doe', '1234567890', 0),
 (2, 'admin@example.com', '7c6a180b36896a0a8c02787eeafb0e4c', 'Admin', 'User', '9876543210', 1),
 (3, 'test@gmail.com', '098f6bcd4621d373cade4e832627b4f6', 'vru', 'alhd', '464747374', 0),
 (4, 'amgad@gmail.com', '5d41402abc4b2a76b9719d911017c592', 'Amgad', 'Salim', '074034353', 0),
@@ -248,7 +265,7 @@ ALTER TABLE `items`
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `review`
@@ -260,13 +277,13 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT for table `shopping_cart`
 --
 ALTER TABLE `shopping_cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
