@@ -73,6 +73,23 @@ include ('db_connection.php');
                         <option value="price_desc">Price High to Low</option>
                     </select>
                 </form>
+                <form method="post" action="" id="filterForm">
+                    <label for="category">Filter by Category:</label>
+                    <select name="category" id="category" onchange="submitFilter()">
+                        <option value="">Select</option>
+                        <!-- Categories will be populated dynamically -->
+                        <?php
+                        $sql_categories = "SELECT DISTINCT category FROM items";
+                        $result_categories = $conn->query($sql_categories);
+                        
+                        echo '<option value="">Select</option>';
+                        while ($row_category = $result_categories->fetch_assoc()) {
+                            $category = $row_category['category'];
+                            echo '<option value="' . $category . '">' . $category . '</option>';
+                        }
+                        ?>
+                    </select>
+                </form>
         <h3></h3>
         <!-- <button type="submit" name="sort_submit">Sort</button> -->
         <h3>Products</h3>
@@ -130,6 +147,14 @@ if (isset($_POST['sort'])) {
     // Modify SQL query to include ORDER BY clause
     $sql .= " ORDER BY $order_by";
 }
+if (isset($_POST['category'])) {
+    // If category filter is selected
+    $category_filter = $_POST['category'];
+    if ($category_filter != '') {
+        // Modify SQL query to include a WHERE clause for category filtering
+        $sql .= " WHERE items.category = '$category_filter'";
+    }
+}
 
 $result = $conn->query($sql);
 }
@@ -180,6 +205,9 @@ echo '</div>'; // Close the items container
 <script>
         function submitForm() {
             document.getElementById("sortForm").submit();
+        }
+        function submitFilter() {
+            document.getElementById("filterForm").submit();
         }
     </script>
 </html>
