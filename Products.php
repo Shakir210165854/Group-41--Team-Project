@@ -153,6 +153,7 @@ while ($row = $result->fetch_assoc()) {
     echo '<div class="item-name">' . $row['item_name'] . '</div>';
     echo '<div class="item-description">' . $row['description'] . '</div>';
     echo '<div class="item-price">£' . $row['price'] . '</div>';
+    echo '<div class="category">' . $row['category'] . '</div>';
 
     echo '<form method="post" action="add_to_cart.php">';
     echo '<input type="hidden" name="item_id" value="' . $row['item_id'] . '">';
@@ -160,6 +161,7 @@ while ($row = $result->fetch_assoc()) {
     echo '<input type="hidden" name="item_name" value="' . $row['item_name'] . '">';    
     echo '<input type="hidden" name="description" value="' . $row['description'] . '">';
     echo '<input type="hidden" name="price" value="' . $row['price'] . '">';
+    echo '<input type="hidden" name="category" value="' .$row['category'] . '">';
     echo '<button type="submit" name="add_to_cart">Add to Basket</button>';
     echo '</form>';
     echo '</div>';
