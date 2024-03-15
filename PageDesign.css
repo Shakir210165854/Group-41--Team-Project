@@ -47,8 +47,18 @@ nav button {
 }
 
 nav button:hover {
-    background: #3e3c3a;
+    background-color: #3e3c3a;
 }
+nav button.active {
+    background-color: #3e3c3a; 
+}
+
+nav button:hover,
+nav button.active:hover {
+    background-color: #3e3c3a; 
+}
+
+
 
 .logo {
     text-align: center;

@@ -47,7 +47,7 @@ body {
     cursor: pointer;
   }
 
-nav {
+  nav {
     flex: 1;
     width: 200px;
     height: 100vh;
@@ -59,6 +59,7 @@ nav {
     position: fixed;
     overflow: auto;
 }
+
 nav button {
     background-color: #5e1698; /* Purple */
     border: none;
@@ -73,8 +74,17 @@ nav button {
 }
 
 nav button:hover {
-    background-color: #252322;
+    background-color: #3e3c3a;
 }
+nav button.active {
+    background-color: #3e3c3a; 
+}
+
+nav button:hover,
+nav button.active:hover {
+    background-color: #3e3c3a; 
+}
+
 
 .logo {
     text-align: center;

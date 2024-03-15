@@ -1,6 +1,9 @@
 <?php
 session_start();
 include ('db_connection.php');
+// Set current page variable
+$currentPage = 'products'; // Change this according to the current page
+
 ?>
 
 <!DOCTYPE html>
@@ -22,9 +25,10 @@ include ('db_connection.php');
         </a>
         <button onclick="window.location.href = 'newHome.php';">Home</button>
         <button onclick="window.location.href = 'myAccount.php';">My Account</button>
-        <button onclick="window.location.href = 'Products.php';">Products</button>
+        <button class="<?php echo ($currentPage === 'products') ? 'active' : ''; ?>" onclick="window.location.href = 'Products.php';">Products</button>
         <button onclick="window.location.href = 'About_Us.php';">About Us</button>
         <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
+
     </nav>
     
     <div class='mainContent' style="color: aliceblue;">

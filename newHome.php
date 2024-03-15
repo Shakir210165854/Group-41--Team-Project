@@ -1,6 +1,8 @@
 ﻿<?php
 session_start();
 include ('db_connection.php');
+// Set current page variable
+$currentPage = 'home'; // Change this according to the current page
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +22,7 @@ include ('db_connection.php');
         <a class="logo" onclick="return false;">
             <img src="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png" alt="ATlogo" />
         </a>
-        <button onclick="window.location.href = 'newHome.php';">Home</button>
+        <button class="<?php echo ($currentPage === 'home') ? 'active' : ''; ?>" onclick="window.location.href = 'newHome.php';">Home</button>
         <button onclick="window.location.href = 'myAccount.php';">My Account</button>
         <button onclick="window.location.href = 'Products.php';">Products</button>
         <button onclick="window.location.href = 'About_Us.php';">About Us</button>

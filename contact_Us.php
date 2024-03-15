@@ -1,6 +1,9 @@
 <?php
 session_start();
 include ('db_connection.php');
+// Set current page variable
+$currentPage = 'contact'; // Change this according to the current page
+
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +34,9 @@ if (isset($_SESSION['user_id'])) {
 
         <button onclick="window.location.href = 'Products.php';">Products</button>
         <button onclick="window.location.href = 'About_Us.php';">About Us</button>
-        <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
+        <button class="<?php echo ($currentPage === 'contact') ? 'active' : ''; ?>" onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
+    </nav>
+
     </nav>
 
     <div class="mainContent">

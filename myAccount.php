@@ -1,6 +1,8 @@
 <!-- Include the user information php file -->
 <?php 
-include ('getUserInfo.php') ?>
+include ('getUserInfo.php')
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +22,8 @@ include ('getUserInfo.php') ?>
         </a>
         <!--when clicking on buttons it goes to the page that was clicked on.-->
         <button onclick="window.location.href = 'newHome.php';">Home</button>
-        <button onclick="window.location.href = 'myAccount.php';">My Account</button>
+        <button class="<?php echo basename($_SERVER['PHP_SELF']) == 'myAccount.php' ? 'active' : ''; ?>" onclick="window.location.href = 'myAccount.php';">My Account</button>
+
         <button onclick="window.location.href = 'Products.php';">Products</button>
         <button onclick="window.location.href = 'About_Us.php';">About Us</button>
         <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
