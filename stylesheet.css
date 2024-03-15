@@ -186,9 +186,20 @@ nav button:hover {
     display: flex;
     align-items: center;
     margin-right: 10px; /* Adjust margin for spacing */
+    /* display: flex; */
+    justify-content: space-between;
+    /* align-items: center; */
+    color: rgb(246, 242, 242);
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin-left: 2%; /* Move the entire container to the right */
+    background-color: #5e1698;
+    padding: 10px; /* Adjust padding for spacing */
 }
 
-#sort {
+#sort, #category {
     margin-right: 10px; /* Adjust margin for spacing */
 }
 
@@ -587,7 +598,7 @@ form{
 
 
 /* Style the dropdown container */
-#sort {
+#sort, #category {
     background-color: #5e1698;
     color: white;
     padding: 16px;
@@ -597,7 +608,7 @@ form{
 }
 
 /* Style the options within the dropdown */
-#sort option {
+#sort option, #category option {
     padding: 12px 16px;
     font-size: 14px;
 }
@@ -608,11 +619,11 @@ form{
 }
 
 /* Show the dropdown content when the dropdown is hovered */
-#sort:hover #sort-content {
+#sort:hover #sort-content, #category:hover #category-content {
     display: block;
 }
 
 /* Change the background color of the dropdown button when hovered */
-#sort:hover {
+#sort:hover, #category:hover {
     background-color: #4d0e80;
 }

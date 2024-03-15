@@ -61,6 +61,10 @@ include ('db_connection.php');
         </div>
     </div>
 </div>
+<h3 class="title">Products</h3>
+<?php
+echo '<hr style="border: none; height: 1px; background-color: white;">';
+?>
     <div class="title">
     <div class="sort">
                 <form method="post" action="" id="sortForm">
@@ -92,7 +96,7 @@ include ('db_connection.php');
                 </form>
         <h3></h3>
         <!-- <button type="submit" name="sort_submit">Sort</button> -->
-        <h3>Products</h3>
+        
 
         <!-- <a onclick="window.location.href = 'shopping_basket.php';"><img src="Basket.png" alt="ATlogo"></a> -->
     
