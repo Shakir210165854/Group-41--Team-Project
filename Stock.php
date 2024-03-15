@@ -141,6 +141,7 @@
             </table>
         </div>
     </div>
+    <a href="AdminHomePage.php" class="btn">Back to panel</a>
 
 </body>
 </html>
