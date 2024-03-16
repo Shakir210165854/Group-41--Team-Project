@@ -23,7 +23,13 @@ $currentPage = 'home'; // Change this according to the current page
             <img src="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png" alt="ATlogo" />
         </a>
         <button class="<?php echo ($currentPage === 'home') ? 'active' : ''; ?>" onclick="window.location.href = 'newHome.php';">Home</button>
-        <button onclick="window.location.href = 'myAccount.php';">My Account</button>
+        <?php
+    if (isset($_SESSION['user_id'])) {
+        echo ' <button onclick="window.location.href = \'myAccount.php\';">My Account</button>';
+       } else {
+        echo '<button onclick="window.location.href = \'loginpage.php\';">My Account</button>';
+       }
+       ?>
         <button onclick="window.location.href = 'Products.php';">Products</button>
         <button onclick="window.location.href = 'About_Us.php';">About Us</button>
         <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>

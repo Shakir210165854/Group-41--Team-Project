@@ -57,7 +57,7 @@ include ('getUserInfo.php')
             </div>
     
         </div>
-
+        <?php if (isset($_SESSION['user_id'])) : ?>
         <h1 class="title"> My Account Details</h1>
         <div class="accountInfo">
             <img src="https://via.placeholder.com/150" alt="Person 1" />
@@ -71,6 +71,7 @@ include ('getUserInfo.php')
             <br />
             <br />
             <div class="infoContainer">
+            
                 <label for="email">Email: </label>
                 <span class="infoContent"><?php echo $email; ?></span>
                 <label for="email">Phone Number: </label>
@@ -91,6 +92,7 @@ include ('getUserInfo.php')
                     <input type="password" id="new_Password" name="newPassword" required /><br><br>
                     <button type="submit" name="change-pass">Change Password</button>
     </form>
+    <?php endif; ?>
             </div>
 
         </div>
