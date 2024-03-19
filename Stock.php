@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,63 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Panel</title>
     <style>
-
-    body {
-      font-family: 'Arial Rounded MT';
-      margin: 5px;
-      padding: 5px;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: lightgray;
-      border: 1px solid solid black;
-      border-radius: 5px;
-    }
-    .section {
-      margin-bottom: 20px;
-    }
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-    .section-header h2 {
-      margin: 2px;
-      font-size: 24px;
-    }
-    .table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .table th,
-    .table td {
-      padding: 10px;
-      border: 1px solid black;
-      text-align: left;
-    }
-    .table th {
-      background-color: #f2f2f2;
-      font-weight: bold;
-    }
-    .table td {
-      background-color: whitesmoke;
-    }
-    .btn {
-      display: inline-block;
-      padding: 8px 16px;
-      margin-right: 10px;
-      background-color: #007bff;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .btn:hover {
-      background-color: #0056b3;
-    }
+        body {
+            font-family: 'Arial Rounded MT';
+            margin: 5px;
+            padding: 5px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: lightgray;
+            border: 1px solid solid black;
+            border-radius: 5px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .section-header h2 {
+            margin: 2px;
+            font-size: 24px;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table th,
+        .table td {
+            padding: 10px;
+            border: 1px solid black;
+            text-align: left;
+        }
+        .table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .table td {
+            background-color: whitesmoke;
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-right: 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -116,6 +114,18 @@
                     <?php
 
                     include 'db_connection.php';
+                    //Function to delete a product on admin page
+                    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_product_id'])) {
+                        $productId = $_POST['delete_product_id'];
+
+                        $sql = "DELETE FROM items WHERE item_id = $productId";
+
+                        if ($conn->query($sql) === TRUE) {
+                            echo "Product deleted successfully";
+                        } else {
+                            echo "Error deleting product: " . $conn->error;
+                        }
+                    }
 
                     $sql = "SELECT * FROM items";
                     $result = $conn->query($sql);
@@ -128,8 +138,11 @@
                             echo "<td>" . $row["price"] . "</td>";
                             echo "<td>" . $row["quantity"] . "</td>";
                             echo "<td>";
+                            echo "<form method='post'>";
                             echo "<button onclick=\"editProduct(" . $row["item_id"] . ")\">Edit</button>";
-                            echo "<button onclick=\"deleteProduct(" . $row["item_id"] . ")\">Delete</button>";
+                            echo "<input type='hidden' name='delete_product_id' value='" . $row["item_id"] . "' />";
+                            echo "<button type='submit'>Delete</button>";
+                            echo "</form>";
                             echo "</td>";
                             echo "</tr>";
                         }
