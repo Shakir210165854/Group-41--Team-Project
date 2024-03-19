@@ -79,10 +79,10 @@ if (isset($_SESSION['user_id'])) {
 }
  
 // Fetch data from the shopping_cart table
-$sql = "SELECT shopping_cart.*, items.item_name, items.description, items.price, image.image_data
+$sql = "SELECT shopping_cart.*, items.item_name, items.description, items.price, items.image
         FROM shopping_cart
         INNER JOIN items ON shopping_cart.item_id = items.item_id
-        INNER JOIN image ON shopping_cart.image_id = image.image_id
+
         WHERE shopping_cart.user_id = '$userID'";
 $result = $conn->query($sql);
  
@@ -92,7 +92,7 @@ $result = $conn->query($sql);
 // Display the fetched data
 while ($row = $result->fetch_assoc()) {
     echo '<div class="Basket">';
-    echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image_data']) . '" alt="Product Image">';
+    echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="Product Image">';
     echo '<div class="Basket-content">';
     echo '<div class="Basket-name">' . $row['item_name'] . '</div>';
     echo '<div class="Basket-description">' . $row['description'] . '</div>';

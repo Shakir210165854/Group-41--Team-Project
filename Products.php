@@ -121,8 +121,7 @@ echo '<hr style="border: none; height: 1px; background-color: white;">';
     $search = mysqli_real_escape_string($conn, $_POST['search']);
 
     // Modify SQL query to include a WHERE clause for searching
-    $sql = "SELECT items.*, image.image_data FROM items
-            INNER JOIN image ON items.item_id = image.item_id
+    $sql = "SELECT * FROM items
             WHERE items.item_name LIKE '%$search%'";
 
     $result = $conn->query($sql);
@@ -134,8 +133,8 @@ echo '<hr style="border: none; height: 1px; background-color: white;">';
 }else {
 
 
-    $sql = "SELECT items.*, image.image_id, image.image_data FROM items
-    INNER JOIN image ON items.item_id = image.item_id";
+    $sql = "SELECT * FROM items";
+
 $result = $conn->query($sql);
 
 if (isset($_POST['sort'])) {
@@ -187,8 +186,8 @@ if(isset($_SESSION['success']) && $_SESSION['success']=='true')
 // Loop through the results and display product information
 while ($row = $result->fetch_assoc()) {
     echo '<div class="item">';
-    $imageData = base64_encode($row['image_data']);
-    echo '<img src="data:image/jpeg;base64,' . $imageData . '" alt="Item Image">';
+    $image = base64_encode($row['image']);
+    echo '<img src="data:image/jpeg;base64,' . $image . '" alt="Item Image">';
     echo '<div class="item-name">' . $row['item_name'] . '</div>';
     echo '<div class="item-description">' . $row['description'] . '</div>';
     echo '<div class="item-price">£' . $row['price'] . '</div>';
@@ -196,7 +195,7 @@ while ($row = $result->fetch_assoc()) {
 
     echo '<form method="post" action="add_to_cart.php">';
     echo '<input type="hidden" name="item_id" value="' . $row['item_id'] . '">';
-    echo '<input type="hidden" name="image_id" value="' . $row['image_id'] . '">';
+    
     echo '<input type="hidden" name="item_name" value="' . $row['item_name'] . '">';    
     echo '<input type="hidden" name="description" value="' . $row['description'] . '">';
     echo '<input type="hidden" name="price" value="' . $row['price'] . '">';

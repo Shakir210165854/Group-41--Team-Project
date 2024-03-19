@@ -51,10 +51,10 @@ include ('db_connection.php');
         // Assuming you have a database connection established and stored in the $conn variable
 
 // Perform the query
-$query = "SELECT items.item_id, items.item_name, items.description, items.price, image.image_data, SUM(order_details.quantity) AS total_quantity_sold
+$query = "SELECT items.item_id, items.item_name, items.description, items.price, items.image, SUM(order_details.quantity) AS total_quantity_sold
 FROM order_details
 JOIN items ON order_details.item_id = items.item_id
-JOIN image ON items.image_id = image.image_id
+
 GROUP BY items.item_id
 ORDER BY total_quantity_sold DESC
 LIMIT 4";
@@ -66,8 +66,8 @@ echo '<div class="items-container">';
 while ($row = $result->fetch_assoc()) {
     echo '<div class="item">';
     // Display the item information, including the image
-    $imageData = base64_encode($row['image_data']);
-    echo '<img src="data:image/jpeg;base64,' . $imageData . '" alt="Item Image">';
+    $image = base64_encode($row['image']);
+    echo '<img src="data:image/jpeg;base64,' . $image . '" alt="Item Image">';
     echo '<div class="item-name">' . $row['item_name'] . '</div>';
     echo '<div class="item-description">' . $row['description'] . '</div>';
     echo '<div class="item-price">£' . $row['price'] . '</div>';

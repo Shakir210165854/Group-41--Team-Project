@@ -20,7 +20,7 @@ if (isset($_POST['add_to_cart'])) {
     echo "User ID: $userID";
     // $userID = mysqli_real_escape_string($conn, $_POST['user_id']);
     $item_id = mysqli_real_escape_string($conn, $_POST['item_id']);
-    $image_id = mysqli_real_escape_string($conn, $_POST['image_id']);
+    $image_id = mysqli_real_escape_string($conn, $_POST['image']);
     $item_name = mysqli_real_escape_string($conn, $_POST['item_name']);
     $description = mysqli_real_escape_string($conn, $_POST['description']);
     $price = mysqli_real_escape_string($conn, $_POST['price']);
@@ -34,8 +34,8 @@ if (isset($_POST['add_to_cart'])) {
         goback();
     } else {
         // If the item is not in the shopping cart, insert it with additional details
-        $insert_sql = "INSERT INTO shopping_cart (item_id, user_id, image_id, item_name, description, price) 
-                       VALUES ('$item_id', '$userID' , '$image_id', '$item_name', '$description', '$price')";
+        $insert_sql = "INSERT INTO shopping_cart (item_id, user_id, item_name, description, price) 
+                       VALUES ('$item_id', '$userID' , '$item_name', '$description', '$price')";
         if ($conn->query($insert_sql) === TRUE) {
             header('location:Products.php');
         } else {
