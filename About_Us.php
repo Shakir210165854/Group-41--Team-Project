@@ -14,7 +14,7 @@ $currentPage = 'about'; // Change this according to the current page
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link rel="stylesheet" type="text/css" href="PageDesign.css"/>
-    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/tZw1b64/Alpha-Tech-Final-PNG.png"> 
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png"> 
 </head>
 
 <body>
