@@ -269,8 +269,8 @@ h3 {
 }
 
 .about-us-subtitle {
-    color: rgb(174, 99, 212);
-    font-size: 30px;
+    color: rgb(255, 255, 255);
+    font-size: 35px;
     font-family: 'Arial', sans-serif;
     text-align: center;
 }
@@ -304,8 +304,9 @@ h3 {
 }
 
 .about-us-paragraph-one {
-    color: rgb(136, 1, 194);
-    font-size: 14px;
+    padding-top: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
     padding-left: 50px;
@@ -313,9 +314,9 @@ h3 {
 }
 
 .about-us-paragraph-two {
-    color: rgb(136, 1, 194);
-    font-size: 13px;
-    font-style: italic;
+    padding-top: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
     text-align: center;
     padding-left: 50px;
     padding-right: 50px;
@@ -351,12 +352,12 @@ h3 {
 
 .team-member h2 {
     margin-top: 10px;
-    color: #b7b7b7;
+    color: #ffffff;
 }
 
 .team-member p {
     margin-top: 5px;
-    color: #b3b3b3;
+    color: #ffffff;
 }
 .hero-image {
     width: 100%;
