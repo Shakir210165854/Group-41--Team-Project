@@ -1,3 +1,5 @@
+<?php  include 'db_connection.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -113,7 +115,7 @@
                 <tbody>
                     <?php
 
-                    include 'db_connection.php';
+                   
                     //Function to delete a product on admin page
                     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_product_id'])) {
                         $productId = $_POST['delete_product_id'];
