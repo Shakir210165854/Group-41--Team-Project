@@ -187,14 +187,14 @@ if(isset($_SESSION['success']) && $_SESSION['success']=='true')
 while ($row = $result->fetch_assoc()) {
     echo '<div class="item">';
     $image = base64_encode($row['image']);
+    
     echo '<img src="data:image/jpeg;base64,' . $image . '" alt="Item Image">';
     echo '<div class="item-name">' . $row['item_name'] . '</div>';
     echo '<div class="item-description">' . $row['description'] . '</div>';
     echo '<div class="item-price">£' . $row['price'] . '</div>';
     echo '<div class="category">' . $row['category'] . '</div>';
     echo '<label for="quantity">Quantity:</label>';
-    echo '<input type="number" name="quantity" id="quantity" min="1" value="1" style="width: 50%;">';
-
+    
 
     echo '<form method="post" action="add_to_cart.php">';
     echo '<input type="hidden" name="item_id" value="' . $row['item_id'] . '">';
@@ -202,13 +202,13 @@ while ($row = $result->fetch_assoc()) {
     echo '<input type="hidden" name="description" value="' . $row['description'] . '">';
     echo '<input type="hidden" name="price" value="' . $row['price'] . '">';
     echo '<input type="hidden" name="category" value="' . $row['category'] . '">';
-    
+    echo '<input type="number" name="quantity" id="quantity" min="1" value="1" style="width: 50%;">';
     
     echo '<button type="submit" name="add_to_cart">Add to Basket</button>';
     echo '</form>';
-    
     echo '</div>';
 }
+
 
 echo '</div>'; // Close the items container
 

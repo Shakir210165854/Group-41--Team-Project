@@ -96,7 +96,10 @@ while ($row = $result->fetch_assoc()) {
     echo '<div class="Basket-content">';
     echo '<div class="Basket-name">' . $row['item_name'] . '</div>';
     echo '<div class="Basket-description">' . $row['description'] . '</div>';
-    echo '<div class="Basket-price">$' . $row['price'] . '</div>';
+    echo '<div class="Basket-quantity">Quantity: ' . $row['quantity'] . '</div>';
+    $itemTotalPrice = $row['price'] * $row['quantity'];
+    // echo '<div class="Basket-price">$' . $row['price'] . '</div>';
+    echo '<div class="Basket-price">$' . $itemTotalPrice . '</div>';
     echo '</div>';
  
     echo '<form method="post" action="delete_item.php">';
@@ -106,7 +109,7 @@ while ($row = $result->fetch_assoc()) {
     echo '</form>';
  
       // adds the price for each item
-      $totalPrice += $row['price'];
+      $totalPrice += $itemTotalPrice;
 }
  
 echo '<div class="total-price" style="color: white; font-weight: bold;">Total: $' . $totalPrice . '</div>';
