@@ -13,42 +13,42 @@ body {
 .dropdown {
     position: relative;
     display: inline-block;
-  }
+}
 
-  .dropdown-content {
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
-  }
+}
 
-  .dropdown-content a {
+.dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
+}
 
-  .dropdown-content a:hover {
+.dropdown-content a:hover {
     background-color: #f1f1f1;
-  }
+}
 
-  .dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content {
     display: block;
-  }
+}
 
-  .dropdown-btn {
+.dropdown-btn {
     background-color: #4caf50;
     color: white;
     padding: 12px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-  }
+}
 
-  nav {
+nav {
     flex: 1;
     width: 200px;
     height: 100vh;
@@ -56,13 +56,14 @@ body {
     justify-content: space-around;
     flex-direction: column;
     background: #5e1698;
-    z-index: 3; 
+    z-index: 3;
     position: fixed;
     overflow: auto;
 }
 
 nav button {
-    background-color: #5e1698; /* Purple */
+    background-color: #5e1698;
+    /* Purple */
     border: none;
     color: white;
     padding: 30px 32px;
@@ -70,20 +71,23 @@ nav button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border-top-left-radius: 25px; /* Rounded top-left corner */
-    border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
+    border-top-left-radius: 25px;
+    /* Rounded top-left corner */
+    border-bottom-left-radius: 25px;
+    /* Rounded bottom-left corner */
 }
 
 nav button:hover {
     background-color: #3e3c3a;
 }
+
 nav button.active {
-    background-color: #3e3c3a; 
+    background-color: #3e3c3a;
 }
 
 nav button:hover,
 nav button.active:hover {
-    background-color: #3e3c3a; 
+    background-color: #3e3c3a;
 }
 
 
@@ -116,7 +120,8 @@ nav button.active:hover {
     text-align: center;
     position: fixed;
     /* bottom: 0; */
-    width: 100%; /* Make the footer full width */
+    width: 100%;
+    /* Make the footer full width */
 }
 
 .login {
@@ -124,54 +129,65 @@ nav button.active:hover {
     flex: wrap;
     /* width: 100vh; */
     position: relative;
-    justify-content:right;
-    text-align:center;
-    
+    justify-content: right;
+    text-align: center;
+
 }
+
 .loginX {
     display: flex;
     flex: wrap;
     /* width: 100vh; */
     position: relative;
-    justify-content:right;
-    text-align:center;
+    justify-content: right;
+    text-align: center;
     justify-content: space-between;
 }
-.loginX button{
-    background-color: #5e1698; /* Purple */
+
+.loginX button {
+    background-color: #5e1698;
+    /* Purple */
     border: none;
     color: white;
     padding: 10px 40px;
     margin: 5px;
-   /* 
+    /* 
     text-align: center;
     text-decoration: none;
     display: inline-block; */
     font-size: 16px;
-    border-top-left-radius: 25px; /* Rounded top-left corner */
-    border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
+    border-top-left-radius: 25px;
+    /* Rounded top-left corner */
+    border-bottom-left-radius: 25px;
+    /* Rounded bottom-left corner */
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
 }
+
 .login button {
-    background-color: #5e1698; /* Purple */
+    background-color: #5e1698;
+    /* Purple */
     border: none;
     color: white;
     padding: 10px 40px;
     margin: 5px;
-   /* 
+    /* 
     text-align: center;
     text-decoration: none;
     display: inline-block; */
     font-size: 16px;
-    border-top-left-radius: 25px; /* Rounded top-left corner */
-    border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
+    border-top-left-radius: 25px;
+    /* Rounded top-left corner */
+    border-bottom-left-radius: 25px;
+    /* Rounded bottom-left corner */
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
- 
+
 }
+
 .login button:hover {
-    background-color: #420c6d; /* Purple */
+    background-color: #420c6d;
+    /* Purple */
 }
 
 .title {
@@ -183,20 +199,25 @@ nav button.active:hover {
     font-weight: bold;
     font-family: 'Arial', sans-serif;
     text-align: center;
-    margin-left: auto; /* Move the entire container to the right */
+    margin-left: auto;
+    /* Move the entire container to the right */
     background-color: #5e1698;
-    padding: 10px; /* Adjust padding for spacing */
+    padding: 10px;
+    /* Adjust padding for spacing */
 }
 
 .title h3 {
-    flex: 1; /* Allow the text to take remaining space */
-    margin-right: 10px; /* Adjust margin for spacing */
+    flex: 1;
+    /* Allow the text to take remaining space */
+    margin-right: 10px;
+    /* Adjust margin for spacing */
 }
 
 .sort {
     display: flex;
     align-items: center;
-    margin-right: 10px; /* Adjust margin for spacing */
+    margin-right: 10px;
+    /* Adjust margin for spacing */
     /* display: flex; */
     justify-content: space-between;
     /* align-items: center; */
@@ -205,13 +226,17 @@ nav button.active:hover {
     font-weight: bold;
     font-family: 'Arial', sans-serif;
     text-align: center;
-    margin-left: 2%; /* Move the entire container to the right */
+    margin-left: 2%;
+    /* Move the entire container to the right */
     background-color: #5e1698;
-    padding: 10px; /* Adjust padding for spacing */
+    padding: 10px;
+    /* Adjust padding for spacing */
 }
 
-#sort, #category {
-    margin-right: 10px; /* Adjust margin for spacing */
+#sort,
+#category {
+    margin-right: 10px;
+    /* Adjust margin for spacing */
 }
 
 .title a img {
@@ -241,141 +266,160 @@ nav button.active:hover {
 
 .card p {
     margin-bottom: 5px;
-} 
+}
 
-
-
-    /* .title h4{
+/* .title h4{
         
     } */
-        .items-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: start;
-            align-items: left;
-            position: relative;
-            /* justify-content: space-around; */
-        }
+    .items-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        align-items: left;
+        position: relative;
         
-        .item {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 16px;
-            margin: 10px;
-            width: auto;
-            max-width: 300px;
-            box-sizing: border-box;
-            /* display: flex;
-            flex-wrap: wrap; */
-        }
-        
-        .item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-        
-        .item-name {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin: 8px 0;
-        }
-        
-        .item-description {
-            font-size: 0.9em;
-            color: #fefcfc;
-        }
-        
-        .item-price {
-            font-size: 1.5em;
-            color: #fefcfc;        }
+        /* justify-content: space-around; */
+    }
 
-            .Basket {
+    .item {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 16px;
+        margin: 10px;
+        width: auto;
+        max-width: 300px;
+        box-sizing: border-box;
+        transition: all 0.3s ease; /* Added transition property */
+        /* display: flex;
+                flex-wrap: wrap; */
+    }
+    .item:hover {
+        transform: scale(1.1); /* Expand the item on hover */
+        z-index: 1; /* Ensure hovered item is on top of others */
+    }
+   
 
-            
-        
-                background-color: #5e1698; /* Purple */
-                border: none;
-                color: white;
-                padding: 10px 40px;
-                margin: 5px;
-                height: 40px;
-                width: 110px;
-               /* 
+    .item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
+
+    .item-name {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 8px 0;
+    }
+
+    .item-description {
+        font-size: 0.9em;
+        color: #fefcfc;
+    }
+
+    .item-price {
+        font-size: 1.5em;
+        color: #fefcfc;
+    }
+
+.Basket {
+
+
+
+    background-color: #5e1698;
+    /* Purple */
+    border: none;
+    color: white;
+    padding: 10px 40px;
+    margin: 5px;
+    height: 40px;
+    width: 110px;
+    /* 
                 text-align: center;
                 text-decoration: none;
                 display: inline-block; */
-                font-size: 16px;
-                border-top-left-radius: 25px; /* Rounded top-left corner */
-                border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
-                border-top-right-radius: 25px;
-                border-bottom-right-radius: 25px;
-             
-            }
-            
-            .Basket img {
-                align-items: end;
-                width: 70%;
-                /* height: auto; */
-                /* margin-right: 5vh; */
-            }
-            
-            
-            .Basket-content {
-                flex-grow: 1;
-            }
-            
-            .Basket-name {
-                font-size: 1.2em;
-                font-weight: bold;
-                margin-bottom: 8px;
-            }
-            
-            .Basket-description {
-                margin-bottom: 12px;
-            }
-            
-            .Basket-price {
-                font-size: 1.1em;
-                color: #007BFF;
-                font-weight: bold;
-            }
-            .delete-button {
-                margin-left: auto; /* Push the button to the right end */
-                padding: 8px 12px;
-                max-height: 50px;
-                background-color: #5e1698; /* Bootstrap's danger color */
-                color: #fff;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-            
-            .delete-button:hover {
-                background-color: #511085; /* Darker shade on hover */
-                color: #9d9d9d;
-            }
-            .Basket button {
-                background-color: #5e1698; /* Purple */
-                border: none;
-                color: white;
-                padding: 10px 40px;
-                margin: 5px;
-               /* 
+    font-size: 16px;
+    border-top-left-radius: 25px;
+    /* Rounded top-left corner */
+    border-bottom-left-radius: 25px;
+    /* Rounded bottom-left corner */
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+}
+
+.Basket img {
+    align-items: end;
+    width: 70%;
+    /* height: auto; */
+    /* margin-right: 5vh; */
+}
+
+
+.Basket-content {
+    flex-grow: 1;
+}
+
+.Basket-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.Basket-description {
+    margin-bottom: 12px;
+}
+
+.Basket-price {
+    font-size: 1.1em;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.delete-button {
+    margin-left: auto;
+    /* Push the button to the right end */
+    padding: 8px 12px;
+    max-height: 50px;
+    background-color: #5e1698;
+    /* Bootstrap's danger color */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #511085;
+    /* Darker shade on hover */
+    color: #9d9d9d;
+}
+
+.Basket button {
+    background-color: #5e1698;
+    /* Purple */
+    border: none;
+    color: white;
+    padding: 10px 40px;
+    margin: 5px;
+    /* 
                 text-align: center;
                 text-decoration: none;
                 display: inline-block; */
-                font-size: 16px;
-                border-top-left-radius: 25px; /* Rounded top-left corner */
-                border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
-                border-top-right-radius: 25px;
-                border-bottom-right-radius: 25px;
-             
-            }
-            .Basket:hover {
-                background-color: #420c6d; /* Purple */
-            }
-    
+    font-size: 16px;
+    border-top-left-radius: 25px;
+    /* Rounded top-left corner */
+    border-bottom-left-radius: 25px;
+    /* Rounded bottom-left corner */
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+}
+
+.Basket:hover {
+    background-color: #420c6d;
+    /* Purple */
+}
+
 .subtitle {
     color: rgb(146, 3, 255);
     font-size: 30px;
@@ -437,7 +481,9 @@ nav button.active:hover {
     border-radius: 10px;
 }
 
-.team-members , .stock , .header-con{
+.team-members,
+.stock,
+.header-con {
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
@@ -464,6 +510,7 @@ nav button.active:hover {
     margin-top: 5px;
     color: #b3b3b3;
 }
+
 .hero-image {
     width: 100%;
     max-height: 400px;
@@ -510,12 +557,12 @@ nav button.active:hover {
     margin-bottom: 10px;
 }
 
-.container h1{
- text-align: center;
+.container h1 {
+    text-align: center;
 }
 
 h1 {
-    color: #333; 
+    color: #333;
 }
 
 /* form {
@@ -523,23 +570,23 @@ h1 {
 } */
 
 label {
-    display: block; 
-    margin-bottom: 5px; 
+    display: block;
+    margin-bottom: 5px;
 }
 
 input {
     width: 100%;
-    padding: 10px; 
-    margin-bottom: 15px; 
+    padding: 10px;
+    margin-bottom: 15px;
 }
 
 button {
-    background-color: #5e1698; 
+    background-color: #5e1698;
     border: none;
     color: white;
     padding: 10px 20px;
     font-size: 16px;
-    border-radius: 5px; 
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -547,40 +594,45 @@ button:hover {
     background-color: #420c6d;
 }
 
-.search{
-    display:inline-flex;
+.search {
+    display: inline-flex;
     padding: 5px;
     height: auto;
     width: 100%;
-    position:relative;
+    position: relative;
     justify-content: space-between;
     /* margin-left: 25%; */
 }
-.search button{
+
+.search button {
     margin-left: 5px;
-    height: 40px ;
+    height: 40px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    
+
     position: relative;
-    
+
 }
-.searchB{
+
+.searchB {
     max-width: 60%;
     height: 70%;
-    
+
 }
-#log-in{
-    
-    border-top-left-radius: 25px; /* Rounded top-left corner */
-    border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
+
+#log-in {
+
+    border-top-left-radius: 25px;
+    /* Rounded top-left corner */
+    border-bottom-left-radius: 25px;
+    /* Rounded bottom-left corner */
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
 }
 
 
-form{
+form {
     width: 100%;
     display: flex;
     /* flex-wrap: wrap; */
@@ -591,34 +643,36 @@ form{
     padding: 5px;
     height: auto;
 }
+
 /* form button{
 
 } */
 
 @media screen and (max-width: 700px) {
     .login button {
-        margin-left: 0; 
+        margin-left: 0;
     }
-    .search{
+
+    .search {
         margin-left: 3%;
     }
 }
 
-.accountInfo{
-    margin-left:20px;
-    margin-top:20px;
-    padding:10px;
+.accountInfo {
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 10px;
 }
 
-.accountInfo img{
-    width: 250px; 
-    height: 250px; 
+.accountInfo img {
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
 }
 
 .accountInfo .infoContent {
     margin-bottom: 20px;
-    padding:10px;
+    padding: 10px;
 }
 
 .accountInfo label {
@@ -631,7 +685,8 @@ form{
 
 
 /* Style the dropdown container */
-#sort, #category {
+#sort,
+#category {
     background-color: #5e1698;
     color: white;
     padding: 16px;
@@ -641,7 +696,8 @@ form{
 }
 
 /* Style the options within the dropdown */
-#sort option, #category option {
+#sort option,
+#category option {
     padding: 12px 16px;
     font-size: 14px;
 }
@@ -652,11 +708,13 @@ form{
 }
 
 /* Show the dropdown content when the dropdown is hovered */
-#sort:hover #sort-content, #category:hover #category-content {
+#sort:hover #sort-content,
+#category:hover #category-content {
     display: block;
 }
 
 /* Change the background color of the dropdown button when hovered */
-#sort:hover, #category:hover {
+#sort:hover,
+#category:hover {
     background-color: #4d0e80;
 }

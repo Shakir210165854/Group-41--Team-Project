@@ -90,7 +90,6 @@ echo '<hr style="border: none; height: 1px; background-color: white;">';
                 <form method="post" action="" id="filterForm">
                     <label for="category">Filter by Category:</label>
                     <select name="category" id="category" onchange="submitFilter()">
-                        <option value="">Select</option>
                         <!-- Categories will be populated dynamically -->
                         <?php
                         $sql_categories = "SELECT DISTINCT category FROM items";
@@ -206,6 +205,9 @@ while ($row = $result->fetch_assoc()) {
     
     echo '<button type="submit" name="add_to_cart">Add to Basket</button>';
     echo '</form>';
+
+    echo '<a id="readmore" style="text-align: right; display: block;">Read more</a>';
+
     echo '</div>';
 }
 
