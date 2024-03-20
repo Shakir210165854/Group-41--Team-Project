@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2024 at 04:47 PM
+-- Generation Time: Mar 20, 2024 at 06:05 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -35,6 +35,13 @@ CREATE TABLE `address` (
   `state` varchar(255) NOT NULL,
   `postal_code` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `address`
+--
+
+INSERT INTO `address` (`address_id`, `user_id`, `street_address`, `city`, `state`, `postal_code`) VALUES
+(1, 1, 'woodland road', 'Birmingham', 'West Midlands', 'B66 3JH');
 
 -- --------------------------------------------------------
 
@@ -123,7 +130,8 @@ CREATE TABLE `shopping_cart` (
   `item_id` int(11) DEFAULT NULL,
   `item_name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `price` decimal(10,2) DEFAULT NULL
+  `price` decimal(10,2) DEFAULT NULL,
+  `quantity` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -208,13 +216,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `address`
 --
 ALTER TABLE `address`
-  MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `order_details`
@@ -232,7 +240,7 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT for table `shopping_cart`
 --
 ALTER TABLE `shopping_cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
 
 --
 -- AUTO_INCREMENT for table `users`
