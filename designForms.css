@@ -7,7 +7,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh; 
+    height: 100vh;
     margin: 0;
 }
 
@@ -17,37 +17,95 @@ body {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 0 20px grey;
+    max-width: 400px;
+    width: 90%;
+    margin: auto;
 }
 
 h1 {
-    color: #333; 
+    color: #333;
 }
 
-form {
-    margin-top: 20px;
+.form-group {
+    margin-bottom: 15px;
 }
 
 label {
-    display: block; 
-    margin-bottom: 5px; 
+    display: block;
+    margin-bottom: 5px;
 }
 
 input {
     width: 100%;
-    padding: 10px; 
-    margin-bottom: 15px; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 button {
-    background-color: #5e1698; 
+    background-color: #5e1698;
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 10px;
     font-size: 16px;
-    border-radius: 5px; 
+    border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #420c6d;
+    button:hover {
+        background-color: #420c6d;
+    }
+
+.container.signup-container {
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px grey;
+    max-width: 600px;
+    width: 90%;
+    margin: auto;
 }
+
+    .container.signup-container h1 {
+        color: #333;
+    }
+
+    .container.signup-container form {
+        display: grid;
+        gap: 5px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container.signup-container .form-group {
+        margin-bottom: 15px;
+    }
+
+    .container.signup-container label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .container.signup-container input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .container.signup-container button {
+        background-color: #5e1698;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        justify-content: center;
+    }
+
+        .container.signup-container button:hover {
+            background-color: #420c6d;
+        }
