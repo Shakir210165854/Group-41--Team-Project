@@ -72,7 +72,7 @@
     <div class="section">
         <div class="section-header">
            <h2>Stock</h2>
-            <a href="#" class="btn">Add Product</a>
+            <a href="add_product_form.php" class="btn">Add Product</a>
         </div>
         <table class="table">
         
