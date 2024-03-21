@@ -68,11 +68,10 @@
 <body>
 
 <div class="container">
-
-    <div class="section">
+<div class="section">
         <div class="section-header">
-           <h2>Stock</h2>
-            <a href="add_product_form.php" class="btn">Add Product</a>
+           <h2>Order Details</h2>
+            <a href="#" class="btn">Add Order</a>
         </div>
         <table class="table">
         
@@ -86,9 +85,44 @@
                     </tr>
                 </thead>
 
-                <tbody>
-    
-</tbody>
+            <tbody>
+            <?php
+            // Gets order details from the database to display
+
+            $sql = "SELECT order_details.order_id, users.first_name, users.surname, order_details.total_price, order_details.order_date 
+                    FROM order_details 
+                    INNER JOIN users ON order_details.user_id = users.user_id";
+
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row["order_id"] . "</td>";
+                    echo "<td>" . $row["first_name"] . " " . $row["surname"] . "</td>";
+                    echo "<td>" . $row["total_price"] . "</td>";
+                    echo "<td>" . $row["order_date"] . "</td>";
+                    echo "<td>";
+                    // Add your action buttons here
+                    echo "</td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='5'>No orders found</td></tr>";
+            }
+            ?>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+           <h2>Stock</h2>
+            <a href="add_product_form.php" class="btn">Add Product</a>
+        </div>
+        <table class="table">
+        
+            <thead>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
