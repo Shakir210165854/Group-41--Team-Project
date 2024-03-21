@@ -123,7 +123,8 @@
                         $sql = "DELETE FROM items WHERE item_id = $productId";
 
                         if ($conn->query($sql) === TRUE) {
-                            echo "Product deleted successfully";
+                          echo "<script>alert('Product deleted successfully');</script>";
+
                         } else {
                             echo "Error deleting product: " . $conn->error;
                         }
