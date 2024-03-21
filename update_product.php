@@ -13,8 +13,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['product_id'])) {
 
     if ($conn->query($sql) === TRUE) {
         // Redirects back to the stock page
-        echo "<script>alert('Product updated successfully');</script>";
-        header("Location: Stock.php");
+        echo "<script>
+                alert('Product updated successfully');
+                window.location.href = 'stock.php';
+              </script>";
        
     } else {
         echo "Error updating product: " . $conn->error;
