@@ -194,7 +194,6 @@ while ($row = $result->fetch_assoc()) {
     echo '<div class="category">' . $row['category'] . '</div>';
     echo '<label for="quantity">Quantity:</label>';
     
-
     echo '<form method="post" action="add_to_cart.php">';
     echo '<input type="hidden" name="item_id" value="' . $row['item_id'] . '">';
     echo '<input type="hidden" name="item_name" value="' . $row['item_name'] . '">';    
@@ -202,14 +201,22 @@ while ($row = $result->fetch_assoc()) {
     echo '<input type="hidden" name="price" value="' . $row['price'] . '">';
     echo '<input type="hidden" name="category" value="' . $row['category'] . '">';
     echo '<input type="number" name="quantity" id="quantity" min="1" value="1" style="width: 50%;">';
-    
-    echo '<button type="submit" name="add_to_cart">Add to Basket</button>';
+    echo '<button type="submit" name="add_to_cart" >Add to Basket</button>';
     echo '</form>';
 
-    echo '<a id="readmore" style="text-align: right; display: block;">Read more</a>';
+    // Pass item information to ReadMore.php using query parameters
+    echo '<button class="readmore" onclick="redirectToReadMore(' . $row['item_id'] . ')">Read more</button>';
 
     echo '</div>';
 }
+
+// JavaScript function to redirect to ReadMore.php with item_id parameter
+echo '<script>
+function redirectToReadMore(itemId) {
+    window.location.href = "ReadMore.php?item_id=" + itemId;
+}
+</script>';
+
 
 
 echo '</div>'; // Close the items container
