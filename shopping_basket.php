@@ -77,11 +77,16 @@ function buyButtonClick() {
 </script>
 <body>
 <nav>
-    <a class="logo" onclick="return false;"><img src="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png" alt="ATlogo"></a>
-    <button onclick="window.location.href = 'newHome.php';">Home</button>
+    <a class="logo" onclick="return false;">
+        <img src="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png" alt="ATlogo" />
+    </a>
+   
     <?php
     if (isset($_SESSION['user_id'])) {
-        echo ' <button onclick="window.location.href = \'myAccount.php\';">My Account</button>';
+        echo '<button onclick="window.location.href = \'myAccount.php\';">My Account</button>';
+        if ($_SESSION['user_id'] == '2') { 
+            echo '<button onclick="window.location.href = \'AdminHomePage.php\';">Admin page</button>';
+        }
     } else {
         echo '<button onclick="window.location.href = \'loginpage.php\';">My Account</button>';
     }

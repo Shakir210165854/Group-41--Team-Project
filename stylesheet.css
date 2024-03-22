@@ -299,41 +299,6 @@ nav button.active:hover {
     }
    
 
-    .read-more-item-card {
-        display: flex;
-        border: 1px solid #ccc;
-        margin-bottom: 20px;
-        padding: 10px;
-    }
-    .read-more-item-image {
-        flex: 0 0 30%; /* Set the width of the image column */
-        margin-right: 10px;
-    }
-    .read-more-item-image img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 4px;
-    }
-    .read-more-item-content {
-        flex: 1; /* Allow content to take remaining width */
-    }
-    .read-more-item-name {
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
-    .read-more-item-description {
-        margin-bottom: 5px;
-    }
-    .read-more-item-price {
-        font-weight: bold;
-        color: green;
-        margin-bottom: 5px;
-    }
-    .category {
-        font-style: italic;
-        margin-bottom: 5px;
-    }
-
 
 
     .star-rating {

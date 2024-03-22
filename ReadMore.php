@@ -6,6 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReadMore</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+    <style>
+.read-more-item-card {
+        display: flex;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+    .read-more-item-image {
+        flex: 0 0 30%; /* Set the width of the image column */
+        margin-right: 10px;
+    }
+    .read-more-item-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
+    .read-more-item-content {
+        flex: 1; /* Allow content to take remaining width */
+    }
+    .read-more-item-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+        color:white;
+    }
+    .read-more-item-description {
+        margin-bottom: 5px;
+        color:white;
+    }
+    .read-more-item-price {
+        font-weight: bold;
+        color:white;
+        margin-bottom: 5px;
+    }
+    .category {
+        font-style: italic;
+        margin-bottom: 5px;
+        color:white;
+    }
+
+    </style>
 </head>
 <body>
 
@@ -42,6 +82,7 @@ if (isset($_GET['item_id'])) {
         echo '<div class="read-more-item-price">£' . $row['price'] . '</div>';
         echo '<div class="category">' . $row['category'] . '</div>';
         // You can add more information here if needed
+        echo '<button onclick="window.location.href = \'Products.php\';">Back</button>';
         echo '</div>';
         echo '</div>';
     } else {
