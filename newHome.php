@@ -19,7 +19,7 @@ $currentPage = 'home';
 
 <nav>
     <a class="logo" onclick="return false;"><img src="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png" alt="ATlogo"></a>
-    <button onclick="window.location.href = 'newHome.php';">Home</button>
+    <button class="<?php echo ($currentPage === 'home') ? 'active' : ''; ?>" onclick="window.location.href = 'newHome.php';">Home</button>
     <?php
     if (isset($_SESSION['user_id'])) {
         // If logged in, go to the My Account page
@@ -33,7 +33,7 @@ $currentPage = 'home';
 
     <button onclick="window.location.href = 'Products.php';">Products</button>
     <button onclick="window.location.href = 'About_Us.php';">About Us</button>
-    <button class="<?php echo ($currentPage === 'contact') ? 'active' : ''; ?>" onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
+    <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
 </nav>
 
 <div class='mainContent' style="color: aliceblue;">
