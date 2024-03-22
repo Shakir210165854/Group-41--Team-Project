@@ -1,8 +1,8 @@
 <?php
 session_start();
 include ('db_connection.php');
-// Set current page variable
-$currentPage = 'contact'; // Change this according to the current page
+
+$currentPage = 'contact'; 
 
 ?>
 
