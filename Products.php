@@ -119,7 +119,7 @@ echo '<hr style="border: none; height: 1px; background-color: white;">';
 
     $search = mysqli_real_escape_string($conn, $_POST['search']);
 
-    // Modify SQL query to include a WHERE clause for searching
+    // Used for searching
     $sql = "SELECT * FROM items
             WHERE items.item_name LIKE '%$search%'";
 
@@ -156,14 +156,14 @@ if (isset($_POST['sort'])) {
             $order_by = 'items.item_name ASC';
     }
 
-    // Modify SQL query to include ORDER BY clause
+   
     $sql .= " ORDER BY $order_by";
 }
 if (isset($_POST['category'])) {
     // If category filter is selected
     $category_filter = $_POST['category'];
     if ($category_filter != '') {
-        // Modify SQL query to include a WHERE clause for category filtering
+        //filters the products
         $sql .= " WHERE items.category = '$category_filter'";
     }
 }
@@ -173,7 +173,7 @@ $result = $conn->query($sql);
 
 // echo '<h1 class="title">Products</h1>';
 
-// Add a container to hold the items
+
 echo '<div class="items-container">';
 //Pop-up message for duplicate items
 if(isset($_SESSION['success']) && $_SESSION['success']=='true')
@@ -182,7 +182,7 @@ if(isset($_SESSION['success']) && $_SESSION['success']=='true')
     
   $_SESSION['success'] = 'false';
 }
-// Loop through the results and display product information
+// Loops through the results and display product information
 while ($row = $result->fetch_assoc()) {
     echo '<div class="item">';
     $image = base64_encode($row['image']);
@@ -194,21 +194,31 @@ while ($row = $result->fetch_assoc()) {
     echo '<div class="category">' . $row['category'] . '</div>';
     echo '<label for="quantity">Quantity:</label>';
     
-    echo '<form method="post" action="add_to_cart.php">';
-    echo '<input type="hidden" name="item_id" value="' . $row['item_id'] . '">';
-    echo '<input type="hidden" name="item_name" value="' . $row['item_name'] . '">';    
-    echo '<input type="hidden" name="description" value="' . $row['description'] . '">';
-    echo '<input type="hidden" name="price" value="' . $row['price'] . '">';
-    echo '<input type="hidden" name="category" value="' . $row['category'] . '">';
-    echo '<input type="number" name="quantity" id="quantity" min="1" value="1" style="width: 50%;">';
-    echo '<button type="submit" name="add_to_cart" >Add to Basket</button>';
-    echo '</form>';
+    // Only shows Add to Basket button if the user is logged in
+    if (isset($_SESSION['user_id'])) {
+        echo '<form method="post" action="add_to_cart.php">';
+        echo '<input type="hidden" name="item_id" value="' . $row['item_id'] . '">';
+        echo '<input type="hidden" name="item_name" value="' . $row['item_name'] . '">';    
+        echo '<input type="hidden" name="description" value="' . $row['description'] . '">';
+        echo '<input type="hidden" name="price" value="' . $row['price'] . '">';
+        echo '<input type="hidden" name="category" value="' . $row['category'] . '">';
+        echo '<input type="number" name="quantity" id="quantity" min="1" value="1" style="width: 50%;">';
+        echo '<button type="submit" name="add_to_cart">Add to Basket</button>';
+        echo '</form>';
+    } else {
+        // If user is not logged in button to log in
+        echo '<button onclick="window.location.href = \'loginpage.php\';">Login to purchase</button>';
+        
+    }
 
-    // Pass item information to ReadMore.php using query parameters
+    echo '<div style="margin-top: 10px;"></div>';
+    
+    //new page to read more about product
     echo '<button class="readmore" onclick="redirectToReadMore(' . $row['item_id'] . ')">Read more</button>';
 
     echo '</div>';
 }
+
 
 // JavaScript function to redirect to ReadMore.php with item_id parameter
 echo '<script>
