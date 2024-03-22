@@ -103,7 +103,14 @@
                     echo "<td>" . $row["total_price"] . "</td>";
                     echo "<td>" . $row["order_date"] . "</td>";
                     echo "<td>";
-                    // Add your action buttons here
+                    echo "<form method='post' action='delete_order.php'>";
+                    echo "<input type='hidden' name='delete_order_id' value='" . $row["order_id"] . "' />";
+                    echo "<button type='submit'>Delete Order</button>";
+                    echo "</form>";
+                    echo "<form method='get' action='view_order.php'>";
+                    echo "<input type='hidden' name='view_order_id' value='" . $row["order_id"] . "' />";
+                    echo "<button type='submit'>View Order</button>";
+                    echo "</form>";
                     echo "</td>";
                     echo "</tr>";
                 }
