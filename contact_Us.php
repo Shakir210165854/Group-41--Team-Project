@@ -13,13 +13,13 @@ $currentPage = 'contact'; // Change this according to the current page
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="stylesheet" type="text/css" href="PageDesign.css"/>
-    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png"> 
-</head>
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png">
 
 <body>
 
-    <nav>
-        <a class="logo" onclick="return false;"><img src="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png" alt="ATlogo"></a>
+   <nav>
+
+   <a class="logo" onclick="return false;"><img src="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png" alt="ATlogo"></a>
         <button onclick="window.location.href = 'newHome.php';">Home</button>
 <?php
 if (isset($_SESSION['user_id'])) {
@@ -116,7 +116,7 @@ if (isset($_SESSION['user_id'])) {
         document.getElementById('Form2').addEventListener('submit', function (e) {
             e.preventDefault(); 
             
-            document.getElementById('name').value = '';
+            document.getElementById('name').value = ''; 
         document.getElementById('email').value = '';
         document.getElementById('subject').value = '';
         document.getElementById('message').value = '';
