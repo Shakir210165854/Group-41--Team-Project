@@ -73,11 +73,10 @@
     </style>
 </head>
 <body>
-
 <div class="container">
     <div class="section">
         <h2>Add Product</h2>
-        <form method="post" action="add_product.php"> <!-- Form action points to add_product.php -->
+        <form method="post" action="add_product.php" enctype="multipart/form-data"> <!-- Form action points to add_product.php -->
             <label for="item_name">Product Name:</label>
             <input type="text" id="item_name" name="item_name" required><br><br>
             <label for="price">Price:</label>
@@ -108,11 +107,11 @@
             ?>
             </select><br><br>
             <label for="image">Image:</label>
-            <input type="file" id="image" name="image"><br><br>
+            <input type="file" id="image" name="image" required><br><br>
             <label for="discount">Discount:</label>
             <input type="number" id="discount" name="discount" min="0" step="0.01" value="<?php echo $row['discount']; ?>"><br><br>
             <button type="submit" name="add_product">Add Product</button>
-            <button onclick="window.location.href = 'Stock.php';">Back to panel</button>
+            <button onclick="window.location.href = 'stock.php';">Back to panel</button>
         </form>
     </div>
 </div>

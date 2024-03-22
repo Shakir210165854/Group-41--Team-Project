@@ -56,18 +56,20 @@ if (isset($_POST['log-in'])) {
         $userID = $uid; // Update $userID
         header('location: newHome.php');
 
-        // Log activity to the database, give date and time as well as action.
-        $timestamp = date('Y-m-d H:i:s');
-        $action="log in";
-        $insert_query = "INSERT INTO user_logs (user_id, timestamp, action) VALUES ('$userID', '$timestamp' , '$action')";
-        mysqli_query($conn, $insert_query);
-
         if($user['admin'] == 1){
           header('location: AdminHomePage.php');
         }else{
           header('location: newHome.php');
         }
 
+        
+        // Log activity to the database, give date and time as well as action.
+        $timestamp = date('Y-m-d H:i:s');
+        $action="log in";
+        $insert_query = "INSERT INTO user_logs (user_id, timestamp, action) VALUES ('$userID', '$timestamp' , '$action')";
+        mysqli_query($conn, $insert_query);
+
+     
       }else {
         array_push($errors, "Wrong username/password combination");
       }

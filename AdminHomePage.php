@@ -23,6 +23,7 @@ include ('db_connection.php');
         <button onclick="window.location.href = 'User_accounts.php';">Users</button>
         <button onclick="window.location.href = 'Stock.php';">Stock</button>
         <button onclick="window.location.href = 'Stats.php';">Stats</button>
+        <button onclick="window.location.href = 'newHome.php';">Back to main page</button>
         
         
     </nav>
@@ -45,7 +46,7 @@ include ('db_connection.php');
 
 
         
-    <h1 class="title">AlphaTech</h1>
+    <h1 class="title">AlphaTech's Best Sellers</h1>
 
     <?php
         // Assuming you have a database connection established and stored in the $conn variable
@@ -57,7 +58,7 @@ JOIN items ON order_details.item_id = items.item_id
 
 GROUP BY items.item_id
 ORDER BY total_quantity_sold DESC
-LIMIT 4";
+LIMIT 8";
 
 $result = $conn->query($query);
 
