@@ -17,24 +17,26 @@ $currentPage = 'home'; // Change this according to the current page
 
 <body>
 
-    <nav>
-
-        <a class="logo" onclick="return false;">
-            <img src="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png" alt="ATlogo" />
-        </a>
-        <button class="<?php echo ($currentPage === 'home') ? 'active' : ''; ?>" onclick="window.location.href = 'newHome.php';">Home</button>
-        <?php
+<nav>
+    <a class="logo" onclick="return false;">
+        <img src="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png" alt="ATlogo" />
+    </a>
+   
+    <?php
     if (isset($_SESSION['user_id'])) {
-        echo ' <button onclick="window.location.href = \'myAccount.php\';">My Account</button>';
-       } else {
+        echo '<button onclick="window.location.href = \'myAccount.php\';">My Account</button>';
+        if ($_SESSION['user_id'] == '2') { 
+            echo '<button onclick="window.location.href = \'AdminHomePage.php\';">Admin page</button>';
+        }
+    } else {
         echo '<button onclick="window.location.href = \'loginpage.php\';">My Account</button>';
-       }
-       ?>
-        <button onclick="window.location.href = 'Products.php';">Products</button>
-        <button onclick="window.location.href = 'About_Us.php';">About Us</button>
-        <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
-        
-    </nav>
+    }
+    ?>
+    <button onclick="window.location.href = 'Products.php';">Products</button>
+    <button onclick="window.location.href = 'About_Us.php';">About Us</button>
+    <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
+</nav>
+
 
 
     <div class='mainContent' style="color: aliceblue;">
@@ -82,7 +84,7 @@ FROM order_details
 JOIN items ON order_details.item_id = items.item_id
 GROUP BY items.item_id
 ORDER BY total_quantity_sold DESC
-LIMIT 4";
+LIMIT 8";
 
 $result = $conn->query($query);
 
