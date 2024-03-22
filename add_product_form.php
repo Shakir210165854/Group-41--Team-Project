@@ -84,6 +84,33 @@
             <input type="number" id="price" name="price" min="0" step="0.01" required><br><br>
             <label for="quantity">Quantity:</label>
             <input type="number" id="quantity" name="quantity" min="0" required><br><br>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+            <?php
+            include 'db_connection.php';
+
+            // Query to fetch categories from the database
+            $categorySql = "SELECT DISTINCT category FROM items";
+            $categoryResult = $conn->query($categorySql);
+            
+            // Check if the query was successful
+            if (!$categoryResult) {
+                echo "Error fetching categories: " . $conn->error;
+            }
+            if ($categoryResult->num_rows > 0) {
+                while ($categoryRow = $categoryResult->fetch_assoc()) {
+                    $selected = ($categoryRow['category'] == $row['category']) ? 'selected' : '';
+                    echo "<option value='" . $categoryRow['category'] . "' $selected>" . $categoryRow['category'] . "</option>";
+                }
+            }
+            ?>
+            </select><br><br>
+            <label for="image">Image:</label>
+            <input type="file" id="image" name="image"><br><br>
+            <label for="discount">Discount:</label>
+            <input type="number" id="discount" name="discount" min="0" step="0.01" value="<?php echo $row['discount']; ?>"><br><br>
             <button type="submit" name="add_product">Add Product</button>
             <button onclick="window.location.href = 'Stock.php';">Back to panel</button>
         </form>
