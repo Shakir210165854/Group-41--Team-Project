@@ -9,45 +9,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_product'])) {
     $category = $_POST['category'];
     $discount = $_POST['discount'];
 
-    // File upload handling for image
-    $target_dir = "uploads/";
-    $target_file = $target_dir . basename($_FILES["image"]["name"]);
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-    // Check if file already exists
-    if (file_exists($target_file)) {
-        echo "Sorry, file already exists.";
-        $uploadOk = 0;
-    }
-    // Allow certain file formats
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-    && $imageFileType != "gif" ) {
-        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-        $uploadOk = 0;
-    }
-    // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-    // if everything is ok, try to upload file
-    } else {
-        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-            echo "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded.";
+    // Check if file is uploaded
+    if(isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
+        // Read image file into a variable
+        $imageData = file_get_contents($_FILES["image"]["tmp_name"]);
+
+        // Prepare the SQL statement with placeholders
+        $sql = "INSERT INTO items (item_name, price, quantity, description, category, image, discount) 
+                VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        // Prepare the SQL statement
+        $stmt = $conn->prepare($sql);
+
+        // Bind parameters to the prepared statement
+        $stmt->bind_param("sdissss", $itemName, $price, $quantity, $description, $category, $imageData, $discount);
+
+        // Execute the prepared statement
+        if ($stmt->execute()) {
+            echo "<script>
+                    alert('Product added successfully');
+                    window.location.href = 'stock.php';
+                  </script>";
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            echo "Error adding product: " . $stmt->error;
         }
-    }
 
-    // $sql = "INSERT INTO items (item_name, price, quantity) VALUES ('$itemName', '$price', '$quantity')";
-    $sql = "INSERT INTO items (item_name, price, quantity, description, category, image, discount) 
-            VALUES ('$itemName', '$price', '$quantity', '$description', '$category', '$target_file', '$discount')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "<script>
-                alert('Product added successfully');
-                window.location.href = 'stock.php';
-              </script>";
+        // Close the statement
+        $stmt->close();
     } else {
-        echo "Error adding product: " . $conn->error;
+        echo "Error uploading image.";
     }
+} else {
+    echo "Invalid request.";
 }
 ?>
