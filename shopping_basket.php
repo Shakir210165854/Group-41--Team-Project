@@ -71,7 +71,7 @@ function buyButtonClick() {
     alert("Thank you for your purchase!");
 
     // Redirect to the home page
-    window.location.href = "newHome.php";
+    window.location.href = "rating.php";
 }
 
 </script>
