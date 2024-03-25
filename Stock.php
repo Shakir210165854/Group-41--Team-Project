@@ -71,7 +71,6 @@
 <div class="section">
         <div class="section-header">
            <h2>Order Details</h2>
-            <a href="#" class="btn">Add Order</a>
         </div>
         <table class="table">
         
@@ -89,7 +88,7 @@
             <?php
             // Gets order details from the database to display
 
-            $sql = "SELECT order_details.order_id, users.first_name, users.surname, order_details.total_price, order_details.order_date 
+            $sql = "SELECT order_details.order_id, order_details.user_id, users.first_name, users.surname, order_details.total_price, order_details.order_date 
                     FROM order_details 
                     INNER JOIN users ON order_details.user_id = users.user_id";
 
@@ -109,6 +108,8 @@
                     echo "</form>";
                     echo "<form method='get' action='view_order.php'>";
                     echo "<input type='hidden' name='view_order_id' value='" . $row["order_id"] . "' />";
+                    echo "<input type='hidden' name='user_id' value='" . $row["user_id"] . "' />";
+                    echo "<input type='hidden' name='order_date' value='" . $row["order_date"] . "' />";
                     echo "<button type='submit'>View Order</button>";
                     echo "</form>";
                     echo "</td>";
