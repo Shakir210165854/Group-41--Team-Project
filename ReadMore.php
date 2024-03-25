@@ -49,7 +49,7 @@
 </head>
 <body>
 
-<?php
+    <?php
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -65,26 +65,64 @@ if (isset($_GET['item_id'])) {
     $query = "SELECT * FROM items WHERE item_id = $item_id";
     $result = $conn->query($query);
 
+    $ratingQuery = "SELECT * FROM review WHERE item_id = $item_id";
+    $ratingResult = $conn->query($ratingQuery);
+
+
+
     // Check if there is a result
     if ($result && $result->num_rows > 0) {
-        // Fetch item details
-        $row = $result->fetch_assoc();
+        if ($ratingResult && $ratingResult->num_rows > 0){
+            // Fetch item details
+            $row = $result->fetch_assoc();
 
-        // Display item details
-        echo '<div class="read-more-item-card">';
-        echo '<div class="read-more-item-image">';
-        $image = base64_encode($row['image']);
-        echo '<img src="data:image/jpeg;base64,' . $image . '" alt="Item Image">';
-        echo '</div>';
-        echo '<div class="read-more-item-content">';
-        echo '<div class="read-more-item-name">' . $row['item_name'] . '</div>';
-        echo '<div class="read-more-item-description">' . $row['description'] . '</div>';
-        echo '<div class="read-more-item-price">£' . $row['price'] . '</div>';
-        echo '<div class="category">' . $row['category'] . '</div>';
-        // You can add more information here if needed
-        echo '<button onclick="window.location.href = \'Products.php\';">Back</button>';
-        echo '</div>';
-        echo '</div>';
+            // Display item details
+            echo '<div class="read-more-item-card">';
+            echo '<div class="read-more-item-image">';
+            $image = base64_encode($row['image']);
+            echo '<img src="data:image/jpeg;base64,' . $image . '" alt="Item Image">';
+            echo '</div>';
+            echo '<div class="read-more-item-content">';
+            echo '<div class="read-more-item-name">' . $row['item_name'] . '</div>';
+            echo '<div class="read-more-item-description">' . $row['description'] . '</div>';
+            echo '<div class="read-more-item-price">£' . $row['price'] . '</div>';
+            echo '<div class="category">' . $row['category'] . '</div>';
+            // You can add more information here if needed
+            // Display rating if exists
+            $reviewRow = $ratingResult->fetch_assoc();
+            echo '<div class="read-more-ratingStars">';
+
+            echo '<div class="read-more-rating-rate">' . $reviewRow['rating'] . '</div>';
+            echo '<div class="read-more-rating-comment">' . $reviewRow['comment'] . '</div>';
+
+            echo '<button onclick="window.location.href = \'Products.php\';">Back</button>';
+            echo '</div>';
+            echo '</div>';
+        }
+
+        else{
+            $row = $result->fetch_assoc();
+
+            // Display item details
+            echo '<div class="read-more-item-card">';
+            echo '<div class="read-more-item-image">';
+            $image = base64_encode($row['image']);
+            echo '<img src="data:image/jpeg;base64,' . $image . '" alt="Item Image">';
+            echo '</div>';
+            echo '<div class="read-more-item-content">';
+            echo '<div class="read-more-item-name">' . $row['item_name'] . '</div>';
+            echo '<div class="read-more-item-description">' . $row['description'] . '</div>';
+            echo '<div class="read-more-item-price">£' . $row['price'] . '</div>';
+            echo '<div class="category">' . $row['category'] . '</div>';
+
+            echo 'NO REVIEWS';
+
+
+
+            echo '<button onclick="window.location.href = \'Products.php\';">Back</button>';
+            echo '</div>';
+            echo '</div>';
+        }
     } else {
         echo 'Item not found.';
     }
@@ -97,7 +135,7 @@ if (isset($_GET['item_id'])) {
 
 // Close database connection
 $conn->close();
-?>
+    ?>
 
 </body>
 </html>
