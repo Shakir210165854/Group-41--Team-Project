@@ -45,6 +45,11 @@
         }
         $conn->close();
         ?>
+
+<a href="AdminHomePage.php">
+  <button class="user_home_button">Back to Home</button>
+</a>
+
     </div>
 </body>
 

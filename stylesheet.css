@@ -733,3 +733,18 @@ form {
 #category:hover {
     background-color: #4d0e80;
 }
+
+.cards-container, body{
+    background-color:#3e3c3a;
+   
+}
+
+.card{
+    color: white;
+}
+
+.user_home_button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; 
+  }
