@@ -11,6 +11,7 @@
     <section class="container signup-container" id="sign-up">
         <h1>Sign Up</h1>
         <form method="post" action="loginpage.php">
+
             <div class="form-group">
                 <label for="first_name">First name:</label>
                 <input type="text" id="first_name" name="first_name" required />
@@ -53,6 +54,7 @@
             </div>
 
             <button type="submit" name="sign-up">Sign Up</button>
+
 
         </form>
 
