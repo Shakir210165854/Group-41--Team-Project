@@ -246,10 +246,10 @@ h3 {
     font-weight: bold;
 }
 .delete-button {
-    margin-left: auto; /* Push the button to the right end */
+    margin-left: auto; 
     padding: 8px 12px;
     max-height: 50px;
-    background-color: #5e1698; /* Bootstrap's danger color */
+    background-color: #5e1698; 
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -524,12 +524,12 @@ button:hover {
     margin-top: 25px;
     max-width: 100%;
     border-radius: 10px;
-    margin-top: 20px; /* Adjust the top margin to move the form down */
+    margin-top: 20px; 
     
 }
 .Contact-form textarea {
-    width: 720px; /* Adjust the width as needed */
-    height: 40px; /* Adjust the height as needed */
+    width: 718px;
+    height: 40px; 
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
