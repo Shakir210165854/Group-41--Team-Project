@@ -89,10 +89,10 @@ if (isset($_SESSION['user_id'])) {
             <small class="error"></small>
             
             <label for="message">Message:</label>
-            <textarea id="message" placeholder="Message" rows="4" required></textarea>
+            <textarea id="message" placeholder="Message"  required></textarea>
             <small class="error"></small>
 
-            <button type="submit" class="myButton">Submit</button>
+            <button type="submit" class="myButton submitButton">Submit</button>
 
             <div id="thankYouMessage" style="display: none;">
                 <p>Thank you for reaching out to AlphaTech! Your message has been received,and we appreciate your interest in AlphaTech.</p>
