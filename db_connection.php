@@ -142,7 +142,7 @@ if (isset($_POST['sign-up'])) {
 
       $_SESSION['email'] = $username;
       $_SESSION['user_id'] = $userID; // Update $_SESSION['user_id']
-      $_SESSION['success'] = "You are now logged in";
+      $_SESSION['success'] = "You have successfully registered.";
 
       // Log activity to the database, give date and time as well as action.
       $timestamp = date('Y-m-d H:i:s');
