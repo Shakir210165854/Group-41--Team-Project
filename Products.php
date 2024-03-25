@@ -72,7 +72,7 @@ $currentPage = 'products'; // Change this according to the current page
                 </div>
             </div>
         </div>
-        <h3 class="title">Products</h3>
+        <!-- <h3 class="title">Products</h3> -->
         <?php
         echo '<hr style="border: none; height: 1px; background-color: white;">';
         ?>
@@ -88,6 +88,10 @@ $currentPage = 'products'; // Change this according to the current page
                         <option value="price_desc">Price High to Low</option>
                     </select>
                 </form>
+                <h3 class="title" style="color: #5e1698">Products</h3>
+                <h3 class="title">Products</h3>
+                <h3 class="title" style="color: #5e1698">Products</h3>
+                
                 <form method="post" action="" id="filterForm">
                     <label for="category">Filter by Category:</label>
                     <select name="category" id="category" onchange="submitFilter()">
@@ -178,7 +182,7 @@ $currentPage = 'products'; // Change this according to the current page
 
                 // Check if quantity is 0
                 if ($row['quantity'] == 0) {
-                    echo '<div class="item-price">Out of Stock</div>';
+                    echo '<div class="item-price" style="color: red;">Out of Stock</div>';
                 } else {
                     echo '<div class="item-price">£' . $row['price'] . '</div>';
                     echo '<div class="category">' . $row['category'] . '</div>';
@@ -199,7 +203,7 @@ $currentPage = 'products'; // Change this according to the current page
                         echo '</form>';
                     } else {
                         // If user is not logged in or item is out of stock, display appropriate message
-                        echo '<button disabled>Out of Stock</button>';
+                        echo '<button onclick="window.location.href = \'loginpage.php\';">Login to purchase</button>';
                     }
                 }
 
