@@ -4,9 +4,9 @@
 
 
 $servername = 'localhost';
-$username = 'u-220112408';
-$password = 'e9EikGENzYELew9';
-$dbname = 'u_220112408_alphatech';
+$username = 'u-210165854';
+$password = '2NYFxrXWD8LJWil';
+$dbname = 'u_210165854_db';
 $errors = array();
 
 // Create connection
