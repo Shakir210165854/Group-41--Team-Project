@@ -10,9 +10,9 @@ include ('getUserInfo.php')
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Account</title>
     <link rel="stylesheet" type="text/css" href="PageDesign.css" />
-    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png"> 
-</head>
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png">
 
+</head>
 
 <body>
     <!--left side nav bar which is present on all pages-->
@@ -23,7 +23,6 @@ include ('getUserInfo.php')
         <!--when clicking on buttons it goes to the page that was clicked on.-->
         <button onclick="window.location.href = 'newHome.php';">Home</button>
         <button class="<?php echo basename($_SERVER['PHP_SELF']) == 'myAccount.php' ? 'active' : ''; ?>" onclick="window.location.href = 'myAccount.php';">My Account</button>
-
         <button onclick="window.location.href = 'Products.php';">Products</button>
         <button onclick="window.location.href = 'About_Us.php';">About Us</button>
         <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
@@ -75,8 +74,13 @@ include ('getUserInfo.php')
                 <label for="email">Email: </label>
                 <span class="infoContent"><?php echo $email; ?></span>
                 <label for="email">Phone Number: </label>
-               
+
+
                 <span class="infoContent"><?php echo $phone_number; ?></span> 
+                <br />
+                <br />
+                <button onclick="window.location.href = 'rating.php';">Leave a rating and review</button>
+                <br />
                 <!-- Change number form -->
                 <form method="post" action="changeNumber.php">
                     <label for="newNumber"> New Number: </label>
