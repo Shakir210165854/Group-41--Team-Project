@@ -11,10 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['buy_basket_items'])) {
         echo '<button onclick="window.location.href = \'loginpage.php\';">My Account</button>';
     }
 
-    // Retrieve address, card_number, and ccv from the form
-    $address = mysqli_real_escape_string($conn, $_POST['address']);
+
     $card_number = mysqli_real_escape_string($conn, $_POST['card_number']);
     $ccv = mysqli_real_escape_string($conn, $_POST['ccv']);
+
+
 
     // Select all items from the shopping_cart table that match the user_id
     $query = "SELECT * FROM shopping_cart WHERE user_id = $user_id";
@@ -30,17 +31,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['buy_basket_items'])) {
         $itemTotalPrice = $item_price * $quantity;
 
         // Insert item into order_details table
-        $insert_query = "INSERT INTO order_details (user_id, item_id, order_date, quantity, total_price) 
+        $insert_query = "INSERT INTO order_details (user_id, item_id, order_date, quantity, total_price)
         VALUES ('$user_id', '$item_id', NOW(), '$quantity', '$itemTotalPrice')";
         mysqli_query($conn, $insert_query);
+
+
+        // Update the new quantity in DB
+        $remove_stock_query = "UPDATE items SET quantity = quantity - $quantity WHERE item_id = $item_id";
+        mysqli_query($conn, $remove_stock_query);
     }
 
     // Clear the shopping_cart for the user
     $delete_query = "DELETE FROM shopping_cart WHERE user_id = $user_id";
     mysqli_query($conn, $delete_query);
 
-    // Confirmation message
-    echo "<script>window.location.href = 'newHome.php';</script>";
+
+    // Log activity to the database, give date and time as well as action.
+    $timestamp = date('Y-m-d H:i:s');
+    $action="purchase";
+    $insert_query = "INSERT INTO user_logs (user_id, timestamp, action) VALUES ('$userID', '$timestamp' , '$action')";
+    mysqli_query($conn, $insert_query);
+
+
+    echo '<script>alert("Thank you for your purchase!"); window.location.href = "newHome.php";</script>';
+
+
     exit(); // Stop further execution
 }
 ?>
@@ -52,49 +67,92 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['buy_basket_items'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basket</title>
     <link rel="stylesheet" type="text/css" href="basket.css" />
-</head>
-<script>
-function buyButtonClick() {
-    // Form validation
-    var address = document.getElementsByName('address')[0].value;
-    var cardNumber = document.getElementsByName('card_number')[0].value;
-    var ccv = document.getElementsByName('ccv')[0].value;
-
-    if (address === '' || cardNumber === '' || ccv === '') {
-        alert("Please fill out all fields.");
-        return false; // Prevent form submission if fields are not filled
-    }
-
-    // Check if card number and CCV are in correct format (you can add more validation here if needed)
-
-    // Display an alert
-    alert("Thank you for your purchase!");
-
-    // Redirect to the home page
-    window.location.href = "newHome.php";
-}
-
-</script>
-<body>
-<nav>
-    <a class="logo" onclick="return false;">
-        <img src="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png" alt="ATlogo" />
-    </a>
-   
-    <?php
-    if (isset($_SESSION['user_id'])) {
-        echo '<button onclick="window.location.href = \'myAccount.php\';">My Account</button>';
-        if ($_SESSION['user_id'] == '2') { 
-            echo '<button onclick="window.location.href = \'AdminHomePage.php\';">Admin page</button>';
+    <style>
+        /*CSS styles for the checkout table */
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
         }
-    } else {
-        echo '<button onclick="window.location.href = \'loginpage.php\';">My Account</button>';
+
+        form table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        form table td {
+            padding: 5px;
+        }
+
+        form table td label {
+            font-weight: bold;
+            display: inline-block;
+            width: 110px; 
+        }
+
+        form table td input[type="text"] {
+            width: 480px;
+            padding: 6px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }       
+
+
+        .buy-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            width:200px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            position:relative;
+            right:200px;
+        }
+
+        .buy-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <script>
+    function buyButtonClick() {
+        // Form validation
+        var cardNumber = document.getElementsByName('card_number')[0].value;
+        var ccv = document.getElementsByName('ccv')[0].value;
+
+        if (address === '' || cardNumber === '' || ccv === '') {
+            alert("Please fill out all fields.");
+            return false; // Prevent form submission if fields are not filled
+        }
+
+        // Check if card number and CCV are in correct format (you can add more validation here if needed
     }
-    ?>
-    <button onclick="window.location.href = 'Products.php';">Products</button>
-    <button onclick="window.location.href = 'About_Us.php';">About Us</button>
-    <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
-</nav>
+
+    </script>
+    <nav>
+        <a class="logo" onclick="return false;">
+            <img src="https://i.ibb.co/n01ZhS9/Alpha-Tech-V3.png" alt="ATlogo" />
+        </a>
+        <button onclick="window.location.href = 'newHome.php';">Home</button>
+        <?php
+        if (isset($_SESSION['user_id'])) {
+            echo '<button onclick="window.location.href = \'myAccount.php\';">My Account</button>';
+            if ($_SESSION['user_id'] == '2') { 
+                echo '<button onclick="window.location.href = \'AdminHomePage.php\';">Admin page</button>';
+            }
+        } else {
+            echo '<button onclick="window.location.href = \'loginpage.php\';">My Account</button>';
+        }
+        ?>
+        <button onclick="window.location.href = 'Products.php';">Products</button>
+        <button onclick="window.location.href = 'About_Us.php';">About Us</button>
+        <button onclick="window.location.href = 'contact_Us.php';">Contact Us</button>
+    </nav>
  
 <div class="mainContent">
     <div class="loginX">
@@ -165,29 +223,58 @@ function buyButtonClick() {
     // Display total price and Buy button
     echo '<div class="total-price" style="color: white; font-weight: bold;">Total: $' . number_format($totalPrice, 2) . '</div>';
 
-echo '<form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '">';
-echo '<table>';
-echo '<tr><td><label for="address"> Address: </label></td>';
-echo '<td><input type="text" name="address" required></td></tr>';
 
-echo '<tr><td><label for="card_number">Card Number:</label></td>';
-echo '<td><input type="text" name="card_number" pattern="\d{16}" title="Enter a 16-digit card number" required></td></tr>';
+    $query = "SELECT COUNT(*) AS num_items FROM shopping_cart WHERE user_id = $userID";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+    $num_items = $row['num_items'];
 
-echo '<tr><td><label for="ccv">CCV:</label></td>';
-echo '<td><input type="text" name="ccv" pattern="\d{3}" title="Enter a 3-digit CCV" required></td></tr>';
+    if ($num_items == 0) {
+        echo "<p>Your basket is empty. Please add items before proceeding with the purchase.</p>";
+    } else {
 
-echo '</table>';
-// Buy button
-echo '<button class="buy-button" type="submit" name="buy_basket_items" onclick="buyButtonClick()">Buy</button>';
-echo '</form>';
-echo '</div>';
-echo '</div>';
-echo '</div>';
+        // GEt user ID and the address from DB
+        $userID = $_SESSION['user_id'];
+        $query = "SELECT * FROM address WHERE user_id = $userID";
+        $result = mysqli_query($conn, $query);
+        $user_address = mysqli_fetch_assoc($result);
 
+        // Display address from DB with option to edit.
+        echo '<form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '">';
+        echo '<table>';
+
+        echo '<tr><td><label for="address"> Address: </label></td>';
+        echo '<td><input type="text" name="address" value="' . $user_address['street_address'] . '" required></td></tr>';
+
+        echo '<tr><td><label for="city">City:</label></td>';
+        echo '<td><input type="text" name="city" value="' . $user_address['city'] . '" required></td></tr>';
+
+        echo '<tr><td><label for="state">State:</label></td>';
+        echo '<td><input type="text" name="state" value="' . $user_address['state'] . '" required></td></tr>';
+
+        echo '<tr><td><label for="postal_code">Postal Code:</label></td>';
+        echo '<td><input type="text" name="postal_code" value="' . $user_address['postal_code'] . '" required></td></tr>';
+
+        echo '<tr><td><label for="card_number">Card Number:</label></td>';
+        echo '<td><input type="text" name="card_number" pattern="\d{16}" title="Enter a 16-digit card number" required></td></tr>';
+
+        echo '<tr><td><label for="ccv">CCV:</label></td>';
+        echo '<td><input type="text" name="ccv" pattern="\d{3}" title="Enter a 3-digit CCV" required></td></tr>';
+
+        echo '</table>';
+        // Buy button
+        echo '<button class="buy-button" type="submit" name="buy_basket_items" onclick="buyButtonClick()">Buy</button>';
+        echo '</form>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+
+    }
     // Close database connection
     $conn->close();
-?>
+    ?>
+</div>
 </body>
 </html>
 
-    
+   
