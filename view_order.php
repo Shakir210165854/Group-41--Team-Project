@@ -60,7 +60,103 @@ foreach ($orders as $order) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Order</title>
-    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F3E5F5; 
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #6A1B9A; 
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+            background-color: #FFFFFF; 
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #E0E0E0; 
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #5e1698; 
+            color: #fff; 
+        }
+        tr:nth-child(even) {
+            background-color: #f3e8fc; 
+        }
+        .item-image {
+            max-width: 100px;
+            max-height: 100px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .table-vertical {
+            margin-top: 20px;
+            width: 30%;
+            border-collapse: collapse;
+            background-color: #FFFFFF; 
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-vertical th,
+        .table-vertical td {
+            border: 1px solid #E0E0E0; 
+            padding: 12px;
+            text-align: left;
+        }
+
+        .table-vertical th {
+            background-color: #CE93D8; 
+            color: #4527A0; 
+        }
+
+        .table-vertical tr:nth-child(even) {
+            background-color: #f3e8fc; 
+        }
+
+        /* .table-vertical tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        } */
+
+        .table-vertical td:first-child {
+            font-weight: bold;
+            width: 150px;
+            background-color: #5e1698; 
+            color: #fff; 
+        }
+        .highlighted {
+        background-color: #7a5a94; 
+        font-weight: bold;
+        color: #FFFFFF; 
+        border: 2px solid #7B1FA2; 
+        }
+        .custom-button {
+        background-color: #ad82d1; 
+        color: #FFFFFF; 
+        padding: 10px 20px; 
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        text-decoration: none; 
+        display: inline-block;
+        transition: background-color 0.3s;
+    }
+    .custom-button:hover {
+        background-color: #7B1FA2; 
+    }
+    </style>
 </head>
 <body>
 <a href="Stock.php" class="custom-button">Back
