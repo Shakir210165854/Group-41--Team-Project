@@ -5,7 +5,7 @@
 
 $servername = 'localhost';
 $username = 'u-220112408';
-$password = 'Yemen2004@';
+$password = 'e9EikGENzYELew9';
 $dbname = 'u_220112408_alphatech';
 $errors = array();
 

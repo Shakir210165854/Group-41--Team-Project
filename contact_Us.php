@@ -66,12 +66,10 @@ if (isset($_SESSION['user_id'])) {
       
         <h1 class="title">Contact Us</h1>
 
-        <!-- <div class="paragraph">
-        <p>Connecting with us is simple. Whether you have questions, inquiries, or just want 
+        <p class="contact-us-paragraph-one">Connecting with us is simple. Whether you have questions, inquiries, or just want 
         to say hello, feel free to send us a message. Our dedicated team at AlphaTech is here 
-        to assist you. feel free to provide more details, and we can help you refine your message 
+        to assist you. Feel free to provide more details, and we can help you refine your message 
         or provide additional information. Let AlphaTech help set you apart in your journey. We look forward to hearing from you!</p>
-        </div> -->
 
         <div class="Contact-form">
         <form id="Form2" action="process_contact_form.php" method="post">
