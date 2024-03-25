@@ -178,7 +178,7 @@ $currentPage = 'products'; // Change this according to the current page
 
                 // Check if quantity is 0
                 if ($row['quantity'] == 0) {
-                    echo '<div class="item-price">Out of Stock</div>';
+                    echo '<div class="item-price" style="color: red;">Out of Stock</div>';
                 } else {
                     echo '<div class="item-price">£' . $row['price'] . '</div>';
                     echo '<div class="category">' . $row['category'] . '</div>';
@@ -199,7 +199,7 @@ $currentPage = 'products'; // Change this according to the current page
                         echo '</form>';
                     } else {
                         // If user is not logged in or item is out of stock, display appropriate message
-                        echo '<button disabled>Out of Stock</button>';
+                        echo '<button onclick="window.location.href = \'loginpage.php\';">Login to purchase</button>';
                     }
                 }
 
