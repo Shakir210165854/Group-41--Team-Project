@@ -88,6 +88,7 @@ $currentPage = 'home';
         echo '<div class="item-name">' . $row['item_name'] . '</div>';
         echo '<div class="item-description">' . $row['description'] . '</div>';
         echo '<div class="item-price">£' . $row['price'] . '</div>';
+        echo '<label for="quantity">Quantity:</label>';
 
         // If user is logged in shows add to basket
         if (isset($_SESSION['user_id'])) {
@@ -97,6 +98,7 @@ $currentPage = 'home';
             echo '<input type="hidden" name="item_name" value="' . $row['item_name'] . '">';    
             echo '<input type="hidden" name="description" value="' . $row['description'] . '">';
             echo '<input type="hidden" name="price" value="' . $row['price'] . '">';
+            echo '<input type="number" name="quantity" id="quantity" min="1" value="1" style="width: 50%;">';
             echo '<button type="submit" name="add_to_cart">Add to Basket</button>';
             echo '</form>';
         }else {
