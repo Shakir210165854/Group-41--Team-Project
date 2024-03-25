@@ -72,7 +72,7 @@ $currentPage = 'products'; // Change this according to the current page
                 </div>
             </div>
         </div>
-        <h3 class="title">Products</h3>
+        <!-- <h3 class="title">Products</h3> -->
         <?php
         echo '<hr style="border: none; height: 1px; background-color: white;">';
         ?>
@@ -88,6 +88,10 @@ $currentPage = 'products'; // Change this according to the current page
                         <option value="price_desc">Price High to Low</option>
                     </select>
                 </form>
+                <h3 class="title" style="color: #5e1698">Products</h3>
+                <h3 class="title">Products</h3>
+                <h3 class="title" style="color: #5e1698">Products</h3>
+                
                 <form method="post" action="" id="filterForm">
                     <label for="category">Filter by Category:</label>
                     <select name="category" id="category" onchange="submitFilter()">
